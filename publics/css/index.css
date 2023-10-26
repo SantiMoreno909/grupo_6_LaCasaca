@@ -8,7 +8,18 @@ body {
   font-family: Arial, sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /*CLASES REUTILIZABLES*/
+
+.section-title {
+  font-size: 2rem;
+  margin: 2rem auto 1rem 3rem;
+}
+
 .d-flex-r {
   display: flex;
   flex-direction: row;
@@ -26,12 +37,23 @@ body {
   align-items: center;
 }
 
-.align-izq {
+.alinear-izq {
   margin: 0 auto 0 0;
 }
 
-.align-der {
+.alinear-der {
   margin: 0 0 0 auto;
+}
+
+.divisor {
+  width: 95%;
+  background-color: #000;
+  height: 2px;
+  border-radius: 100%;
+}
+
+.w-75 {
+  width: 75%;
 }
 
 /*ESTILOS DEL HEADER*/
@@ -89,6 +111,7 @@ body {
 #buscador__equipos {
   color: white;
   background-color: #072e51;
+  padding-top: 1rem;
 }
 
 .contenedorCarrusel {
@@ -122,4 +145,41 @@ body {
 
 .flechasCarrusel > svg {
   background-color: white;
+}
+
+/*ESTILOS CARDS*/
+.card__contenedor {
+  justify-content: space-around;
+}
+
+.cardItem {
+  width: 26vw;
+  border: 1px solid black;
+  border-radius: 15px;
+  margin: 2rem 1rem;
+}
+
+.card__escudos {
+  margin-top: 0.8rem;
+}
+
+.card__escudo {
+  height: 40px;
+}
+
+.card__fotoRemera {
+  width: 80%;
+}
+
+.card__txt {
+  font-size: 24px;
+  margin-bottom: 1rem;
+}
+
+.card__precio,
+.card__envio {
+  font-weight: 800;
+  font-size: 16px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }

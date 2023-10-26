@@ -22,13 +22,14 @@ Nos hemos inspirado en los colores de la selección nacional de fútbol de Argen
 
 ## Inspiración
 
-Para inspirarnos, buscamos páginas que pertenecieran a e-commerce que vendieran los mismos productos que nosotros. Estas fueron las cinco páginas ganadoras:
+Para inspirarnos, buscamos páginas que pertenecieran a e-commerce que vendieran los mismos productos que nosotros. Estas fueron las páginas ganadoras:
 
 - Area Nueve: https://www.areanueve.shop/
 - Templo del Futbol: https://www.templodelfutbol.com.ar/
 - Camisetas Futbol Spainnn: https://www.camisetasfutbolspainnn.com/collections/ligas-paises
 - Sporting: https://www.sporting.com.ar/futbol
 - GMKits: https://www.gmkits1.com/
+- Adidas: https://www.adidas.com.ar/futbol
 
 ## Explora Nuestro Proyecto
 
