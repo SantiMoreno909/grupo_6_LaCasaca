@@ -1,28 +1,442 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/index.css" />
     <title>La Casaca</title>
   </head>
   <body>
     <header>
       <div class="headerNavbar">
         <div class="headerNavbarLogo">
-            <img src="/img/logo.png" alt="Logo" height="50">
+          <img src="/img/logo.png" alt="Logo" height="50" />
         </div>
         <div class="headerLinks">
-            <a href="#">Inicio</a>
-            <a href="#">Productos</a>
-            <a href="#">Contactanos</a>
-            <a href="#">Registrar</a>
-            <a href="#">Nosotros</a>
+          <a href="#">Inicio</a>
+          <a href="#">Productos</a>
+          <a href="#">Contactanos</a>
+          <a href="#">Registrar</a>
+          <a href="#">Nosotros</a>
         </div>
         <div class="headerCarrito">
-           <!-- aca poner los iconos de login y carrito -->
+          <!-- aca poner los iconos de login y carrito -->
         </div>
-    </div>
+      </div>
     </header>
+    <main>
+      <section id="banner__principal" class="d-flex-c centrado">
+        <p class="banner__ppal--txt">Bienvenido al club</p>
+        <img
+          src="/img/logo.png"
+          alt="LA CASACA"
+          class="banner__ppal--img-logo"
+        />
+        <p class="banner__ppal--txt">"Vistiendo tu pasión"</p>
+      </section>
+      <section id="buscador__ligas">
+        <h2 class="busc__titulo centrado">
+          Elegí entre las mejores ligas del planeta
+        </h2>
+        <div class="contenedorCarrusel">
+          <div class="itemCarrusel" id="ligaElementoCarrusel-1">
+            <div class="tarjetasCarrusel centrado" id="ligaElementoCarrusel-1">
+              <img
+                src="/img/escudos/bundesliga.png"
+                alt=""
+                class="carruselImg"
+              />
+            </div>
+            <div class="flechasCarrusel">
+              <a href="#ligaElementoCarrusel-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-left"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"
+                  />
+                </svg>
+              </a>
+              <a href="#ligaElementoCarrusel-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="itemCarrusel" id="ligaElementoCarrusel-2">
+            <div class="tarjetasCarrusel centrado" id="ligaElementoCarrusel-2">
+              <img src="/img/escudos/serieA.png" alt="" class="carruselImg" />
+            </div>
+            <div class="flechasCarrusel">
+              <a href="#ligaElementoCarrusel-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-left"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"
+                  />
+                </svg>
+              </a>
+              <a href="#ligaElementoCarrusel-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="itemCarrusel" id="ligaElementoCarrusel-3">
+            <div class="tarjetasCarrusel centrado" id="ligaElementoCarrusel-3">
+              <img
+                src="/img/escudos/ligaArgentina.png"
+                alt=""
+                class="carruselImg"
+              />
+            </div>
+            <div class="flechasCarrusel">
+              <a href="#ligaElementoCarrusel-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-left"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"
+                  />
+                </svg>
+              </a>
+              <a href="#ligaElementoCarrusel-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="itemCarrusel" id="ligaElementoCarrusel-4">
+            <div class="tarjetasCarrusel centrado" id="ligaElementoCarrusel-4">
+              <img
+                src="/img/escudos/ligaEspanola.png"
+                alt=""
+                class="carruselImg"
+              />
+            </div>
+            <div class="flechasCarrusel">
+              <a href="#ligaElementoCarrusel-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-left"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"
+                  />
+                </svg>
+              </a>
+              <a href="#ligaElementoCarrusel-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="itemCarrusel" id="ligaElementoCarrusel-5">
+            <div class="tarjetasCarrusel centrado" id="ligaElementoCarrusel-5">
+              <img
+                src="/img/escudos/premierLeague.png"
+                alt=""
+                class="carruselImg"
+              />
+            </div>
+            <div class="flechasCarrusel">
+              <a href="#ligaElementoCarrusel-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-left"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"
+                  />
+                </svg>
+              </a>
+              <a href="#ligaElementoCarrusel-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="buscador__equipos">
+        <h2 class="busc__titulo centrado">
+          Buscá el escudo de tu equipo favorito
+        </h2>
+        <div class="contenedorCarrusel">
+          <div class="itemCarrusel" id="equipoElementoCarrusel-1">
+            <div
+              class="tarjetasCarrusel centrado"
+              id="equipoElementoCarrusel-1"
+            >
+              <img src="/img/escudos/river.png" alt="" class="carruselImg" />
+            </div>
+            <div class="flechasCarrusel">
+              <a href="#equipoElementoCarrusel-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-left"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"
+                  />
+                </svg>
+              </a>
+              <a href="#equipoElementoCarrusel-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="itemCarrusel" id="equipoElementoCarrusel-2">
+            <div
+              class="tarjetasCarrusel centrado"
+              id="equipoElementoCarrusel-2"
+            >
+              <img src="/img/escudos/boca.png" alt="" class="carruselImg" />
+            </div>
+            <div class="flechasCarrusel">
+              <a href="#equipoElementoCarrusel-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-left"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"
+                  />
+                </svg>
+              </a>
+              <a href="#equipoElementoCarrusel-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="itemCarrusel" id="equipoElementoCarrusel-3">
+            <div
+              class="tarjetasCarrusel centrado"
+              id="equipoElementoCarrusel-3"
+            >
+              <img src="/img/escudos/racing.png" alt="" class="carruselImg" />
+            </div>
+            <div class="flechasCarrusel">
+              <a href="#equipoElementoCarrusel-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-left"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"
+                  />
+                </svg>
+              </a>
+              <a href="#equipoElementoCarrusel-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="itemCarrusel" id="equipoElementoCarrusel-4">
+            <div
+              class="tarjetasCarrusel centrado"
+              id="equipoElementoCarrusel-4"
+            >
+              <img
+                src="/img/escudos/sanLorenzo.png"
+                alt=""
+                class="carruselImg"
+              />
+            </div>
+            <div class="flechasCarrusel">
+              <a href="#equipoElementoCarrusel-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-left"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"
+                  />
+                </svg>
+              </a>
+              <a href="#equipoElementoCarrusel-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="itemCarrusel" id="equipoElementoCarrusel-5">
+            <div
+              class="tarjetasCarrusel centrado"
+              id="equipoElementoCarrusel-5"
+            >
+              <img src="/img/escudos/defyJust.png" alt="" class="carruselImg" />
+            </div>
+            <div class="flechasCarrusel">
+              <a href="#equipoElementoCarrusel-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-left"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"
+                  />
+                </svg>
+              </a>
+              <a href="#equipoElementoCarrusel-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="mostrador__eleccion"></section>
+      <section id="ingresos"></section>
+      <section id="banner__seleccion"></section>
+      <section id="ofertas"></section>
+    </main>
   </body>
 </html>
