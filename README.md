@@ -20,6 +20,16 @@ Nuestro público objetivo principal está compuesto por hombres, en un rango de 
 
 Nos hemos inspirado en los colores de la selección nacional de fútbol de Argentina para definir nuestra identidad de marca. Estos colores representan nuestra pasión por el fútbol y nuestra conexión con la cultura futbolística.
 
+## Inspiración
+
+Para inspirarnos, buscamos páginas que pertenecieran a e-commerce que vendieran los mismos productos que nosotros. Estas fueron las cinco páginas ganadoras:
+
+- Area Nueve: https://www.areanueve.shop/
+- Templo del Futbol: https://www.templodelfutbol.com.ar/
+- Camisetas Futbol Spainnn: https://www.camisetasfutbolspainnn.com/collections/ligas-paises
+- Sporting: https://www.sporting.com.ar/futbol
+- GMKits: https://www.gmkits1.com/
+
 ## Explora Nuestro Proyecto
 
 Te invitamos a explorar nuestro repositorio y descubrir más sobre nuestro proyecto. ¡Esperamos que disfrutes de lo que hemos creado y que te unas a nosotros en este emocionante viaje futbolero!
