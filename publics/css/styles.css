@@ -1,0 +1,44 @@
+
+/*estilos globales */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+body {
+font-family: Arial, sans-serif;
+}
+  
+
+/*ESTILOS DEL HEADER*/
+
+.header__Navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #072e51;
+    padding: 0.5rem 8rem;
+  }
+  
+  .headerNavbar__Logo img {
+    display: block;
+    width: 7rem;
+    height: 7rem;
+  }
+  
+  .headerLinks a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 18px;
+    transition: color 0.3s;
+  }
+  
+  .headerLinks a:hover {
+    color: white;
+    text-decoration: underline;
+  }
+  
+ /*estilos para el footer*/ 

@@ -1,12 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-body {
-  font-family: Arial, sans-serif;
-}
 
 a {
   text-decoration: none;
@@ -56,34 +48,6 @@ a {
   width: 75%;
 }
 
-/*ESTILOS DEL HEADER*/
-
-.headerNavbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #072e51;
-  padding: 0.5rem 8rem;
-}
-
-.headerNavbarLogo img {
-  display: block;
-  width: 7rem;
-  height: 7rem;
-}
-
-.headerLinks a {
-  color: white;
-  text-decoration: none;
-  margin-left: 20px;
-  font-size: 18px;
-  transition: color 0.3s;
-}
-
-.headerLinks a:hover {
-  color: white;
-  text-decoration: underline;
-}
 
 /*ESTILOS BANNER PRINCIPAL*/
 #banner__principal {
