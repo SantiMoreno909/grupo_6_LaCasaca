@@ -192,7 +192,15 @@ a {
 
 /*BANNER DE LA SELECCIÓN*/
 #banner__seleccion {
-  background-image: url(/img/img-banner-seleccion.jpg);
+  background: linear-gradient(rgba(28, 28, 28, 0.55), rgba(28, 28, 28, 0.55)),
+    url("/img/img-banner-seleccion.jpg");
+  height: 90vh;
+  width: 100%;
+
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 #banner__seleccion .banner__selec--txt {
