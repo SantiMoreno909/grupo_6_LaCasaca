@@ -196,11 +196,11 @@ a {
 }
 
 #banner__seleccion .banner__selec--txt {
-  font-size: 3rem;
-  background-color: rgba(28, 28, 28, 0.85);
+  font-size: 4rem;
+  color: rgba(28, 28, 28, 0.85);
   padding: 0.8rem;
   border-radius: 15px;
-  color: rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.55);
 }
 
 /*estilos para el footer*/

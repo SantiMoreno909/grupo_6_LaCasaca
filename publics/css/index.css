@@ -1,6 +1,5 @@
 /*ESTILOS BANNER PRINCIPAL*/
-#banner__principal,
-#banner__seleccion {
+#banner__principal {
   height: 90vh;
   width: 100%;
   background: linear-gradient(rgba(28, 28, 28, 0.55), rgba(28, 28, 28, 0.55)),
@@ -59,4 +58,14 @@
 
 .flechasCarrusel > svg {
   background-color: white;
+}
+#banner__seleccion {
+  background: linear-gradient(rgba(28, 28, 28, 0.55), rgba(28, 28, 28, 0.55)),
+    url("/img/img-banner-seleccion.jpg");
+  height: 90vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: cover;
+  background-attachment: fixed;
 }
