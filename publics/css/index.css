@@ -1,5 +1,3 @@
-
-
 a {
   text-decoration: none;
   color: inherit;
@@ -48,9 +46,9 @@ a {
   width: 75%;
 }
 
-
 /*ESTILOS BANNER PRINCIPAL*/
-#banner__principal {
+#banner__principal,
+#banner__seleccion {
   height: 90vh;
   width: 100%;
   background: linear-gradient(rgba(28, 28, 28, 0.55), rgba(28, 28, 28, 0.55)),
@@ -146,4 +144,34 @@ a {
   font-size: 16px;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+}
+
+/*BANNER DE LA SELECCIÓN*/
+#banner__seleccion {
+  background-image: url(/img/img-banner-seleccion.jpg);
+}
+
+#banner__seleccion .banner__selec--txt {
+  font-size: 3rem;
+  background-color: rgba(28, 28, 28, 0.85);
+  padding: 0.8rem;
+  border-radius: 15px;
+  color: rgb(0, 0, 0);
+}
+
+/*ENLACES A OTRA PÁGINA*/
+.irPagEspContenedo {
+  width: 100%;
+}
+
+.irPaginaEspecifica {
+  display: block;
+  text-align: right;
+  width: 95%;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.irPaginaEspecifica:hover {
+  color: #154e7f;
 }
