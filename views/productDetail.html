@@ -12,47 +12,62 @@
 
 <body>
     <header id="header"></header>
-    <div>
-        <img src="/img/camisetasBoca/camiseta_Boca_2023.png" alt="">
-    </div>
-    <div>
-        <div>
-            <h1>Camiseta Titular Boca 2023</h1>
-            <p>Código de Articulo: 0000123</p>
-            <h1>$33000</h1>
+    <content>
+        <div class="content__imagenes">
+            <img src="/img/camisetasBoca/camiseta_Boca_2023.png" alt="">          
+        </div>
+        <div class="content__descripcion">
+            <div>
+                <h1>Camiseta Titular Boca 2023</h1>
+                <h4>Hombre</h4>
+                <p>Código de Articulo: 0000123</p>
+                <h1 class="content__descripcion--precio">$33000</h1>
 
-        </div>
-        <div>
-            <hr>
-            <div>
-                <i class="fas fa-credit-card"></i>
-                <a>Ver opciones de pago</a>
             </div>
-            <div>
-                <i class="fas fa-truck"></i>
-                <a>Ver medios de envio</a>
+            <div class="content__pagos">
+                <hr>
+                <div class="content__pagos--opciones">
+                    <div>
+                        <i class="fas fa-credit-card"></i>
+                        <a href="#">Ver opciones de pago</a>
+                    </div>
+                    <div>
+                        <i class="fas fa-truck"></i>
+                        <a href="#">Ver medios de envio</a>
+                    </div>
+                </div>
+                <hr>
             </div>
-            <hr>
+            <div class="content__talles">
+                <h4>Selecciona tu talle</h4>
+                <button>S</button>
+                <button>M</button>
+                <button>L</button>
+                <button>XL</button>
+                <button>XXL</button>
+            </div>
+            <div class="content__acciones">
+                <div>
+                    <button>
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                    <p>Agregar al Carrito</p>
+                </div>
+                <div>
+                    <button>
+                        <i class="fas fa-heart"></i>
+                    </button>
+                    <p>Favoritos</p>
+                </div>
+                <div>
+                    <button>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                    <p>Compartir</p>
+                </div>
+            </div>
         </div>
-        <div>
-            <h4>Seleccion tu talle</h4>
-            <ul>
-                <li>S</li>
-                <li>M</li>
-                <li>L</li>
-                <li>XL</li>
-                <li>XXL</li>
-            </ul>
-        </div>
-        <div>
-            <i class="fas fa-shopping-cart"></i>
-            <p>Agregar al Carrito</p>
-            <i class="fas fa-heart"></i>
-            <p>Agregar a Favoritos</p>
-            <i class="fas fa-paper-plane"></i>
-            <p>Compartir</p>
-        </div>
-    </div>
+    </content>
 </body>
 <script src="/js/loadComponent.js"></script>
 
