@@ -15,6 +15,54 @@ body {
   display: none;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*CLASES REUTILIZABLES*/
+
+.section-title {
+  font-size: 2rem;
+  margin: 2rem auto 1rem 3rem;
+}
+
+.d-flex-r {
+  display: flex;
+  flex-direction: row;
+}
+
+.d-flex-c {
+  display: flex;
+  flex-direction: column;
+}
+
+.centrado {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.alinear-izq {
+  margin: 0 auto 0 0;
+}
+
+.alinear-der {
+  margin: 0 0 0 auto;
+}
+
+.divisor {
+  width: 95%;
+  background-color: #000;
+  height: 2px;
+  border-radius: 100%;
+}
+
+.w-75 {
+  width: 75%;
+}
+
 /*ESTILOS DEL HEADER*/
 
 .header__Navbar {

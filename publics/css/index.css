@@ -1,51 +1,3 @@
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/*CLASES REUTILIZABLES*/
-
-.section-title {
-  font-size: 2rem;
-  margin: 2rem auto 1rem 3rem;
-}
-
-.d-flex-r {
-  display: flex;
-  flex-direction: row;
-}
-
-.d-flex-c {
-  display: flex;
-  flex-direction: column;
-}
-
-.centrado {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
-
-.alinear-izq {
-  margin: 0 auto 0 0;
-}
-
-.alinear-der {
-  margin: 0 0 0 auto;
-}
-
-.divisor {
-  width: 95%;
-  background-color: #000;
-  height: 2px;
-  border-radius: 100%;
-}
-
-.w-75 {
-  width: 75%;
-}
-
 /*ESTILOS BANNER PRINCIPAL*/
 #banner__principal,
 #banner__seleccion {
@@ -107,19 +59,4 @@ a {
 
 .flechasCarrusel > svg {
   background-color: white;
-}
-
-/*ESTILOS CARDS*/
-
-/*BANNER DE LA SELECCIÓN*/
-#banner__seleccion {
-  background-image: url(/img/img-banner-seleccion.jpg);
-}
-
-#banner__seleccion .banner__selec--txt {
-  font-size: 3rem;
-  background-color: rgba(28, 28, 28, 0.85);
-  padding: 0.8rem;
-  border-radius: 15px;
-  color: rgb(0, 0, 0);
 }
