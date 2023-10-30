@@ -83,4 +83,76 @@ body {
   text-decoration: none;
 }
 
+/*Estilos de las cards*/
+.card__contenedor {
+  justify-content: space-around;
+}
+
+.cardItem {
+  width: 26vw;
+  border: 1px solid black;
+  border-radius: 15px;
+  margin: 2rem 1rem;
+}
+
+.card__escudos {
+  margin-top: 0.8rem;
+}
+
+.card__escudo {
+  height: 40px;
+}
+
+.card__fotoRemera {
+  width: 80%;
+}
+
+.card__txt {
+  font-size: 24px;
+  margin-bottom: 1rem;
+}
+
+.card__precio,
+.card__envio {
+  font-weight: 800;
+  font-size: 16px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.card__fotoRemera {
+  width: 90%;
+  height: 80%;
+}
+
+/*ENLACES A OTRA PÁGINA*/
+.irPagEspContenedo {
+  width: 100%;
+}
+
+.irPaginaEspecifica {
+  display: block;
+  text-align: right;
+  width: 95%;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.irPaginaEspecifica:hover {
+  color: #154e7f;
+}
+
+/*BANNER DE LA SELECCIÓN*/
+#banner__seleccion {
+  background-image: url(/img/img-banner-seleccion.jpg);
+}
+
+#banner__seleccion .banner__selec--txt {
+  font-size: 3rem;
+  background-color: rgba(28, 28, 28, 0.85);
+  padding: 0.8rem;
+  border-radius: 15px;
+  color: rgb(0, 0, 0);
+}
+
 /*estilos para el footer*/
