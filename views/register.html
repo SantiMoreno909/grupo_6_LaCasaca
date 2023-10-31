@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="/publics/css/register.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-<title>Página de Registro</title>
-<link rel="shortcut icon" href="/publics/img/logo 1.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/register.css">
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"/>
+  <title>Página de Registro</title>
+  <link rel="shortcut icon" href="/img/logo 1.png" type="image/x-icon">
 
 </head>
+
 <body>
   <header id="header"></header>
   <div class="container">
-    <div class="left-side">
-      <img src="/publics/img/logo 1.png" alt="Logo">
-      <h1>¡bienvebid@ al club!</h1>
-      <h2>Te tomaremos algunos 
-        datos para poder 
+    <div class="left-side centrado">
+      <img src="/img/logo 1.png" alt="Logo">
+      <h1>¡Bienvenid@ al club!</h1>
+      <h2>Te tomaremos algunos
+        datos para poder
         ficharte, ¿De acuerdo?</h2>
-      <button>Volver Atrás</button>
+      <button><a href="/">Volver Atrás</a></button>
     </div>
     <div class="right-side">
       <h2>Ficha de ingreso a "La Casaca":</h2>
@@ -48,12 +52,12 @@
       <div class="formulario_1">
         <div class="formulario_label">
           <label class="titulo" for="nacimiento">Nacimiento:</label>
-          
+
           <input class="didi" type="date" id="nacimiento" name="nacimiento" required><br>
-          </div>
-          <div class="formulario_label">
+        </div>
+        <div class="formulario_label">
           <label class="titulo" for="genero">Genero:</label>
-          
+
           <select class="didi" name="genero">
             <option>Masculino</option>
 
@@ -70,41 +74,37 @@
       <div class="contenedor_ing">
         <form class="formulario" action="#" method="post">
           <div class="formulario_label">
-          <label class="titulo" for="contrasena">Contraseña:</label>
-          
-          <input class="didi" type="password" id="contrasena" name="contrasena" required><br>
+            <label class="titulo" for="contrasena">Contraseña:</label>
+
+            <input class="didi" type="password" id="contrasena" name="contrasena" required><br>
           </div>
           <div class="formulario_label">
-          <label class="titulo" for="repetir_contrasena">Repetir Contraseña:</label>
-          
-          <input class="didi" type="password" id="repetir_contrasena" name="repetir_contrasena" required><br>
+            <label class="titulo" for="repetir_contrasena">Repetir Contraseña:</label>
+
+            <input class="didi" type="password" id="repetir_contrasena" name="repetir_contrasena" required><br>
           </div>
           <label>
             <input type="checkbox" name="aceptar_terminos" required>
             Acepto los términos y condiciones
-        </label><br>
-        <label>
-          <input type="checkbox" name="newsletter">
-          Unirme a las novedades
-        </label><br>
-        <a href="#">Politica de privacidad de datos</a>
-        
-        <button type="submit" value="Enviar">Enviar</button>
+          </label><br>
+          <label>
+            <input type="checkbox" name="newsletter">
+            Unirme a las novedades
+          </label><br>
+          <a href="#">Politica de privacidad de datos</a>
+
+          <button type="submit" value="Enviar">Enviar</button>
         </form>
-        
+
       </div>
-
-      
-      
     </div>
-    
-    
+
   </div>
-  <script src="/js/validar_contrasena.js"></script>
-  <script src="/js/loadcomponent.js"></script>
- 
+
+  
+
 </body>
+<footer id="footer"></footer>
+<script src="/js/validar_contrasena.js"></script>
+<script src="/js/loadcomponent.js"></script>
 </html>
-
-
-

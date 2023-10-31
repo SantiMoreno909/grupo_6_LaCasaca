@@ -8,4 +8,4 @@ function loadHTML(url, elementId) {
 
 loadHTML("/components/header.html", "header");
 
-
+loadHTML("/components/footer.html", "footer");

@@ -22,4 +22,8 @@ app.get("/detalle", (req, res) => {
   res.sendFile(__dirname + "/views/productDetail.html");
 });
 
+app.get("/carrito", (req, res) => {
+  res.sendFile(__dirname + "/views/productCart.html");
+});
+
 app.listen(PORT, () => console.log("Server funcionando en puerto " + PORT));
