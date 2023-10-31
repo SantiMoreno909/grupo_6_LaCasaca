@@ -28,8 +28,16 @@ textarea {
 }
 
 .detalle {
-  height: 30%;
+  height: 20%;
   margin: 1rem;
+}
+
+.detalle__img {
+  height: 100%;
+}
+
+.detalle__txt {
+  font-size: 1rem;
 }
 
 .codigoArt {
@@ -37,19 +45,18 @@ textarea {
 }
 
 .variable {
-  width: 100px;
-  height: 50px;
-  font-size: 1.2rem;
+  width: 70px;
+  height: 30px;
   background-color: rgba(28, 28, 28, 0.55);
   text-align: center;
   border: none;
-  margin: 0 2rem;
+  margin: 0.5rem 2rem;
   padding: 0.5rem;
 }
 
 .basurero {
   background: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 label {
