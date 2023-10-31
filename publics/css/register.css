@@ -1,237 +1,228 @@
+body {
+  font-family: "Roboto", sans-serif;
 
-  body {
-    font-family: 'Roboto', sans-serif;
-    
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    
-    
-  }
-
-  .navbar {
-    background-color: #e0e0e0;
-    display: flex;
-    height: 50px;
-    flex-direction: row;
-    /*width: 100%;*/
-    padding: 0 10px;
-    justify-content: space-between;
-    align-items: center;
-    /*max-width: 95%;*/
-  }
-  nav img{
-    width: 50px;
-    height: 50px;
-    border-radius: 50px;
-  }
-
-  a {
-    text-decoration: none;
-    color: black;
-  }
-
-  .container {
-    display: flex;
-    max-width: 95%;
-    width: 100%;
-    margin: 20px;
-  }
-
-  .contenedor {
-    display: flex;
-    max-width: 95%;
-    width: 100%;
-    margin: 20px;
-  }
-
-  .left-side {
-    display: flex;
-    /* background-color: #007bff; */
-    /* color: #ffffff; */
-    padding: 30px;
-    flex: 1;
-    text-align: center;
-    margin: 0 10px;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .left-side img {
-    border-radius: 50px;
-    width: 100px;
-
-  }
-
-  .right-side {
-    background-color: #e0e0e0;
-    padding: 30px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    flex: 1;
-    box-sizing: border-box;
-    margin: 0 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
-  h1 {
-    font-size: 40px;
-    margin-bottom: 10px;
-  }
-
-  h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  .titulo {
-    font-size: 16px;
-    font-weight: bold;
-  }
-
-  .boton {
-    display: flex;
-    justify-content: space-around;
+.navbar {
+  background-color: #e0e0e0;
+  display: flex;
+  height: 50px;
+  flex-direction: row;
+  /*width: 100%;*/
+  padding: 0 10px;
+  justify-content: space-between;
+  align-items: center;
+  /*max-width: 95%;*/
+}
+nav img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
 }
 
-  button {
-    background-color: #ffffff;
-    color: #000000;
-    border: 3px double #000000;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 10px;
-    border-radius: 15px;
+a {
+  text-decoration: none;
+  color: black;
 }
 
-  .submit_button{
-    background-color: #ffffff;
-    color: #000000;
-    border: 3px double #000000;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 10px;
-    border-radius: 15px;
-  }
+.container {
+  display: flex;
+  max-width: 95%;
+  width: 100%;
+  margin: 20px;
+}
 
-  button:hover {
-    background-color: #65c6f4;
-    color: #ffffff;
-    border: 1px solid #65c6f4;
-  }
+.contenedor {
+  display: flex;
+  max-width: 95%;
+  width: 100%;
+  margin: 20px;
+}
 
-  .card-input {
-    margin-bottom: 15px;
-    width: calc(100% - 20px);
-  }
-  .didi {
-    margin-top: 10px;
-    height: 25px;
-    width: 100%;
-    border-radius: 7px;
-    border-style: none;
-  }
+.left-side {
+  display: flex;
+  /* background-color: #007bff; */
+  /* color: #ffffff; */
+  padding: 30px;
+  flex: 1;
+  text-align: center;
+  margin: 0 10px;
+  flex-direction: column;
+  align-items: center;
+}
 
-  
-
-  .checkbox-label {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    font-size: 16px;
-  }
-
-  .checkbox-input {
-    margin: 0 10px 0 0;
-  }
-
-  .register-button {
-    display: flex;
-    text-align: center;
-    max-width: 800px;
-    width: 100%;
-    margin: 20px;
-    justify-content: space-around;
-  }
-
-  .formulario {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-
-  .formulario_1 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .formulario_label {
-    width: 40%;
-    
-  }
-
-  .contenedor_ing {
-    width: 100%;
-    margin-top: 15px;
-  }
-
-
-@media screen and (max-width: 768px) {
-  body{
-    .container {
-      display: flex;
-      width: 100%;
-      margin: 20px;
-      flex-direction: column;
-  }
-  .navbar {
-    background-color: #e0e0e0;
-    display: flex;
-    height: 50px;
-    flex-direction: row;
-    width: 100%;
-    padding: 0 10px;
-    justify-content: space-evenly;
-    align-items: center;
-    
-  }
-
-  .contenedor {
-    display: flex;
-    max-width: 95%;
-    width: 100%;
-    margin: 20px;
-    flex-direction: column;
-    align-items: center;
+.left-side img {
+  border-radius: 50px;
+  width: 100px;
 }
 
 .right-side {
-  width: 100%;
-  background-color: #e0e0e0;
+  background-color: #072e51;
+  color: white;
   padding: 30px;
   border: 1px solid #ccc;
   border-radius: 10px;
   flex: 1;
   box-sizing: border-box;
-  margin: 0;
+  margin: 0 30px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+}
 
-  }
+h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
 
-.register-button p{
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.titulo {
+  font-size: 16px;
   font-weight: bold;
 }
+
+.boton {
+  display: flex;
+  justify-content: space-around;
 }
+
+button {
+  background-color: #ffffff;
+  color: #000000;
+  border: 3px double #000000;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 15px;
+}
+
+.submit_button {
+  background-color: #ffffff;
+  color: #000000;
+  border: 3px double #000000;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 15px;
+}
+
+button:hover {
+  background-color: #65c6f4;
+  color: #ffffff;
+  border: 1px solid #65c6f4;
+}
+
+.card-input {
+  margin-bottom: 15px;
+  width: calc(100% - 20px);
+}
+.didi {
+  margin-top: 10px;
+  height: 25px;
+  width: 100%;
+  border-radius: 7px;
+  border-style: none;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.checkbox-input {
+  margin: 0 10px 0 0;
+}
+
+.register-button {
+  display: flex;
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+  margin: 20px;
+  justify-content: space-around;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.formulario_1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.formulario_label {
+  width: 40%;
+}
+
+.contenedor_ing {
+  width: 100%;
+  margin-top: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    .container {
+      display: flex;
+      width: 100%;
+      margin: 20px;
+      flex-direction: column;
+    }
+    .navbar {
+      background-color: #e0e0e0;
+      display: flex;
+      height: 50px;
+      flex-direction: row;
+      width: 100%;
+      padding: 0 10px;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    .contenedor {
+      display: flex;
+      max-width: 95%;
+      width: 100%;
+      margin: 20px;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .right-side {
+      width: 100%;
+      background-color: #e0e0e0;
+      padding: 30px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      flex: 1;
+      box-sizing: border-box;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .register-button p {
+      font-weight: bold;
+    }
+  }
 }
 /*fin movil*/

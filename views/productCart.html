@@ -5,30 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/productCart.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
     <title>La Casaca</title>
   </head>
   <body>
     <header id="header"></header>
-    <main class="d-flex-c">
-      <section id="carrito">
+    <main class="centrado">
+      <section id="carrito" class="d-flex-r">
         <div class="detalles d-flex-c">
           <p class="titulo">Carrito de compras</p>
           <div class="divisor"></div>
           <div class="detalle d-flex-r">
             <img
               src="/img/camisetasBoca/camiseta_Boca_2023.png"
-              class="detalle__img"
+              class="detalle__img centrado"
               alt="Camiseta"
             />
             <div class="d-flex-c centrado">
               <h1 class="detalle__txt">Camiseta Titular Boca 2023</h1>
               <p class="detalle__txt">Hombre</p>
-              <p class="detalle__txt">Código de Articulo: 0000123</p>
-              <div class="variables d-flex-r">
-                <input type="number" value="1" />
-                <input type="text" value="M" />
-                <button class="basurero" value="Borrar">
+              <p class="codigoArt">Código de Articulo: 0000123</p>
+              <div class="variables d-flex-r centrado">
+                <input type="number" value="1" class="variable" />
+                <input type="text" value="M" class="variable" />
+                <button class="basurero variable centrado" value="Borrar">
                   <i class="fa fa-trash" aria-hidden="true"></i>
                 </button>
               </div>
@@ -39,31 +42,31 @@
             ><i class="fa fa-commenting-o" aria-hidden="true"></i> Agregar una
             nota</label
           >
-          <textarea name="nota" id="nota" cols="30" rows="10"></textarea>
+          <textarea name="nota" id="nota"></textarea>
         </div>
         <div class="finalizar d-flex-c">
           <p class="titulo">Resumen de la compra</p>
           <div class="divisor"></div>
-          <div class="subtotal d-flex-r">
-            <div class="subt">
-              <p class="subtotal__txt">Subtotal</p>
-              <p class="subtotal__txt">$33.000</p>
+          <div class="subtotal d-flex-c">
+            <div class="subt d-flex-r">
+              <p class="subtotal__txt alinear-izq">Subtotal</p>
+              <p class="subtotal__txt alinear-der">$33.000</p>
             </div>
-            <div class="subt">
-              <p class="subtotal__txt">Envío</p>
-              <p class="subtotal__txt">GRATIS</p>
+            <div class="subt d-flex-r">
+              <p class="subtotal__txt alinear-izq">Envío</p>
+              <p class="subtotal__txt alinear-der">GRATIS</p>
             </div>
-            <button class="flecha">
+            <button class="flecha centrado">
               San Fernando del Valle, Catamarca, Argentina
               <i class="fa fa-arrow-down" aria-hidden="true"></i>
             </button>
           </div>
           <div class="divisor"></div>
-          <div class="d-flex-c">
-            <p class="total">Total</p>
-            <p class="total">$33.000</p>
+          <div class="subt d-flex-r">
+            <p class="total alinear-izq">Total</p>
+            <p class="total alinear-der">$33.000</p>
           </div>
-          <button class="finalizarCompra">FINALIZAR COMPRA</button>
+          <button class="finalizarCompra centrado">FINALIZAR COMPRA</button>
           <p class="pagoSeguro">
             <i class="fa fa-shield" aria-hidden="true"></i> Pago seguro
           </p>

@@ -8,3 +8,104 @@ main {
   background-size: cover;
   background-attachment: fixed;
 }
+
+#carrito {
+  background-color: rgba(28, 28, 28, 0.55);
+  width: 80%;
+  height: 80%;
+}
+
+.titulo {
+  font-size: 2.5rem;
+  text-align: left;
+  margin: 1rem;
+}
+
+.detalles,
+.finalizar,
+textarea {
+  width: 90%;
+}
+
+.detalle {
+  height: 30%;
+  margin: 1rem;
+}
+
+.codigoArt {
+  font-size: 1rem;
+}
+
+.detalle__txt,
+.subtotal__txt {
+  font-size: 2rem;
+}
+
+.variables {
+  margin: 1rem;
+}
+
+.variable {
+  width: 100px;
+  height: 50px;
+  font-size: 2rem;
+  background-color: rgba(28, 28, 28, 0.55);
+  text-align: center;
+  border: none;
+  margin: 0 2rem;
+  padding: 0.5rem;
+}
+
+.basurero {
+  background: none;
+  font-size: 1.8rem;
+}
+
+label {
+  text-align: left;
+  font-size: 2rem;
+  margin: 0.5rem;
+}
+
+textarea {
+  height: 10vh;
+  background-color: rgba(28, 28, 28, 0.55);
+  color: white;
+  font-size: 2rem;
+  resize: none;
+}
+
+.subt {
+  padding: 1rem 2rem;
+}
+
+.total {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.finalizarCompra,
+.flecha {
+  display: flex;
+  align-self: center;
+  font-size: 2.5rem;
+  width: 80%;
+  padding: 0.5rem;
+  border-radius: 20px;
+  color: white;
+  background-color: #072e51;
+}
+
+.flecha {
+  font-size: 1.5rem;
+  width: 90%;
+}
+
+.flecha > i {
+  margin-left: 1rem;
+}
+
+.pagoSeguro {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
