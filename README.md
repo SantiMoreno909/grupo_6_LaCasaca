@@ -4,9 +4,7 @@
 
 - Matías Santiago Moreno
 - Natalia Luna
-- Diego Mateo Mulero
 - Nicolas Bourgie
-- Lautaro Gorosito
 
 ## Descripción del Proyecto
 
