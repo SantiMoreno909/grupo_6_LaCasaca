@@ -16,7 +16,7 @@ main {
 }
 
 .titulo {
-  font-size: 2.5rem;
+  font-size: 1.2rem;
   text-align: left;
   margin: 1rem;
 }
@@ -33,22 +33,13 @@ textarea {
 }
 
 .codigoArt {
-  font-size: 1rem;
-}
-
-.detalle__txt,
-.subtotal__txt {
-  font-size: 2rem;
-}
-
-.variables {
-  margin: 1rem;
+  font-size: 0.7rem;
 }
 
 .variable {
   width: 100px;
   height: 50px;
-  font-size: 2rem;
+  font-size: 1.2rem;
   background-color: rgba(28, 28, 28, 0.55);
   text-align: center;
   border: none;
@@ -58,12 +49,11 @@ textarea {
 
 .basurero {
   background: none;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
 }
 
 label {
   text-align: left;
-  font-size: 2rem;
   margin: 0.5rem;
 }
 
@@ -71,16 +61,15 @@ textarea {
   height: 10vh;
   background-color: rgba(28, 28, 28, 0.55);
   color: white;
-  font-size: 2rem;
   resize: none;
 }
 
 .subt {
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
 }
 
 .total {
-  font-size: 3rem;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 
@@ -88,7 +77,6 @@ textarea {
 .flecha {
   display: flex;
   align-self: center;
-  font-size: 2.5rem;
   width: 80%;
   padding: 0.5rem;
   border-radius: 20px;
@@ -97,8 +85,9 @@ textarea {
 }
 
 .flecha {
-  font-size: 1.5rem;
+  font-size: 0.6rem;
   width: 90%;
+  margin-bottom: 0.5rem;
 }
 
 .flecha > i {
@@ -106,6 +95,6 @@ textarea {
 }
 
 .pagoSeguro {
-  font-size: 1.5rem;
+  font-size: 0.8rem;
   margin-top: 1rem;
 }
