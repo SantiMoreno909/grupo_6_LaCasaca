@@ -22,6 +22,10 @@ a {
 
 /*CLASES REUTILIZABLES*/
 
+.banner__ppal--img-logo {
+  width: 25vw;
+}
+
 .section-title {
   font-size: 2rem;
   margin: 2rem auto 1rem 3rem;
