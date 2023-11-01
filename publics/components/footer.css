@@ -1,0 +1,56 @@
+.footer {
+    background-color: azure;
+    
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+}
+
+.flecha {
+    direction: ltr;
+    width: 16px;
+    height: 16px;
+}
+
+.iconos {
+    display: flex;
+    flex-direction: row;
+}
+
+.iconos a img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.footer_contenedor {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.parrafo {
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+
+.parrafo p{
+    text-align: center;
+}
+
+.parrafo element.style {
+    text-align: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
