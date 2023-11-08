@@ -1,0 +1,38 @@
+@media screen and (max-width: 950px) {
+  /*BANNER PRINCIPAL*/
+  #banner__principal {
+    height: 60vw;
+  }
+
+  .banner__ppal--txt {
+    font-size: 1.8rem;
+  }
+
+  .banner__ppal--img-logo {
+    width: 25vw;
+  }
+
+  /*CARRUSEL*/
+
+  .carruselImg {
+    height: 80px;
+  }
+
+  /*BANNER SELECCIÓN*/
+  #banner__seleccion {
+    height: 30vh;
+  }
+
+  #banner__seleccion .banner__selec--txt {
+    font-size: 2rem;
+  }
+
+  #banner__seleccion .banner__ppal--img-logo {
+    width: 25vw;
+  }
+
+  /*CARDS*/
+  .cardItem {
+    width: 80vw;
+  }
+}
