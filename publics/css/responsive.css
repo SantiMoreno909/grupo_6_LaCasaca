@@ -44,5 +44,17 @@
 
   textarea {
   heigth: 5vw;
+  }
+
+  .detalle__img {
+    width: 3rem;
+    margin: 0.5rem;
+   }
+
+  .variable {
+    width: 40px;
+    margin: 0.5rem 1rem;
     }
+
+  .
 }
