@@ -37,6 +37,10 @@
   }
 
   /*PRODUCT CART*/
+  #carrito {
+    heigth: auto;
+    }
+  
   .detalles,
 .finalizar{
   width: 90vw;
