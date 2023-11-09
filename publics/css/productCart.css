@@ -1,5 +1,5 @@
 main {
-  height: 90vh;
+  padding: 2rem 0;
   width: 100%;
   background: linear-gradient(rgba(28, 28, 28, 0.55), rgba(28, 28, 28, 0.55)),
     url("/img/img-banner-principal.jpg");
@@ -12,31 +12,33 @@ main {
 
 #carrito {
   background-color: rgba(28, 28, 28, 0.55);
-  width: 80%;
-  height: 80%;
+  width: 90vw;
   display: flex;
   flex-wrap: wrap;
 }
 
 .titulo {
-  font-size: 1.2rem;
+  font-size: 2rem;
   text-align: left;
   margin: 1rem;
 }
 
 .detalles,
-.finalizar,
-textarea {
-  width: 90%;
+.finalizar {
+  width: 42vw;
 }
 
 .detalle {
-  height: 20%;
+  height: 8vw;
   margin: 1rem;
 }
 
 .detalle__img {
   height: 100%;
+}
+
+.detalle__title {
+  font-size: 1.2rem;
 }
 
 .detalle__txt {
@@ -60,6 +62,7 @@ textarea {
 .basurero {
   background: none;
   font-size: 1rem;
+  cursor: pointer;
 }
 
 label {
@@ -72,6 +75,7 @@ textarea {
   background-color: rgba(28, 28, 28, 0.55);
   color: white;
   resize: none;
+  margin-bottom: 1rem;
 }
 
 .subt {
@@ -79,12 +83,13 @@ textarea {
 }
 
 .total {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
 .finalizarCompra,
-.flecha {
+#direccion-btn {
   display: flex;
   align-self: center;
   width: 80%;
@@ -94,17 +99,22 @@ textarea {
   background-color: #072e51;
 }
 
-.flecha {
+#direccion-btn {
   font-size: 0.6rem;
-  width: 90%;
+  width: 100%;
   margin-bottom: 0.5rem;
 }
 
-.flecha > i {
-  margin-left: 1rem;
+#direccion-btn > i {
+  margin: 0.5rem;
+}
+
+.finalizarCompra:hover {
+  background-color: #0b4f89;
+  cursor: pointer;
 }
 
 .pagoSeguro {
   font-size: 0.8rem;
-  margin-top: 1rem;
+  margin: 1rem 0;
 }

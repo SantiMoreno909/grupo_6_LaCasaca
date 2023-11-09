@@ -1,4 +1,4 @@
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 750px) {
   /*BANNER PRINCIPAL*/
   #banner__principal {
     height: 60vw;
@@ -38,27 +38,49 @@
 
   /*PRODUCT CART*/
   #carrito {
-    heigth: auto;
-    }
-  
-  .detalles,
-.finalizar{
-  width: 90vw;
   }
 
-  textarea {
-  heigth: 5vw;
+  .detalles,
+  .finalizar {
+    width: 90%;
+  }
+
+  .titulo {
+    font-size: 2rem;
+    text-align: left;
+    margin: 1rem;
+    margin-left: 0;
+  }
+
+  .detalle {
+    margin: 0;
+    padding: 1rem 0 0 0;
+    height: 10rem;
   }
 
   .detalle__img {
-    width: 3rem;
-    margin: 0.5rem;
-   }
+    height: 70%;
+    margin-left: 0.5rem;
+    margin-right: 0.1rem;
+  }
+
+  .detalle__datos {
+    margin-bottom: 0.3rem;
+  }
 
   .variable {
+    color: white;
     width: 40px;
-    margin: 0.5rem 1rem;
-    }
+    height: 30px;
+    margin: 0.5rem;
+  }
 
-  .
+  .comentarios {
+    margin-bottom: 1rem;
+  }
+
+  textarea {
+    width: 60vw;
+    height: 5vw;
+  }
 }
