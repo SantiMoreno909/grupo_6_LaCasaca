@@ -35,4 +35,10 @@
   .cardItem {
     width: 80vw;
   }
+
+  /*PRODUCT CART*/
+  .detalles,
+.finalizar{
+  width: 90vw;
+  }
 }
