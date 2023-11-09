@@ -41,4 +41,8 @@
 .finalizar{
   width: 90vw;
   }
+
+  textarea {
+  heigth: 5vw;
+    }
 }
