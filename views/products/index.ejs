@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+    <title>La Casaca</title>
+  </head>
+  <body>
+    <%- include('../partials/header.ejs')%>
+    <main>
+      <section id="banner__principal" class="d-flex-c centrado">
+        <p class="banner__ppal--txt">Bienvenido al club</p>
+        <img
+          src="/img/logo.png"
+          alt="LA CASACA"
+          class="banner__ppal--img-logo"
+        />
+        <p class="banner__ppal--txt">"Vistiendo tu pasión"</p>
+      </section>
+      <section id="buscador__ligas">
+        <h2 class="busc__titulo centrado">
+          Elegí entre las mejores ligas del planeta
+        </h2>
+        <div class="contenedorCarrusel">
+          <div class="itemCarrusel" id="ligaElementoCarrusel-1">
+            <div class="tarjetasCarrusel centrado" id="ligaElementoCarrusel-1">
+              <img
+                src="/img/escudos/ligaArgentina.png"
+                alt=""
+                class="carruselImg"
+              />
+            </div>
+            <div class="flechasCarrusel">
+              <a href="#ligaElementoCarrusel-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-left"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"
+                  />
+                </svg>
+              </a>
+              <a href="#ligaElementoCarrusel-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="itemCarrusel" id="ligaElementoCarrusel-2">
+            <div class="tarjetasCarrusel centrado" id="ligaElementoCarrusel-2">
+              <img src="/img/escudos/serieA.png" alt="" class="carruselImg" />
+            </div>
+            <div class="flechasCarrusel">
+              <a href="#ligaElementoCarrusel-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-left"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"
+                  />
+                </svg>
+              </a>
+              <a href="#ligaElementoCarrusel-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="itemCarrusel" id="ligaElementoCarrusel-3">
+            <div class="tarjetasCarrusel centrado" id="ligaElementoCarrusel-3">
+              <img
+                src="/img/escudos/bundesliga.png"
+                alt=""
+                class="carruselImg"
+              />
+            </div>
+            <div class="flechasCarrusel">
+              <a href="#ligaElementoCarrusel-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-left"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"
+                  />
+                </svg>
+              </a>
+              <a href="#ligaElementoCarrusel-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="itemCarrusel" id="ligaElementoCarrusel-4">
+            <div class="tarjetasCarrusel centrado" id="ligaElementoCarrusel-4">
+              <img
+                src="/img/escudos/ligaEspanola.png"
+                alt=""
+                class="carruselImg"
+              />
+            </div>
+            <div class="flechasCarrusel">
+              <a href="#ligaElementoCarrusel-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-left"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"
+                  />
+                </svg>
+              </a>
+              <a href="#ligaElementoCarrusel-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="itemCarrusel" id="ligaElementoCarrusel-5">
+            <div class="tarjetasCarrusel centrado" id="ligaElementoCarrusel-5">
+              <img
+                src="/img/escudos/premierLeague.png"
+                alt=""
+                class="carruselImg"
+              />
+            </div>
+            <div class="flechasCarrusel">
+              <a href="#ligaElementoCarrusel-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-left"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"
+                  />
+                </svg>
+              </a>
+              <a href="#ligaElementoCarrusel-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="buscador__equipos">
+        <h2 class="busc__titulo centrado">
+          Buscá el escudo de tu equipo favorito
+        </h2>
+        <div class="contenedorCarrusel">
+          <div class="itemCarrusel" id="equipoElementoCarrusel-1">
+            <div
+              class="tarjetasCarrusel centrado"
+              id="equipoElementoCarrusel-1"
+            >
+              <img src="/img/escudos/river.png" alt="" class="carruselImg" />
+            </div>
+            <div class="flechasCarrusel">
+              <a href="#equipoElementoCarrusel-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-left"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"
+                  />
+                </svg>
+              </a>
+              <a href="#equipoElementoCarrusel-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="itemCarrusel" id="equipoElementoCarrusel-2">
+            <div
+              class="tarjetasCarrusel centrado"
+              id="equipoElementoCarrusel-2"
+            >
+              <img src="/img/escudos/boca.png" alt="" class="carruselImg" />
+            </div>
+            <div class="flechasCarrusel">
+              <a href="#equipoElementoCarrusel-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-left"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"
+                  />
+                </svg>
+              </a>
+              <a href="#equipoElementoCarrusel-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="itemCarrusel" id="equipoElementoCarrusel-3">
+            <div
+              class="tarjetasCarrusel centrado"
+              id="equipoElementoCarrusel-3"
+            >
+              <img src="/img/escudos/racing.png" alt="" class="carruselImg" />
+            </div>
+            <div class="flechasCarrusel">
+              <a href="#equipoElementoCarrusel-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-left"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"
+                  />
+                </svg>
+              </a>
+              <a href="#equipoElementoCarrusel-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="itemCarrusel" id="equipoElementoCarrusel-4">
+            <div
+              class="tarjetasCarrusel centrado"
+              id="equipoElementoCarrusel-4"
+            >
+              <img
+                src="/img/escudos/sanLorenzo.png"
+                alt=""
+                class="carruselImg"
+              />
+            </div>
+            <div class="flechasCarrusel">
+              <a href="#equipoElementoCarrusel-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-left"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"
+                  />
+                </svg>
+              </a>
+              <a href="#equipoElementoCarrusel-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="itemCarrusel" id="equipoElementoCarrusel-5">
+            <div
+              class="tarjetasCarrusel centrado"
+              id="equipoElementoCarrusel-5"
+            >
+              <img src="/img/escudos/defyJust.png" alt="" class="carruselImg" />
+            </div>
+            <div class="flechasCarrusel">
+              <a href="#equipoElementoCarrusel-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-left"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"
+                  />
+                </svg>
+              </a>
+              <a href="#equipoElementoCarrusel-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#fff"
+                  class="bi bi-caret-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="mostrador__eleccion" class="d-flex-c">
+        <h2 class="section-title">Las mejores casacas de River Plate</h2>
+        <div class="card__contenedor d-flex-r">
+          <div class="cardItem d-flex-c centrado">
+            <div class="card__escudos d-flex-r w-75">
+              <img
+                src="/img/escudos/ligaArgentina.png"
+                alt=""
+                class="card__escudo alinear-izq"
+              />
+              <img
+                src="/img/escudos/river.png"
+                alt=""
+                class="card__escudo alinear-der"
+              />
+            </div>
+            <!--NOTA: ROBÉ LAS FOTOS DE REMERAS DE ADIDAS-->
+            <img
+              src="/img/camisetasRiver/Camiseta_de_Juego_Titular_River_Plate_22-23.png"
+              alt=""
+              class="card__fotoRemera"
+            />
+            <a href="/detail" class="card__txt">
+              Camiseta de juego titular<br />Temporada 22-23<br />Hombre
+            </a>
+            <div class="divisor"></div>
+            <div class="d-flex-r w-75">
+              <p class="card__precio alinear-izq">$57.299</p>
+              <p class="card__envio alinear-der">ENVIO GRATIS</p>
+            </div>
+          </div>
+          <div class="cardItem d-flex-c centrado">
+            <div class="card__escudos d-flex-r w-75">
+              <img
+                src="/img/escudos/ligaArgentina.png"
+                alt=""
+                class="card__escudo alinear-izq"
+              />
+              <img
+                src="/img/escudos/river.png"
+                alt=""
+                class="card__escudo alinear-der"
+              />
+            </div>
+            <!--NOTA: ROBÉ LAS FOTOS DE REMERAS DE ADIDAS-->
+            <img
+              src="/img/camisetasRiver/Camiseta_de_Calentamiento_River_Plate.png"
+              alt=""
+              class="card__fotoRemera"
+            />
+            <a href="/detail" class="card__txt">
+              Camiseta de calentamiento<br />Temporada 22-23<br />Hombre
+            </a>
+            <div class="divisor"></div>
+            <div class="d-flex-r w-75">
+              <p class="card__precio alinear-izq">$32.999</p>
+              <p class="card__envio alinear-der">ENVIO GRATIS</p>
+            </div>
+          </div>
+          <div class="cardItem d-flex-c centrado">
+            <div class="card__escudos d-flex-r w-75">
+              <img
+                src="/img/escudos/ligaArgentina.png"
+                alt=""
+                class="card__escudo alinear-izq"
+              />
+              <img
+                src="/img/escudos/river.png"
+                alt=""
+                class="card__escudo alinear-der"
+              />
+            </div>
+            <!--NOTA: ROBÉ LAS FOTOS DE REMERAS DE ADIDAS-->
+            <img
+              src="/img/camisetasRiver/Camiseta_Alternativa_River_Plate_23.png"
+              alt=""
+              class="card__fotoRemera"
+            />
+            <a href="/detail" class="card__txt">
+              Camiseta alternativa<br />Temporada 22-23<br />Hombre
+            </a>
+            <div class="divisor"></div>
+            <div class="d-flex-r w-75">
+              <p class="card__precio alinear-izq">$39.999</p>
+              <p class="card__envio alinear-der">ENVIO GRATIS</p>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="irPaginaEspecifica">Página del club</a>
+      </section>
+      <section id="ingresos" class="d-flex-c">
+        <h2 class="section-title">Conocé nuestros más recientes ingresos</h2>
+        <div class="card__contenedor d-flex-r">
+          <div class="cardItem d-flex-c centrado">
+            <div class="card__escudos d-flex-r w-75">
+              <img
+                src="/img/escudos/ligaArgentina.png"
+                alt=""
+                class="card__escudo alinear-izq"
+              />
+              <img
+                src="/img/escudos/boca.png"
+                alt=""
+                class="card__escudo alinear-der"
+              />
+            </div>
+            <!--NOTA: ROBÉ LAS FOTOS DE REMERAS DE ADIDAS-->
+            <img
+              src="/img/camisetasBoca/camiseta_Boca_2023.png"
+              alt=""
+              class="card__fotoRemera"
+            />
+            <a href="/detail" class="card__txt">
+              Camiseta de juego titular<br />Temporada 22-23<br />Hombre
+            </a>
+            <div class="divisor"></div>
+            <div class="d-flex-r w-75">
+              <p class="card__precio alinear-izq">$57.299</p>
+              <p class="card__envio alinear-der">ENVIO GRATIS</p>
+            </div>
+          </div>
+          <div class="cardItem d-flex-c centrado">
+            <div class="card__escudos d-flex-r w-75">
+              <img
+                src="/img/escudos/ligaArgentina.png"
+                alt=""
+                class="card__escudo alinear-izq"
+              />
+              <img
+                src="/img/escudos/sanLorenzo.png"
+                alt=""
+                class="card__escudo alinear-der"
+              />
+            </div>
+            <!--NOTA: ROBÉ LAS FOTOS DE REMERAS DE ADIDAS-->
+            <img
+              src="/img/camisetasSanLorenzo/SanLorenzoVisitante2023.png"
+              alt=""
+              class="card__fotoRemera"
+            />
+            <a href="/detail" class="card__txt">
+              Camiseta de visitante<br />Temporada 23<br />Hombre
+            </a>
+            <div class="divisor"></div>
+            <div class="d-flex-r w-75">
+              <p class="card__precio alinear-izq">$35.999</p>
+              <p class="card__envio alinear-der"></p>
+            </div>
+          </div>
+          <div class="cardItem d-flex-c centrado">
+            <div class="card__escudos d-flex-r w-75">
+              <img
+                src="/img/escudos/ligaArgentina.png"
+                alt=""
+                class="card__escudo alinear-izq"
+              />
+              <img
+                src="/img/escudos/defyJust.png"
+                alt=""
+                class="card__escudo alinear-der"
+              />
+            </div>
+            <!--NOTA: ROBÉ LAS FOTOS DE REMERAS DE ADIDAS-->
+            <img
+              src="/img/camisetasDefyJust/DefyJust2020.png"
+              alt=""
+              class="card__fotoRemera"
+            />
+            <a href="/detail" class="card__txt">
+              Camiseta alternativa<br />Temporada 20<br />Hombre
+            </a>
+            <div class="divisor"></div>
+            <div class="d-flex-r w-75">
+              <p class="card__precio alinear-izq">$29.999</p>
+              <p class="card__envio alinear-der">ENVIO GRATIS</p>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="irPaginaEspecifica">Ver más ingresos</a>
+      </section>
+      <section id="banner__seleccion" class="d-flex-c centrado">
+        <p class="banner__selec--txt">Alentá a la selección con</p>
+        <img
+          src="/img/logo.png"
+          alt="LA CASACA"
+          class="banner__ppal--img-logo"
+        />
+      </section>
+      <section id="ofertas">
+        <h2 class="section-title">Mirá estas increibles ofertas</h2>
+        <div class="card__contenedor d-flex-r">
+          <div class="cardItem d-flex-c centrado">
+            <div class="card__escudos d-flex-r w-75">
+              <img
+                src="/img/escudos/ligaArgentina.png"
+                alt=""
+                class="card__escudo alinear-izq"
+              />
+              <img
+                src="/img/escudos/racing.png"
+                alt=""
+                class="card__escudo alinear-der"
+              />
+            </div>
+            <!--NOTA: ROBÉ LAS FOTOS DE REMERAS DE ADIDAS-->
+            <img
+              src="/img/camisetasRacing/Camiseta Racing Club Titular 2022.png"
+              alt=""
+              class="card__fotoRemera"
+            />
+            <a href="/detail" class="card__txt">
+              Camiseta de juego titular<br />Temporada 22<br />Hombre
+            </a>
+            <div class="divisor"></div>
+            <div class="d-flex-r w-75">
+              <p class="card__precio alinear-izq">$24.999</p>
+              <p class="card__envio alinear-der">ENVIO GRATIS</p>
+            </div>
+          </div>
+          <div class="cardItem d-flex-c centrado">
+            <div class="card__escudos d-flex-r w-75">
+              <img
+                src="/img/escudos/ligaArgentina.png"
+                alt=""
+                class="card__escudo alinear-izq"
+              />
+              <img
+                src="/img/escudos/defyJust.png"
+                alt=""
+                class="card__escudo alinear-der"
+              />
+            </div>
+            <!--NOTA: ROBÉ LAS FOTOS DE REMERAS DE ADIDAS-->
+            <img
+              src="/img/camisetasDefyJust/DefyJust2020.png"
+              alt=""
+              class="card__fotoRemera"
+            />
+            <a href="/detail" class="card__txt">
+              Camiseta alternativa<br />Temporada 20<br />Hombre
+            </a>
+            <div class="divisor"></div>
+            <div class="d-flex-r w-75">
+              <p class="card__precio alinear-izq">$29.999</p>
+              <p class="card__envio alinear-der">ENVIO GRATIS</p>
+            </div>
+          </div>
+          <div class="cardItem d-flex-c centrado">
+            <div class="card__escudos d-flex-r w-75">
+              <img
+                src="/img/escudos/ligaArgentina.png"
+                alt=""
+                class="card__escudo alinear-izq"
+              />
+              <img
+                src="/img/escudos/sanLorenzo.png"
+                alt=""
+                class="card__escudo alinear-der"
+              />
+            </div>
+            <!--NOTA: ROBÉ LAS FOTOS DE REMERAS DE ADIDAS-->
+            <img
+              src="/img/camisetasSanLorenzo/TerceraCamisetaSL2021.png"
+              alt=""
+              class="card__fotoRemera"
+            />
+            <a href="/detail" class="card__txt">
+              Tercera camiseta<br />Temporada 21<br />Hombre
+            </a>
+            <div class="divisor"></div>
+            <div class="d-flex-r w-75">
+              <p class="card__precio alinear-izq">$22.999</p>
+              <p class="card__envio alinear-der">ENVIO GRATIS</p>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="irPaginaEspecifica">Ver más ingresos</a>
+      </section>
+    </main>
+  </body>
+  <%- include('../partials/footer.ejs')%>
+  <script src="/js/loadComponent.js"></script>
+</html>
