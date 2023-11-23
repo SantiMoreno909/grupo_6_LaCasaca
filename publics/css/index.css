@@ -19,46 +19,6 @@
   width: 25vw;
 }
 
-/*ESTILOS DE BUSCADORES TIPO CARRUSEL*/
-#buscador__ligas,
-#buscador__equipos {
-  color: white;
-  background-color: #072e51;
-  padding-top: 1rem;
-}
-
-.contenedorCarrusel {
-  height: 120px;
-  overflow: hidden;
-}
-
-.itemCarrusel {
-  height: 120px;
-  position: relative;
-}
-
-.tarjetasCarrusel {
-  height: 100%;
-}
-
-.flechasCarrusel {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2vw;
-}
-
-.carruselImg {
-  height: 100px;
-}
-
-.flechasCarrusel > svg {
-  background-color: white;
-}
 #banner__seleccion {
   background: linear-gradient(rgba(28, 28, 28, 0.55), rgba(28, 28, 28, 0.55)),
     url("/img/img-banner-seleccion.jpg");

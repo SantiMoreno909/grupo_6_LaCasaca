@@ -135,6 +135,51 @@ a {
   text-decoration: none;
 }
 
+/*ESTILOS DE BUSCADORES TIPO CARRUSEL*/
+#buscador__ligas,
+#buscador__equipos {
+  color: white;
+  background-color: #072e51;
+  padding-top: 1rem;
+}
+
+.busc__titulo {
+  font-size: 1.2rem;
+}
+
+.contenedorCarrusel {
+  height: 60px;
+  overflow: hidden;
+}
+
+.itemCarrusel {
+  height: 60px;
+  position: relative;
+}
+
+.tarjetasCarrusel {
+  height: 100%;
+}
+
+.flechasCarrusel {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2vw;
+}
+
+.carruselImg {
+  height: 40px;
+}
+
+.flechasCarrusel > svg {
+  background-color: white;
+}
+
 /*responsive header mobile */
 @media (width < 950px) {
   .header__Navbar {
@@ -173,26 +218,22 @@ a {
   height: 40px;
 }
 
-.card__fotoRemera {
-  width: 80%;
-}
-
 .card__txt {
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 1rem;
 }
 
 .card__precio,
 .card__envio {
   font-weight: 800;
-  font-size: 16px;
+  font-size: 14px;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
 .card__fotoRemera {
-  width: 90%;
-  height: 80%;
+  width: 70%;
+  height: 60%;
 }
 
 /*ENLACES A OTRA PÁGINA*/
@@ -232,5 +273,3 @@ a {
   border-radius: 15px;
   background-color: rgba(255, 255, 255, 0.55);
 }
-
-
