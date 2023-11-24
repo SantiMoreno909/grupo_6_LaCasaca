@@ -13,6 +13,9 @@ const controlador = {
     },
     register: (req,res) => {
         res.render('users/register');
+    },
+    administracion: (req,res) => {
+        res.render('users/admin');
     }
 };
 

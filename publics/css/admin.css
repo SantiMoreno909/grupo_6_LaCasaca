@@ -1,0 +1,120 @@
+.adminForm input[type="text"],
+input[type="file"],
+select {
+    margin-top: 10px;
+    height: 25px;
+    margin-right: 1rem;
+    border-radius: 7px;
+    border-style: none;
+}
+
+.adminForm input[type="textarea"] {
+    width: 100%;
+    height: 8rem;
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+
+.adminCampos {
+    display: flex;
+
+}
+
+.adminContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    margin-left: 2rem;
+}
+
+.formRight-side {
+    background-color: #072e51;
+    color: white;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    flex: 1;
+    box-sizing: border-box;
+    margin: 0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.textArea,
+.adminContainer {
+    width: 50%;
+}
+
+.initial {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.initial h3,
+.imgProduct {
+    margin-left: 2rem;
+}
+
+.initial button {
+    margin-right: 2rem;
+}
+
+.tablaProducto {
+    margin:2rem;
+    text-align: center;
+    border-spacing: 0px !important;
+}
+
+th,
+td {
+    border: 1px solid #072e51;
+}
+.tablaProducto th{
+    height: 2rem;
+    background-color: #072e51;
+    color: #ffffff;
+}
+
+.formDelete button{
+    border: none;
+    color: red;
+}
+
+.formSave button{
+    border: none;
+    color: green;
+}
+
+.tablaProducto .formDelete button:hover {
+    background-color: red !important;
+    color: #ffffff;
+    border: none !important;
+}
+
+.tablaProducto .formSave button:hover {
+    background-color: green !important;
+    color: #ffffff;
+    border: none !important;
+}
+
+.colProducto{
+    width: 15rem;
+}
+.colInfo{
+    width: 5rem;
+}
+.acciones{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+

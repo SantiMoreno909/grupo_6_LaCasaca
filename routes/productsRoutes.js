@@ -11,5 +11,5 @@ router.get('/login',productsController.login)
 router.get('/carrito',productsController.carrito)
 router.get('/detail',productsController.detail)
 router.get('/register',productsController.register)
-
+router.get('/admin',productsController.administracion)
 module.exports = router;
