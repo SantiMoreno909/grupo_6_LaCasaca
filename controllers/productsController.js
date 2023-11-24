@@ -16,6 +16,10 @@ const controlador = {
     },
     administracion: (req,res) => {
         res.render('users/admin');
+    },
+    clubes: (req, res) => {
+    let clubes = req.params.clubNombre;
+    res.render("products/paginaClub", { clubes: clubes });
     }
 };
 
