@@ -20,7 +20,13 @@ const controlador = {
     clubes: (req, res) => {
     let clubes = req.params.clubNombre;
     res.render("products/paginaClub", { clubes: clubes });
+    },
+    listado: (req, res) => {
+        let listado= require('../data/product.json')
+        res.render('products/productList', {listado: listado});
+       
     }
+
 };
 
 module.exports = controlador;

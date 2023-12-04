@@ -1,0 +1,8 @@
+[{"id":1,"name":"Camiseta Boca","description":"potenti nullam","category":"camiseta","liga":"arg","team":"Boca","talle":"S","precio":25,"marca":"integer"},
+{"id":2,"name":"Camiseta River","description":"mus","category":"camiseta","liga":"arg","team":"river","talle":"m","precio":60,"marca":"ame"},
+{"id":3,"name":"Camiseta San Lorenzo","description":"nec","category":"camiseta","liga":"arg","team":"san lorenzo","talle":"l","precio":82,"marca":"ggs"},
+{"id":4,"name":"Camiseta Racing","description":"nibh ligula","category":"camiseta","liga":"arg","team":"racing","talle":"xl","precio":32,"marca":"in est"},
+{"id":5,"name":"viverra eget","description":"nisi","category":"camiseta","liga":"otra","team":"risus ","talle":"s","precio":18,"marca":"a libero"},
+{"id":6,"name":"mauris","description":"nisl","category":"camiseta","liga":"dos","team":"pede ","talle":"s","precio":94,"marca":"primis"},
+{"id":7,"name":"pede justo","description":"lacus","category":"camiseta","liga":"otra","team":"in ascetur","talle":"m","precio":36,"marca":"amet"}
+]
