@@ -1,13 +1,12 @@
-const PORT = 5001;
+const PORT = 5000;
 const express = require("express");
 const app = express();
 
-let rutasProductos= require('./routes/productsRoutes.js');
+let rutasProductos = require("./routes/productsRoutes.js");
 
-app.set('view engine', 'ejs');
+app.set("view engine", "ejs");
 app.use("", express.static(`${__dirname}/publics`));
 
 app.listen(PORT, () => console.log("Server funcionando en puerto " + PORT));
 
-app.use('/', rutasProductos);
-
+app.use("/", rutasProductos);

@@ -1,74 +1,76 @@
 <!DOCTYPE html>
 <html lang="es">
-
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/register.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/register.css" />
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/footer.css" />
     <link rel="stylesheet" href="/css/admin.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
     <title>Administracion</title>
-    <link rel="shortcut icon" href="/img/logo 1.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/logo 1.png" type="image/x-icon" />
+  </head>
 
-    </head>
+  <body>
+    <%- include('../partials/header.ejs')%>
+    <main>
+      <button class="addProducto">Agregar Producto</button>
+      <div class="initial">
+        <h3>Listado de productos</h3>
+      </div>
 
-    <body>
-        <%- include('../partials/header.ejs')%>
-        <main>
-            <button class="addProducto">Agregar Producto</button>
-            <div class="initial">
-                <h3>Listado de productos</h3>
-            </div>
-            
-            <div >
-                <table class="tablaProducto">
-                    <thead>
-                        <tr>
-                            <th class="colProducto">Producto</th>
-                            <th class="colInfo">Descripcion</th>
-                            <th class="colInfo">Categoria</th>
-                            <th class="colInfo">Liga</th>
-                            <th class="colInfo">Equipo</th>
-                            <th class="colInfo">Precio</th>
-                            <th class="colInfo">Talle</th>
-                            <th class="colInfo">Stock</th>
-                            <th class="colProducto">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% for (let i=0; i< listado.length; i++) { %>
-                        <tr>
-                            <td><%= listado[i].name %></td>
-                            <td><%= listado[i].description %></td>
-                            <td><%= listado[i].category %></td>
-                            <td><%= listado[i].liga %></td>
-                            <td><%= listado[i].team %></td>
-                            <td>$<%= listado[i].precio %></td>
-                            <td><%= listado[i].talle %></td>
-                            <td>1</td>
-                            <td class="acciones">
-                                <div class="formDelete">
-                                    <button ><i class="fas fa-trash-alt"></i></button>
-                                </div>
-                                <div class="formSave">
-                                    <button ><i class="far fa-edit"></i></button>
-                                </div>
-                            </td>
-                        </tr>
-                       <% } %>
-                        
-                    </tbody>
-                </table>
-            </div>
-        </main>
-        <br>
-    </body>
+      <div>
+        <table class="tablaProducto">
+          <thead>
+            <tr>
+              <th class="colProducto">Producto</th>
+              <th class="colInfo">Descripcion</th>
+              <th class="colInfo">Categoria</th>
+              <th class="colInfo">Liga</th>
+              <th class="colInfo">Equipo</th>
+              <th class="colInfo">Precio</th>
+              <th class="colInfo">Talle</th>
+              <th class="colInfo">Stock</th>
+              <th class="colProducto">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for (let i=0; i< listado.length; i++) { %>
+            <tr>
+              <td><%= listado[i].name %></td>
+              <td><%= listado[i].description %></td>
+              <td><%= listado[i].category %></td>
+              <td><%= listado[i].liga %></td>
+              <td><%= listado[i].team %></td>
+              <td>$<%= listado[i].precio %></td>
+              <td><%= listado[i].talle %></td>
+              <td>1</td>
+              <td class="acciones">
+                <div class="formDelete">
+                  <button><i class="fas fa-trash-alt"></i></button>
+                </div>
+                <a href="/" class="formSave">
+                  <button><i class="far fa-edit"></i></button>
+                </a>
+              </td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <br />
+  </body>
 
-    <%- include('../partials/footer.ejs')%>
-    
+  <%- include('../partials/footer.ejs')%>
 </html>
