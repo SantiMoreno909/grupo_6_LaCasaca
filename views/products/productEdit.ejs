@@ -1,99 +1,100 @@
 <!DOCTYPE html>
 <html lang="es">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/css/register.css">
-        <link rel="stylesheet" href="/css/styles.css" />
-        <link rel="stylesheet" href="/css/footer.css" />
-        <link rel="stylesheet" href="/css/admin.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"/>
-        <title>Edición</title>
-        <link rel="shortcut icon" href="/img/logo 1.png" type="image/x-icon">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/admin.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <title>Edición</title>
+    <link rel="shortcut icon" href="/img/logo 1.png" type="image/x-icon">
 
-    </head>
+</head>
 
-    <body>
-        <%- include('../partials/header.ejs')%>
+<body>
+    <%- include('../partials/header.ejs')%>
         <main>
             <button class="addProducto">Agregar Producto</button>
             <div class="initial">
                 <h3>Edición de producto</h3>
             </div>
-            
-            <div class="adminCampos">
-                <div class="adminCampos producto">
-                    <input type="text" placeholder="Nombre del producto" value="<%= listado.name %>" >
-                    <input type="text" placeholder="Precio" value="<%= listado.description %>">
+            <div class="adminForm formRight-side">
+                <div class="adminCampos">
+                    <div class="adminCampos producto">
+                        <input type="text" placeholder="Nombre del producto" value="<%= listado.name %>">
+                        <input type="text" placeholder="Precio" value="<%= listado.description %>">
+                    </div>
+                    <div class="adminCampos">
+                        <select name="equipo" id="equipo" value="<%= listado.equipo %>">
+                            <option value="boca">Boca Junior</option>
+                            <option value="river">River</option>
+                            <option value="velez">Velez</option>
+                            <option value="estudiantes">Estudiantes</option>
+                            <option value="argentina">Argentina</option>
+                            <option value="brasil">Brasil</option>
+                            <option value="barcelona">Barcelona</option>
+                            <option value="manchester">Manchester</option>
+                        </select>
+                        <select name="talle" id="talle" value="<%= listado.talle %>">
+                            <option value="s">S</option>
+                            <option value="m">M</option>
+                            <option value="l">L</option>
+                            <option value="xl">XL</option>
+                            <option value="xxl">XXL</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="adminCampos">
-                    <select name="equipo" id="equipo" value="<%= listado.equipo %>">
-                        <option value="boca">Boca Junior</option>
-                        <option value="river">River</option>
-                        <option value="velez">Velez</option>
-                        <option value="estudiantes">Estudiantes</option>
-                        <option value="argentina">Argentina</option>
-                        <option value="brasil">Brasil</option>
-                        <option value="barcelona">Barcelona</option>
-                        <option value="manchester">Manchester</option>
-                    </select>
-                    <select name="talle" id="talle" value="<%= listado.talle %>">
-                        <option value="s">S</option>
-                        <option value="m">M</option>
-                        <option value="l">L</option>
-                        <option value="xl">XL</option>
-                        <option value="xxl">XXL</option>
-                    </select>
-                </div>
-            </div>
-            <div class="adminCampos">
-                <div class="textArea">
-                    <input type="textarea">
-                </div>
-                <div class="adminContainer">
-                    <div class="row">
-                        <div>
-                            <label for="">Liga</label>
-                            <select name="liga" id="liga" value="<%= listado.liga %>">
-                                <option value="arg">Prof. Argentina</option>
-                                <option value="champion">Champions League</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="">Stock</label>
-                            <input type="text" placeholder="stock" value="<%= listado.stock %>">
-                        </div>
-                        
+                    <div class="textArea">
+                        <input type="textarea">
                     </div>
-                    <div class="row">
-                        <div>
-                            <label for="">Marca</label>
-                            <select name="marca" id="marca" value="<%= listado.marca %>">
-                                <option value="adidas">Adidas</option>
-                                <option value="nike">Nike</option>
-                            </select>
+                    <div class="adminContainer">
+                        <div class="row">
+                            <div>
+                                <label for="">Liga</label>
+                                <select name="liga" id="liga" value="<%= listado.liga %>">
+                                    <option value="arg">Prof. Argentina</option>
+                                    <option value="champion">Champions League</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="">Stock</label>
+                                <input type="text" placeholder="stock" value="<%= listado.stock %>">
+                            </div>
+
                         </div>
+                        <div class="row">
+                            <div>
+                                <label for="">Marca</label>
+                                <select name="marca" id="marca" value="<%= listado.marca %>">
+                                    <option value="adidas">Adidas</option>
+                                    <option value="nike">Nike</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="imgProduct">
+                            <input type="file" value="<%= listado.img %>">
+                        </div>
+
+
                     </div>
-                    <div class="imgProduct">
-                        <input type="file" value="<%= listado.img %>">
-                    </div>
-                    
-                    
                 </div>
             </div>
             <div>
                 <button><i class="fas fa-trash-alt"></i></button>
                 <button><i class="fas fa-save"></i></button>
             </div>
-        </div>
+           
         </main>
         <br>
-    </body>
+</body>
 
-    <%- include('../partials/footer.ejs')%>
-    
+<%- include('../partials/footer.ejs')%>
+
 </html>
