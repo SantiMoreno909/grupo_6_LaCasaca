@@ -9,3 +9,7 @@ Dado que comenzamos a trabajar con maquetado, decidimos aplicar metodología BEM
 ## Inicios del tercer sprint
 
 Para este tercer sprint, decidimos continuar con las metodologías de comunicacion y reuniones tal como veníamos haciendo, agregando el desafío extra de intentar no dejar todo para último momento, lo que se nos complica debido a cuestiones particulares de los integrantes, pero que nos comprometemos a intentar.
+
+## Inicios del cuarto sprint
+
+Seguir con los lineamientos del sprint anterior. También decidimos mejorar el trabajo en Trello, agregando las secciones **Historias de usuarios** y **Acciones**.
