@@ -24,7 +24,7 @@
   <body>
     <%- include('../partials/header.ejs')%>
     <main>
-      <button class="addProducto">Agregar Producto</button>
+      <button class="addProducto"><a href="/crearProducto">Agregar Producto</a></button>
       <div class="initial">
         <h3>Listado de productos</h3>
       </div>
@@ -45,7 +45,7 @@
             </tr>
           </thead>
           <tbody>
-            <% for (let i=0; i<= listado.length; i++) { %>
+            <% for (let i=0; i < listado.length; i++) { %>
             <tr>
               <td><%= listado[i].name %></td>
               <td><%= listado[i].description %></td>

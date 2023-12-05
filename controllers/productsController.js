@@ -25,6 +25,13 @@ const controlador = {
     let listado = require("../data/product.json");
     res.render("products/productList", { listado: listado });
   },
+  crearProducto: (req, res) => {
+    res.render("products/productCreate");
+  },
+  guardarProducto: (req,res) => {
+    res.send(req.body)
+    //res.redirect("/products/productList");
+  },
   editar: (req, res) => {
     let listado = require("../data/product.json");
     let productId = req.params.id;
@@ -32,6 +39,7 @@ const controlador = {
     //Extraigo el Id del URL, y le asigno la vista de edición y el objeto listado, para que pueda extraer de él los datos
     //Falta toda la lógica a esto, sigo medio perdido pero creo que va por ahí
   },
+  
 };
 
 module.exports = controlador;

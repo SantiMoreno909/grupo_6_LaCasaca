@@ -12,7 +12,13 @@ router.get("/detail", productsController.detail);
 router.get("/register", productsController.register);
 router.get("/admin", productsController.administracion);
 router.get("/listado", productsController.listado);
+/*para el create*/
+router.get("/crearProducto", productsController.crearProducto);
+router.post("/guardar", productsController.guardarProducto);
+
 router.get("/editar/:id", productsController.editar);
+
+
 //Agrego la ruta para editar los productos
 router.get("/:clubNombre", productsController.clubes);
 
