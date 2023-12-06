@@ -1,3 +1,8 @@
+const fs = require('fs');
+const path = require('path');
+const productFilePath = path.join(__dirname, '../data/product.json');
+const product= JSON.parse(fs.readFileSync(productFilePath, 'utf-8'));
+
 const controlador = {
   index: (req, res) => {
     res.render("products/index");
@@ -22,18 +27,21 @@ const controlador = {
     res.render("products/paginaClub", { clubes: clubes });
   },
   listado: (req, res) => {
-    let listado = require("../data/product.json");
+    let listado = product;
     res.render("products/productList", { listado: listado });
   },
   crearProducto: (req, res) => {
     res.render("products/productCreate");
   },
   guardarProducto: (req,res) => {
-    res.send(req.body)
-    //res.redirect("/products/productList");
+    product.push(req.body)
+    console.log("Product nuevo", product);
+    fs.writeFileSync(productFilePath, JSON.stringify(product), 'utf-8');
+    //res.send(req.body)
+    res.redirect("/listado");
   },
   editar: (req, res) => {
-    let listado = require("../data/product.json");
+    let listado = product;
     let productId = req.params.id;
     res.render("products/productEdit", { listado: listado });
     //Extraigo el Id del URL, y le asigno la vista de edición y el objeto listado, para que pueda extraer de él los datos
