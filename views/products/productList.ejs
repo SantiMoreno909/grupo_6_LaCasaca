@@ -56,8 +56,12 @@
               <td><%= listado[i].talle %></td>
               <td>1</td>
               <td class="acciones">
+                
                 <div class="formDelete">
-                  <button><i class="fas fa-trash-alt"></i></button>
+                  <form action="/delete/<%= listado[i].id %>?_method=DELETE" method="POST">
+                    <button type="submit"><i class="fas fa-trash-alt"></i></button>
+                  </form>
+                  
                 </div>
                 <a href="/" class="formSave">
                   <button><i class="far fa-edit"></i></button>

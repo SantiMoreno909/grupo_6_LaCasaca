@@ -35,18 +35,22 @@ const controlador = {
   },
   guardarProducto: (req,res) => {
     product.push(req.body)
-    console.log("Product nuevo", product);
     fs.writeFileSync(productFilePath, JSON.stringify(product), 'utf-8');
-    //res.send(req.body)
     res.redirect("/listado");
   },
   editar: (req, res) => {
     let listado = product;
     let productId = req.params.id;
     res.render("products/productEdit", { listado: listado });
-    //Extraigo el Id del URL, y le asigno la vista de edición y el objeto listado, para que pueda extraer de él los datos
-    //Falta toda la lógica a esto, sigo medio perdido pero creo que va por ahí
+    
   },
+  destroy: (req,res) => {
+    const {id}= req.params;
+    const productIndex= product.findIndex(product=>product.id=== parseInt(id));
+    product.splice(productIndex,1)
+    fs.writeFileSync(productFilePath, JSON.stringify(product), 'utf-8');
+    res.redirect("/listado");
+  }
   
 };
 
