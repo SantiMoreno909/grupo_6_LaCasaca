@@ -18,7 +18,7 @@ router.get("/listado", productsController.listado);
 router.get("/crearProducto", productsController.crearProducto);
 router.post("/guardar", productsController.guardarProducto);
 
-
+router.delete("/delete/:id", productsController.destroy);
 
 //Agrego la ruta para editar los productos
 router.get("/:clubNombre", productsController.clubes);
