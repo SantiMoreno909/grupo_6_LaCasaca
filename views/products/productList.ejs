@@ -54,7 +54,7 @@
               <td><%= listado[i].team %></td>
               <td>$<%= listado[i].precio %></td>
               <td><%= listado[i].talle %></td>
-              <td>1</td>
+              <td><%= listado[i].stock %></td>
               <td class="acciones">
                 
                 <div class="formDelete">
@@ -63,7 +63,7 @@
                   </form>
                   
                 </div>
-                <a href="/" class="formSave">
+                <a href="/editar/<%= listado[i].id %>" class="formSave">
                   <button><i class="far fa-edit"></i></button>
                 </a>
               </td>

@@ -20,77 +20,85 @@
 <body>
     <%- include('../partials/header.ejs')%>
         <main>
-            <button class="addProducto">Agregar Producto</button>
-            <div class="initial">
-                <h3>Edición de producto</h3>
-            </div>
-            <div class="adminForm formRight-side">
-                <div class="adminCampos">
-                    <div class="adminCampos producto">
-                        <input type="text" placeholder="Nombre del producto" value="<%= listado.name %>">
-                        <input type="text" placeholder="Precio" value="<%= listado.description %>">
-                    </div>
-                    <div class="adminCampos">
-                        <select name="equipo" id="equipo" value="<%= listado.equipo %>">
-                            <option value="boca">Boca Junior</option>
-                            <option value="river">River</option>
-                            <option value="velez">Velez</option>
-                            <option value="estudiantes">Estudiantes</option>
-                            <option value="argentina">Argentina</option>
-                            <option value="brasil">Brasil</option>
-                            <option value="barcelona">Barcelona</option>
-                            <option value="manchester">Manchester</option>
-                        </select>
-                        <select name="talle" id="talle" value="<%= listado.talle %>">
-                            <option value="s">S</option>
-                            <option value="m">M</option>
-                            <option value="l">L</option>
-                            <option value="xl">XL</option>
-                            <option value="xxl">XXL</option>
-                        </select>
-                    </div>
+            <form action="/editar/<%= listado.id %>?_method=PUT" method="POST" >
+                <div class="initial">
+                    <h3>Edición de producto</h3>
                 </div>
-                <div class="adminCampos">
-                    <div class="textArea">
-                        <input type="textarea">
-                    </div>
-                    <div class="adminContainer">
-                        <div class="row">
-                            <div>
-                                <label for="">Liga</label>
-                                <select name="liga" id="liga" value="<%= listado.liga %>">
-                                    <option value="arg">Prof. Argentina</option>
-                                    <option value="champion">Champions League</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="">Stock</label>
-                                <input type="text" placeholder="stock" value="<%= listado.stock %>">
-                            </div>
-
+                <div class="adminForm formRight-side">
+                    <div>
+                        <div>
+                            <label for="">Producto</label>
+                            <input type="text" placeholder="Nombre del producto" name="name" id="name" value="<%= listado.name %>">
                         </div>
-                        <div class="row">
-                            <div>
-                                <label for="">Marca</label>
-                                <select name="marca" id="marca" value="<%= listado.marca %>">
-                                    <option value="adidas">Adidas</option>
-                                    <option value="nike">Nike</option>
-                                </select>
-                            </div>
+                        <div>
+                            <label for="">Precio</label>
+                            <input type="text" placeholder="Precio" name="precio" id="precio" value="<%= listado.precio %>">
+                        </div>
+                        <div>
+                            <label for="">Equipo</label>
+                            <select name="team" id="team" >
+                                <option value="" <%= listado.team  === '' ? 'selected' : '' %>>Ninguno</option>
+                                <option value="boca" <%= listado.team  === 'boca' ? 'selected' : '' %>>Boca Junior</option>
+                                <option value="river" <%= listado.team  === 'river' ? 'selected' : '' %>>River</option>
+                                <option value="velez" <%= listado.team  === 'velez' ? 'selected' : '' %>>Velez</option>
+                                <option value="estudiantes" <%= listado.team  === 'estudiantes' ? 'selected' : '' %>>Estudiantes</option>
+                                <option value="argentina" <%= listado.team  === 'argentina' ? 'selected' : '' %>>Argentina</option>
+                                <option value="brasil" <%= listado.team  === 'brasil' ? 'selected' : '' %>>Brasil</option>
+                                <option value="barcelona" <%= listado.team  === 'barcelona' ? 'selected' : '' %>>Barcelona</option>
+                                <option value="manchester" <%= listado.team  === 'manchester' ? 'selected' : '' %>>Manchester</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="">Talle</label>
+                            <select name="talle" id="talle">
+                                <option value="s" <%= listado.talle === 's' ? 'selected' : '' %> >S</option>
+                                <option value="m" <%= listado.talle === 'm' ? 'selected' : '' %>>M</option>
+                                <option value="l" <%= listado.talle === 'l' ? 'selected' : '' %>>L</option>
+                                <option value="xl" <%= listado.talle === 'xl' ? 'selected' : '' %>>XL</option>
+                                <option value="xxl" <%= listado.talle === 'xxl' ? 'selected' : '' %>>XXL</option>
+                            </select>
+                        </div>
+                        <div class="textArea">
+                            <label for="">Descripción</label>
+                            <input type="textarea" name ="description" id="description" value="<%= listado.description %>">
+                        </div>
+                        <div>
+                            <label for="">Liga</label>
+                            <select name="liga" id="liga" >
+                                <option value="otra" <%= listado.liga === 'otra' ? 'selected' : '' %>>Otra</option>
+                                <option value="arg" <%= listado.liga === 'arg' ? 'selected' : '' %> >Prof. Argentina</option>
+                                <option value="champion" <%= listado.liga === 'champion' ? 'selected' : '' %> >Champions League</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="">Stock</label>
+                            <input type="text" placeholder="stock" name="stock" id="stock" value="<%= listado.stock %>">
+                        </div>
+                        <div>
+                            <label for="">Marca</label>
+                            <select name="marca" id="marca" >
+                                <option value="adidas" <%= listado.marca  === 'adidas' ? 'selected' : '' %>>Adidas</option>
+                                <option value="nike" <%= listado.marca  === 'nike' ? 'selected' : '' %>>Nike</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="">Categoria</label>
+                            <select name="category" id="category" >
+                                <option value="short" <%= listado.category  === 'short' ? 'selected' : '' %> >Short</option>
+                                <option value="camiseta" <%= listado.category  === 'camiseta' ? 'selected' : '' %>>Camiseta</option>
+                            </select>
                         </div>
                         <div class="imgProduct">
                             <input type="file" value="<%= listado.img %>">
                         </div>
 
-
+                    </div>
+                    <div>
+                        <button type="submit"><i class="fas fa-save"></i></button>
                     </div>
                 </div>
-            </div>
-            <div>
-                <button><i class="fas fa-trash-alt"></i></button>
-                <button><i class="fas fa-save"></i></button>
-            </div>
-           
+            </form>
+
         </main>
         <br>
 </body>
