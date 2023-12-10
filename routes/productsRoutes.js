@@ -12,12 +12,16 @@ router.get("/carrito", productsController.carrito);
 router.get("/detail", productsController.detail);
 router.get("/register", productsController.register);
 router.get("/admin", productsController.administracion);
-router.get("/editar/:id", productsController.editar);
+
 router.get("/listado", productsController.listado);
 /*para el create*/
 router.get("/crearProducto", productsController.crearProducto);
 router.post("/guardar", productsController.guardarProducto);
+/*para editar*/ 
+router.get("/editar/:id", productsController.editar);
+router.put("/editar/:id", productsController.update)
 
+/*para eliminar*/
 router.delete("/delete/:id", productsController.destroy);
 
 //Agrego la ruta para editar los productos
