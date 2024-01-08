@@ -26,9 +26,9 @@ const controlador = {
     let clubes = req.params.clubNombre;
     res.render("products/paginaClub", { clubes: clubes });
   },
-  listado: (req, res) => {
-    let listado = product;
-    res.render("products/productList", { listado: listado });
+  productos: (req, res) => {
+    let productos = product;
+    res.render("products/productList", { productos: productos });
   },
   crearProducto: (req, res) => {
     res.render("products/productCreate");
@@ -36,10 +36,10 @@ const controlador = {
   guardarProducto: (req,res) => {
     product.push(req.body)
     fs.writeFileSync(productFilePath, JSON.stringify(product), 'utf-8');
-    res.redirect("/listado");
+    res.redirect("/productos");
   },
   editar: (req, res) => {
-    //let listado = product;
+    //let productos = product;
     let productId = req.params.id;
     const result = product.find((data)=>{
       if(data.id == productId){
@@ -49,7 +49,7 @@ const controlador = {
 
     console.log(result);
     
-    res.render("products/productEdit", { listado: result});
+    res.render("products/productEdit", { productos: result});
     
   },
   update: (req, res) => {
@@ -58,7 +58,7 @@ const controlador = {
     const index = product.findIndex(prod=>prod.id ===id);
 
     if(index === -1) {
-      res.render('listado');
+      res.render('productos');
       return
     }
     
@@ -73,7 +73,7 @@ const controlador = {
     product[index].stock = stock;
 
     fs.writeFileSync(productFilePath, JSON.stringify(product), 'utf-8');
-    res.redirect("/listado");
+    res.redirect("/productos");
   },
 
   destroy: (req,res) => {
@@ -81,7 +81,7 @@ const controlador = {
     const productIndex= product.findIndex(product=>product.id=== parseInt(id));
     product.splice(productIndex,1)
     fs.writeFileSync(productFilePath, JSON.stringify(product), 'utf-8');
-    res.redirect("/listado");
+    res.redirect("/productos");
   }
   
 };

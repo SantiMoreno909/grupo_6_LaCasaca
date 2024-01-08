@@ -1,0 +1,80 @@
+const fs = require('fs');
+const path = require('path');
+const userFilePath = path.join(__dirname, '../data/user.json');
+const user= JSON.parse(fs.readFileSync(userFilePath, 'utf-8'));
+
+const controlador = {
+  
+  login: (req, res) => {
+    res.render("users/login");
+  },
+  register: (req, res) => {
+    res.render("users/register");
+  },
+  
+ 
+  usuarios: (req, res) => {
+    let usuario = user;
+   
+    if(req.file){
+      console.log("entra");
+    }
+    res.render("users/admin", { usuario: usuario });
+  },
+  guardarUsuario: (req,res) => {
+    user.push(req.body)
+    fs.writeFileSync(userFilePath, JSON.stringify(user), 'utf-8');
+    res.redirect("/login");
+  },
+  /*eliminar*/
+  destroy: (req,res) => {
+    const {id}= req.params;
+    const usersIndex= user.findIndex(user=>user.id=== parseInt(id));
+    user.splice(usersIndex,1)
+    fs.writeFileSync(userFilePath, JSON.stringify(user), 'utf-8');
+    res.redirect("/users/usuarios");
+  },
+  /*editar*/
+  editar: (req, res) => {
+    
+    let userId = req.params.id;
+    const result = user.find((data)=>{
+      if(data.id == userId){
+        return data;
+      }
+    })
+  
+    res.render("users/userEdit", { usuario: result});
+    
+  },
+  update: (req, res) => {
+    
+    const { Nombre,Apellido,email,tel,nacimiento,genero,type,contrasena,fotoPerfil,repetir_contrasena,aceptar_terminos,newsletter}= req.body;
+    const id = parseInt(req.params.id);
+    const index = user.findIndex(user=>user.id ===id);
+
+    if(index === -1) {
+      res.render('usuario');
+      return
+    }
+    
+    user[index].Nombre = Nombre;
+    user[index].Apellido = Apellido;
+    user[index].email = email;
+    user[index].tel = tel;
+    user[index].nacimiento = nacimiento;
+    user[index].genero = genero;
+    user[index].type = type;
+    user[index].contrasena = contrasena;
+    user[index].repetir_contrasena = repetir_contrasena;
+    user[index].fotoPerfil = fotoPerfil
+    user[index].aceptar_terminos = aceptar_terminos
+    user[index].newsletter = newsletter
+   
+    fs.writeFileSync(userFilePath, JSON.stringify(user), 'utf-8');
+    res.redirect("/users/usuarios");
+  }
+
+};
+
+module.exports = controlador;

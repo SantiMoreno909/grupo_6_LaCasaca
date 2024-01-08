@@ -7,6 +7,9 @@ body {
   margin: 0;
 }
 
+.perfil{
+  margin-top: 1.5rem;
+}
 .navbar {
   background-color: #e0e0e0;
   display: flex;

@@ -1,147 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
-
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/register.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/register.css" />
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/footer.css" />
     <link rel="stylesheet" href="/css/admin.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"/>
-    <title>Administracion</title>
-    <link rel="shortcut icon" href="/img/logo 1.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+    <title>Administracion de Usuarios</title>
+    <link rel="shortcut icon" href="/img/logo 1.png" type="image/x-icon" />
+  </head>
 
-    </head>
+  <body>
+    <%- include('../partials/header.ejs')%>
+    <main>
+      <button class="addProducto"><a href="/register">Agregar Usuario</a></button>
+      <div class="initial">
+        <h3>Administracion de Usuarios</h3>
+      </div>
 
-    <body>
-        <%- include('../partials/header.ejs')%>
-        <main>
-            <div class="initial">
-                <h3>Hola Usuario Administrador</h3>
-                <button>Cerrar Sesion</button>
-            </div>
-            <div class="adminForm formRight-side">
-                <h4>Cargar Producto</h4>
-                <div class="adminCampos">
-                    <div class="adminCampos producto">
-                        <input type="text" placeholder="Nombre del producto" >
-                        <input type="text" placeholder="Precio" >
-                    </div>
-                    <div class="adminCampos">
-                        <select name="equipo" id="equipo" >
-                            <option value="boca">Boca Junior</option>
-                            <option value="river">River</option>
-                            <option value="velez">Velez</option>
-                            <option value="estudiantes">Estudiantes</option>
-                            <option value="argentina">Argentina</option>
-                            <option value="brasil">Brasil</option>
-                            <option value="barcelona">Barcelona</option>
-                            <option value="manchester">Manchester</option>
-                        </select>
-                        <select name="talle" id="talle">
-                            <option value="s">S</option>
-                            <option value="m">M</option>
-                            <option value="l">L</option>
-                            <option value="xl">XL</option>
-                            <option value="xxl">XXL</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="adminCampos">
-                    <div class="textArea">
-                        <input type="textarea">
-                    </div>
-                    <div class="adminContainer">
-                        <div class="row">
-                            <div>
-                                <label for="">Liga</label>
-                                <select name="liga" id="liga">
-                                    <option value="arg">Prof. Argentina</option>
-                                    <option value="champion">Champions League</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="">Stock</label>
-                                <input type="text" placeholder="stock">
-                            </div>
-                            
-                        </div>
-                        <div class="row">
-                            <div>
-                                <label for="">Marca</label>
-                                <select name="marca" id="marca">
-                                    <option value="adidas">Adidas</option>
-                                    <option value="nike">Nike</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="imgProduct">
-                            <input type="file">
-                        </div>
-                        
-                        
-                    </div>
-                </div>
-                <div>
-                    <button><i class="fas fa-trash-alt"></i></button>
-                    <button><i class="fas fa-save"></i></button>
-                </div>
-            </div>
-            <div >
-                <table class="tablaProducto">
-                    <thead>
-                        <tr>
-                            <th class="colProducto">Producto</th>
-                            <th class="colInfo">Precio</th>
-                            <th class="colInfo">Talle</th>
-                            <th class="colInfo">Stock</th>
-                            <th class="colProducto">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Camiseta Boca</td>
-                            <td>$30000</td>
-                            <td>L</td>
-                            <td>1</td>
-                            <td class="acciones">
-                                <div class="formDelete">
-                                    <button ><i class="fas fa-trash-alt"></i></button>
-                                </div>
-                                <div class="formSave">
-                                    <button ><i class="fas fa-save"></i></button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <tr>
-                                <td>Camiseta River</td>
-                                <td>$20000</td>
-                                <td>M</td>
-                                <td>2</td>
-                                <td class="acciones">
-                                    <div class="formDelete">
-                                        <button ><i class="fas fa-trash-alt"></i></button>
-                                    </div>
-                                    <div class="formSave">
-                                        <button ><i class="fas fa-save"></i></button>
-                                    </div>
-                                    
-                                </td>
-                            </tr>
-                        </tr>
-                        
-                    </tbody>
-                </table>
-            </div>
-        </main>
-        <br>
-    </body>
+      <div>
+        <table class="tablaProducto">
+          <thead>
+            <tr>
+              <th class="colProducto">Nombre y Apellido</th>
+              <th class="colProducto">Email</th>
+              <th class="colInfo">Telefono</th>
+              <th class="colInfo">Rol</th>
+              <th class="colInfo">Foto Perfil</th>
+              <th class="colProducto">Acciones</th>
+            </tr>
 
-    <%- include('../partials/footer.ejs')%>
-    
+          </thead>
+          <tbody>
+            <% for (let i=0; i < usuario.length; i++) { %>
+            <tr>
+              
+             <td><%= usuario[i].Nombre + " " + usuario[i].Apellido %></td>
+             <td><%= usuario[i].email %></td>
+             <td><%= usuario[i].tel %></td>
+             <td><%= usuario[i].type %></td>
+             <td><img src="/img/users/<%= usuario[i].fotoPerfil %>" alt=""></td>
+             <td class="acciones">
+                
+                <div class="formDelete">
+                    <form action="/users/delete/<%= usuario[i].id %>?_method=DELETE" method="POST">
+                      <button type="submit"><i class="fas fa-trash-alt"></i></button>
+                    </form>  
+                </div>
+                <div class="formSave">
+                  <a href="/users/editar/<%= usuario[i].id %>" class="formSave">
+                    <button><i class="far fa-edit"></i></button>
+                  </a>
+                   
+                </div>
+               
+              </td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <br />
+  </body>
+
+  <%- include('../partials/footer.ejs')%>
 </html>
