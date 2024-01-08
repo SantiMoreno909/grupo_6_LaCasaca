@@ -40,6 +40,12 @@
           <input type="checkbox" id="recordar" name="recordar">
           <label class="checkbox-input" for="recordar">Recordar usuario</label>
         </div>
+
+        <% if (error) { %>
+          <div class="mensaje-error">
+            <%= error %>
+          </div>
+        <% } %>
       
         <div class="boton">
           <button type="submit">Ingresar</button>
