@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/admin.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <title>Edición</title>
+    <link rel="shortcut icon" href="/img/logo 1.png" type="image/x-icon">
+
+</head>
+
+<body>
+    <%- include('../partials/header.ejs')%>
+        <main>
+            <form action="/users/editar/<%= usuario.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <div class="initial">
+                    <h3>Edición de Usuario</h3>
+                </div>
+                <div class="right-side">
+                    <h2>Ficha de ingreso a "La Casaca":</h2>
+                    <div class="card-input">
+                      <label class="titulo" for="usuario">Nombre:</label>
+                      <br>
+                      <input class="didi" type="text" id="Nombre" name="Nombre" required value="<%= usuario.Nombre %>">
+                    </div>
+                    <div class="card-input">
+                      <label class="titulo" for="Apellido">Apellido:</label>
+                      <br>
+                      <input class="didi" type="text" id="Apellido" name="Apellido" required value="<%= usuario.Apellido %>">
+                    </div>
+                    <div class="card-input">
+                      <label class="titulo" for="usuario">Email:</label>
+                      <br>
+                      <input class="didi" type="email" id="email" name="email" required value="<%= usuario.email %>">
+                    </div>
+                    <div class="card-input">
+                      <label class="titulo" for="Telefono">Telefono:</label>
+                      <br>
+                      <input class="didi" type="text" id="tel" name="tel" required value="<%= usuario.tel %>"> 
+                    </div>
+            
+                    <div class="formulario_1">
+                      <div class="formulario_label">
+                        <label class="titulo" for="nacimiento">Nacimiento:</label>
+            
+                        <input class="didi" type="date" id="nacimiento" name="nacimiento" required value="<%= usuario.nacimiento %>">
+                        <br>
+                      </div>
+                      <div style="display: none;">
+                        <input  type="text" id="type" name="type" value="<%= usuario.type %>">             
+                      </div>
+                      <div class="formulario_label">
+                        <label class="titulo" for="genero">Genero:</label>
+            
+                        <select class="didi" name="genero">
+                          <option value="masc" <%= usuario.genero  === 'masc' ? 'selected' : '' %>>Masculino</option>
+            
+                          <option value="fem" <%= usuario.genero  === 'fem' ? 'selected' : '' %>>Femenino</option>
+            
+                          <option value="otro" <%= usuario.genero  === 'otro' ? 'selected' : '' %>>Otro</option>
+            
+                        </select>
+                      </div>
+            
+                    </div>
+                    <div>
+                      <label for="perfil">Foto de perfil</label>
+                      <input type="file" name="fotoPerfil" id="fotoPerfil" value="<%= usuario.fotoPerfil %>">
+                    </div>
+                    <div class="contenedor_ing">
+                      <div class="formulario" >
+                        <div class="formulario_label">
+                          <label class="titulo" for="contrasena" >Contraseña:</label>
+            
+                          <input class="didi" type="password" id="contrasena" name="contrasena" required value="<%= usuario.contrasena %>"><br>
+                        </div>
+                        <div class="formulario_label">
+                          <label class="titulo" for="repetir_contrasena">Repetir Contraseña:</label>
+            
+                          <input class="didi" type="password" id="repetir_contrasena" name="repetir_contrasena" required value="<%= usuario.repetir_contrasena %>"><br>
+                        </div>
+                        <label>
+                          <input type="checkbox" name="aceptar_terminos" id="aceptar_terminos" required value="<%= usuario.aceptar_terminos %>">
+                          Acepto los términos y condiciones
+                        </label><br>
+                        <label>
+                          <input type="checkbox" name="newsletter" id="newsletter" value="<%= usuario.newsletter %>">
+                          Unirme a las novedades
+                        </label><br>
+                        <a href="#">Politica de privacidad de datos</a>
+            
+                        <button type="submit">Enviar</button>
+                      </div>
+            
+                    </div>
+                  </div>
+            </form>
+
+        </main>
+        <br>
+</body>
+
+<%- include('../partials/footer.ejs')%>
+
+</html>

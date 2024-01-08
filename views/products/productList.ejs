@@ -34,7 +34,7 @@
           <thead>
             <tr>
               <th class="colProducto">Producto</th>
-              <th class="colInfo">Descripcion</th>
+              <th class="colInfo">Descripción</th>
               <th class="colInfo">Categoria</th>
               <th class="colInfo">Liga</th>
               <th class="colInfo">Equipo</th>
@@ -45,25 +45,25 @@
             </tr>
           </thead>
           <tbody>
-            <% for (let i=0; i < listado.length; i++) { %>
+            <% for (let i=0; i < productos.length; i++) { %>
             <tr>
-              <td><%= listado[i].name %></td>
-              <td><%= listado[i].description %></td>
-              <td><%= listado[i].category %></td>
-              <td><%= listado[i].liga %></td>
-              <td><%= listado[i].team %></td>
-              <td>$<%= listado[i].precio %></td>
-              <td><%= listado[i].talle %></td>
-              <td><%= listado[i].stock %></td>
+              <td><%= productos[i].name %></td>
+              <td><%= productos[i].description %></td>
+              <td><%= productos[i].category %></td>
+              <td><%= productos[i].liga %></td>
+              <td><%= productos[i].team %></td>
+              <td>$<%= productos[i].precio %></td>
+              <td><%= productos[i].talle %></td>
+              <td><%= productos[i].stock %></td>
               <td class="acciones">
                 
                 <div class="formDelete">
-                  <form action="/delete/<%= listado[i].id %>?_method=DELETE" method="POST">
+                  <form action="/delete/<%= productos[i].id %>?_method=DELETE" method="POST">
                     <button type="submit"><i class="fas fa-trash-alt"></i></button>
                   </form>
                   
                 </div>
-                <a href="/editar/<%= listado[i].id %>" class="formSave">
+                <a href="/editar/<%= productos[i].id %>" class="formSave">
                   <button><i class="far fa-edit"></i></button>
                 </a>
               </td>

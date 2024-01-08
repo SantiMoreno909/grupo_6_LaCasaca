@@ -13,7 +13,7 @@ router.get("/detail", productsController.detail);
 router.get("/register", productsController.register);
 router.get("/admin", productsController.administracion);
 
-router.get("/listado", productsController.listado);
+router.get("/productos", productsController.productos);
 /*para el create*/
 router.get("/crearProducto", productsController.crearProducto);
 router.post("/guardar", productsController.guardarProducto);

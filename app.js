@@ -5,7 +5,7 @@ var methodOverride = require('method-override')
 
 
 let rutasProductos = require("./routes/productsRoutes.js");
-
+let rutasUsuarios = require("./routes/usersRoutes.js");
 
 app.use("", express.static(`${__dirname}/publics`));
 app.use(methodOverride('_method'));  //para el PUT y DELETE
@@ -16,3 +16,4 @@ app.set("view engine", "ejs");
 app.listen(PORT, () => console.log("Server funcionando en puerto " + PORT));
 
 app.use("/", rutasProductos);
+app.use("/users", rutasUsuarios);
