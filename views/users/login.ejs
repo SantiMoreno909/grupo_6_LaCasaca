@@ -25,24 +25,26 @@
     </div>
     <div class="right-side">
       <h2>Ingresar a mi cuenta:</h2>
-      <div class="card-input">
-        <label class="titulo" for="usuario">Usuario:</label>
-        <br>
-        <input class="didi" type="text" id="usuario" name="usuario" required>
-
-      </div>
-      <div class="card-input">
-        <label class="titulo" for="contrasena">Contraseña:</label>
-        <br>
-        <input class="didi" type="password" id="contrasena" name="contrasena" required>
-      </div>
-      <div class="titulo" class="checkbox-label">
-        <input type="checkbox" id="recordar" name="recordar">
-        <label class="checkbox-input" for="recordar">Recordar usuario</label>
-      </div>
-      <div class="boton">
-        <button>Ingresar</button>
-      </div>
+      <form method="post" action="/users/login">
+        <div class="card-input">
+          <label class="titulo" for="email">Correo:</label>
+          <br>
+          <input class="didi" type="text" id="email" name="email" required>
+        </div>
+        <div class="card-input">
+          <label class="titulo" for="contrasena">Contraseña:</label>
+          <br>
+          <input class="didi" type="password" id="contrasena" name="contrasena" required>
+        </div>
+        <div class="titulo checkbox-label">
+          <input type="checkbox" id="recordar" name="recordar">
+          <label class="checkbox-input" for="recordar">Recordar usuario</label>
+        </div>
+      
+        <div class="boton">
+          <button type="submit">Ingresar</button>
+        </div>
+      </form>
       
       <p><a href="#">¿Olvidaste tu contraseña?</a></p>
     </div>     
