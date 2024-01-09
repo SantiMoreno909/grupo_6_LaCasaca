@@ -91,24 +91,12 @@ const controlador = {
     const { email, contrasena } = req.body;
     const usuario = user.find((u) => u.email === email);
 
-    console.log("Email proporcionado:", email);
-    console.log("Usuario encontrado:", usuario);
-
-    if (usuario && bcrypt.compareSync(contrasena, usuario.contrasena)) {
-      console.log(`Inicio de sesión exitoso. Bienvenido ${usuario.nombre}`);
+    if (usuario && bcrypt.compareSync(contrasena, bcrypt.hashSync(usuario.contrasena))) {
       req.session.user = usuario;
       res.redirect("/"); // Redirige a la página principal después del inicio de sesión exitoso
     } else {
-      console.log(
-        "Inicio de sesión fallido. Usuario:",
-        usuario.email,
-        "Contraseña:",
-        usuario.contrasena,
-        "Contraseña guardada:",
-        contrasena
-      );
       res.render("users/login", {
-        error: "Usuario y/o contraseña incorrectos",
+        error: "Usuario y/o contraseña incorrectos"  
       });
     }
   },

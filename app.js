@@ -2,7 +2,7 @@ const PORT = 5000;
 const express = require("express");
 const app = express();
 const methodOverride = require("method-override");
-const session = require("express-session");
+const expSession = require("express-session");
 const bcrypt = require("bcryptjs");
 
 let rutasProductos = require("./routes/productsRoutes.js");
@@ -13,7 +13,7 @@ app.use(methodOverride("_method")); //para el PUT y DELETE
 /*para el crud*/
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(session({ secret: "SessionSecret" }));
+app.use(expSession({ secret: "SessionSecret" }));
 
 app.use((req, res, next) => {
   if (req.session.user) {
