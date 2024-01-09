@@ -41,7 +41,7 @@
           <label class="checkbox-input" for="recordar">Recordar usuario</label>
         </div>
 
-        <% if (error) { %>
+        <% if (typeof error !== 'undefined' && error) { %>
           <div class="mensaje-error">
             <%= error %>
           </div>
