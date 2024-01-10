@@ -1,0 +1,78 @@
+-- Crear la tabla USUARIOS
+CREATE TABLE USUARIOS (
+    id INT PRIMARY KEY NOT NULL UNIQUE,
+    nombre MEDIUMTEXT NOT NULL,
+    apellido MEDIUMTEXT NOT NULL,
+    email MEDIUMTEXT NOT NULL UNIQUE,
+    telefono MEDIUMTEXT NOT NULL UNIQUE,
+    fec_nac DATE NOT NULL,
+    genero MEDIUMTEXT,
+    url_foto_perfil MEDIUMTEXT UNIQUE,
+    direccion_envios MEDIUMTEXT,
+    contraseña MEDIUMTEXT NOT NULL,
+    confirmar_contraseña MEDIUMTEXT NOT NULL,
+    tyc TINYINT NOT NULL,
+    novedades TINYINT NOT NULL
+);
+
+-- Crear la tabla LIGAS
+CREATE TABLE LIGAS (
+    id INT PRIMARY KEY NOT NULL UNIQUE,
+    nombre MEDIUMTEXT NOT NULL,
+    pais MEDIUMTEXT NOT NULL
+);
+
+-- Crear la tabla MARCAS
+CREATE TABLE MARCAS (
+    id INT PRIMARY KEY NOT NULL UNIQUE,
+    nombre MEDIUMTEXT NOT NULL
+);
+
+-- Crear la tabla EQUIPOS
+CREATE TABLE EQUIPOS (
+    id INT PRIMARY KEY NOT NULL UNIQUE,
+    nombre MEDIUMTEXT NOT NULL,
+    id_liga INT NOT NULL,
+    id_marca INT NOT NULL,
+    FOREIGN KEY (id_liga) REFERENCES LIGAS(id),
+    FOREIGN KEY (id_marca) REFERENCES MARCAS(id)
+);
+
+-- Crear la tabla PRODUCTOS
+CREATE TABLE PRODUCTOS (
+    id INT PRIMARY KEY NOT NULL UNIQUE,
+    nombre TEXT NOT NULL,
+    precio FLOAT NOT NULL,
+    talle TINYINT,
+    descripcion MEDIUMTEXT,
+    id_equipo INT NOT NULL,
+    id_liga INT NOT NULL,
+    stock INT NOT NULL,
+    id_marca INT NOT NULL,
+    url_foto MEDIUMTEXT,
+    FOREIGN KEY (id_equipo) REFERENCES EQUIPOS(id),
+    FOREIGN KEY (id_liga) REFERENCES LIGAS(id),
+    FOREIGN KEY (id_marca) REFERENCES MARCAS(id)
+);
+
+-- Crear la tabla CARRITO
+CREATE TABLE CARRITO (
+    id INT PRIMARY KEY NOT NULL UNIQUE,
+    id_cliente INT NOT NULL,
+    id_producto INT NOT NULL,
+    cantidad INT NOT NULL,
+    talle TINYTEXT NOT NULL,
+    FOREIGN KEY (id_cliente) REFERENCES USUARIOS(id),
+    FOREIGN KEY (id_producto) REFERENCES PRODUCTOS(id)
+);
+
+-- Crear la tabla VENTAS
+CREATE TABLE VENTAS (
+    id INT PRIMARY KEY NOT NULL UNIQUE,
+    id_carrito INT NOT NULL,
+    cobrado TINYINT NOT NULL,
+    enviado TINYINT NOT NULL,
+    entregado TINYINT NOT NULL,
+    FOREIGN KEY (id_carrito) REFERENCES CARRITO(id)
+);
+
