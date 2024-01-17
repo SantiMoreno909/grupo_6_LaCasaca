@@ -34,10 +34,10 @@ CREATE TABLE MARCAS (
 CREATE TABLE EQUIPOS (
     id INT PRIMARY KEY NOT NULL UNIQUE AUTO_INCREMENT,
     nombre MEDIUMTEXT NOT NULL,
-    id_liga INT NOT NULL,
-    id_marca INT NOT NULL,
-    FOREIGN KEY (id_liga) REFERENCES LIGAS(id),
-    FOREIGN KEY (id_marca) REFERENCES MARCAS(id)
+    ligaId INT NOT NULL,
+    marcaId INT NOT NULL,
+    FOREIGN KEY (ligaId) REFERENCES LIGAS(id),
+    FOREIGN KEY (marcaId) REFERENCES MARCAS(id)
 );
 
 -- Crear la tabla PRODUCTOS
@@ -47,14 +47,14 @@ CREATE TABLE PRODUCTOS (
     precio FLOAT NOT NULL,
     talle TEXT,
     descripcion MEDIUMTEXT,
-    id_equipo INT NOT NULL,
-    id_liga INT NOT NULL,
+    equipoId INT NOT NULL,
+    ligaId INT NOT NULL,
     stock INT NOT NULL,
-    id_marca INT NOT NULL,
+    marcaId INT NOT NULL,
     url_foto MEDIUMTEXT,
-    FOREIGN KEY (id_equipo) REFERENCES EQUIPOS(id),
-    FOREIGN KEY (id_liga) REFERENCES LIGAS(id),
-    FOREIGN KEY (id_marca) REFERENCES MARCAS(id)
+    FOREIGN KEY (equipoId) REFERENCES EQUIPOS(id),
+    FOREIGN KEY (ligaId) REFERENCES LIGAS(id),
+    FOREIGN KEY (marcaId) REFERENCES MARCAS(id)
 );
 
 -- Crear la tabla CARRITO

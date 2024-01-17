@@ -6,7 +6,7 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        marca: {
+        nombre: {
             type: dataTypes.STRING
         }
     }
@@ -16,5 +16,12 @@ module.exports = (sequelize, dataTypes) => {
     };
     const Marcas = sequelize.define(alias, cols, config)
 
+      Marcas.associate= function(models){
+          Marcas.hasMany(models.Productos,{
+              as: 'marca',
+              foreignkey: 'marcaId'
+
+          })
+      }
     return Marcas
 }
