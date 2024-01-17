@@ -47,14 +47,14 @@
           <tbody>
             <% for (let i=0; i < productos.length; i++) { %>
             <tr>
-              <td><%= productos[i].name %></td>
-              <td><%= productos[i].description %></td>
-              <td><%= productos[i].category %></td>
-              <td><%= productos[i].liga %></td>
-              <td><%= productos[i].team %></td>
+              <td><%= productos[i].nombre %></td>
+              <td><%= productos[i].descripcion %></td>
+              <td>cat</td>
+              <td><%= productos[i].ligaId %></td>
+              <td><%= productos[i].equipoId %></td>
               <td>$<%= productos[i].precio %></td>
               <td><%= productos[i].talle %></td>
-              <td><%= productos[i].stock %></td>
+              <td><%= productos[i].stock %></td> 
               <td class="acciones">
                 
                 <div class="formDelete">
