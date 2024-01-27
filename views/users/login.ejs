@@ -25,6 +25,7 @@
     </div>
     <div class="right-side">
       <h2>Ingresar a mi cuenta:</h2>
+      <div class="errores"></div>
       <form method="post" action="/users/login">
         <div class="card-input">
           <label class="titulo" for="email">Correo:</label>
@@ -40,12 +41,6 @@
           <input type="checkbox" id="recordar" name="recordar">
           <label class="checkbox-input" for="recordar">Recordar usuario</label>
         </div>
-
-        <% if (typeof error !== 'undefined' && error) { %>
-          <div class="mensaje-error">
-            <%= error %>
-          </div>
-        <% } %>
       
         <div class="boton">
           <button type="submit">Ingresar</button>
@@ -70,4 +65,5 @@
 
 <%- include('../partials/footer.ejs')%>
 <script src="/js/loadcomponent.js"></script>
+<script src="/js/loginValidator.js"></script>
 </html>
