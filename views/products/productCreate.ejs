@@ -1,46 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/register.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/register.css" />
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/footer.css" />
     <link rel="stylesheet" href="/css/admin.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
     <title>Administracion</title>
-    <link rel="shortcut icon" href="/img/logo 1.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/logo 1.png" type="image/x-icon" />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <%- include('../partials/header.ejs')%>
-        <main>
-            <form action="/guardar" method="POST" class="formCreate">
-                <div class="adminForm formRight-side">
-                    <h2>Cargar Producto</h2>
-                    <div >
-                        <div>
-                            <label for="">Producto</label>
-                            <input type="text" name="name" id="name" placeholder="Nombre del producto">
-                        </div>
-                        <div>
-                            <label for="">Precio</label>
-                            <input type="text" name="precio" id="precio" placeholder="Precio">
-                        </div>
-                        <div>
-                            <label for="">Equipo</label>
-                            <select name="team" id="team">
-                                <% for(let i=0; i< equipos.length; i++) { %>
-                                <option value="<%= equipos[i].id %>">
-                                    <%= equipos[i].nombre %>
-                                </option>
-                                <% } %>
-                                <!-- <option value="river">River</option>
+    <main>
+      <form action="/guardar" method="POST" class="formCreate">
+        <div class="adminForm formRight-side">
+          <h2>Cargar Producto</h2>
+          <div class="errores"></div>
+          <div>
+            <div>
+              <label for="">Producto</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Nombre del producto"
+              />
+            </div>
+            <div>
+              <label for="">Precio</label>
+              <input
+                type="text"
+                name="precio"
+                id="precio"
+                placeholder="Precio"
+              />
+            </div>
+            <div>
+              <label for="">Equipo</label>
+              <select name="team" id="team">
+                <% for(let i=0; i< equipos.length; i++) { %>
+                <option value="<%= equipos[i].id %>">
+                  <%= equipos[i].nombre %>
+                </option>
+                <% } %>
+                <!-- <option value="river">River</option>
                                 <option value="velez">Velez</option>
                                 <option value="estudiantes">Estudiantes</option>
                                 <option value="argentina">Argentina</option>
@@ -48,71 +63,67 @@
                                 <option value="barcelona">Barcelona</option>
                                 <option value="manchester">Manchester</option>
                                 <option value="otro">Otro</option> -->
-                            </select>
-                        </div>
-                        <div>
-                            <label for="">Talle</label>
-                            <select name="talle" id="talle">
-                                <option value="s">S</option>
-                                <option value="m">M</option>
-                                <option value="l">L</option>
-                                <option value="xl">XL</option>
-                                <option value="xxl">XXL</option>
-                            </select>
-                        </div>
-                        <div class="textArea">
-                            <label for="">Descripción</label>
-                            <input type="textarea" name="description" id="description">
-                        </div>
-                        <div>
-                            <label for="">Liga</label>
-                            <select name="liga" id="liga">
-                                <option value="1">Prof. Argentina</option>
-                                <option value="2">Champions League</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="">Stock</label>
-                            <input type="text" name="stock" id="stock" placeholder="stock">
-                        </div>
-                        <div>
-                            <label for="">Marca</label>
-                            <select name="marca" id="marca">
-                                <!-- <option value="1">Adidas</option>
+              </select>
+            </div>
+            <div>
+              <label for="">Talle</label>
+              <select name="talle" id="talle">
+                <option value="s">S</option>
+                <option value="m">M</option>
+                <option value="l">L</option>
+                <option value="xl">XL</option>
+                <option value="xxl">XXL</option>
+              </select>
+            </div>
+            <div class="textArea">
+              <label for="">Descripción</label>
+              <input type="textarea" name="description" id="description" />
+            </div>
+            <div>
+              <label for="">Liga</label>
+              <select name="liga" id="liga">
+                <option value="1">Prof. Argentina</option>
+                <option value="2">Champions League</option>
+              </select>
+            </div>
+            <div>
+              <label for="">Stock</label>
+              <input type="text" name="stock" id="stock" placeholder="stock" />
+            </div>
+            <div>
+              <label for="">Marca</label>
+              <select name="marca" id="marca">
+                <!-- <option value="1">Adidas</option>
                                 <option value="2">Nike</option> -->
-                                <% for(let i=0; i< marcas.length; i++) { %>
-                                <option value="<%= marcas[i].id %>">
-                                    <%= marcas[i].nombre %>
-                                </option>
-                                <% } %> 
-                            </select>
-                        </div>
-                        <div>
-                            <label for="">Categoria</label>
-                            <select name="category" id="category">
-                                <option value="short">Short</option>
-                                <option value="camiseta">Camiseta</option>
-                            </select>
-                        </div>
+                <% for(let i=0; i< marcas.length; i++) { %>
+                <option value="<%= marcas[i].id %>">
+                  <%= marcas[i].nombre %>
+                </option>
+                <% } %>
+              </select>
+            </div>
+            <div>
+              <label for="">Categoria</label>
+              <select name="category" id="category">
+                <option value="short">Short</option>
+                <option value="camiseta">Camiseta</option>
+              </select>
+            </div>
 
-                        <div >
-                            <label for="">Foto</label>
-                            <input type="file" name="foto" id="foto">
-                        </div>
+            <div>
+              <label for="">Foto</label>
+              <input type="file" name="foto" id="foto" />
+            </div>
+          </div>
+          <div>
+            <button type="submit"><i class="fas fa-save"></i>Guardar</button>
+          </div>
+        </div>
+      </form>
+    </main>
+    <br />
+    <script src="/js/productsValidator.js"></script>
+  </body>
 
-
-                    </div>
-                    <div>
-                        <button type="submit"><i class="fas fa-save"></i>Guardar</button>
-                    </div>
-                </div>
-                
-                
-            </form>
-        </main>
-        <br>
-</body>
-
-<%- include('../partials/footer.ejs')%>
-
+  <%- include('../partials/footer.ejs')%>
 </html>

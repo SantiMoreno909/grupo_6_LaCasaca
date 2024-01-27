@@ -2,7 +2,8 @@ document.addEventListener("load", () => {
   let correo = document.querySelector("#email");
   let contrasena = document.querySelector("#contrasena");
 
-  document.querySelector("form").addEventListener("submit", () => {
+  document.querySelector("form").addEventListener("submit", (event) => {
+    event.preventDefault();
     correo.addEventListener("change", (e) => {
       if (e.value === "") {
         errores.push('El campo "Email" no puede estar vacío');
