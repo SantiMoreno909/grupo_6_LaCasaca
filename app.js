@@ -21,8 +21,17 @@ app.use((req, res, next) => {
   }
   next();
 });
-app.set("view engine", "ejs");
-app.listen(PORT, () => console.log("Server funcionando en puerto " + PORT));
 
 app.use("/", rutasProductos);
 app.use("/users", rutasUsuarios);
+
+// Solucionando errores27/01/2024
+app.get("/partials/header.ejs", (req, res) => {
+  res.render("/partials/header.ejs");
+});
+app.get("/partials/footer.ejs", (req, res) => {
+  res.render("/partials/footer.ejs");
+});
+
+app.set("view engine", "ejs");
+app.listen(PORT, () => console.log("Server funcionando en puerto " + PORT));

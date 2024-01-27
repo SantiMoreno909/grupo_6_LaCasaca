@@ -67,6 +67,18 @@ a {
   width: 75%;
 }
 
+.error-card {
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  border: thin solid darkred;
+  border-radius: 5px;
+  color: white;
+  margin: 10px;
+  padding: 15px;
+  text-align: center;
+}
+
 /*ESTILOS DEL HEADER*/
 
 .header__Navbar {
