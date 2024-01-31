@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 const { body, validationResult } = require("express-validator");
-
+const Usuarios = require("../database/models/Usuarios"); // Asegúrate de tener la ruta correcta
 const usersController = require("../controllers/usersController");
 const multer = require("multer");
 
@@ -20,21 +20,57 @@ const upload = multer({ storage });
 
 // Validaciones
 const validateCreateForms = [
-  body("Nombre").notEmpty().withMessage("Debes completar el nombre"),
-  body("Apellido").notEmpty().withMessage("Debes completar el apellido"),
-  body("email").isEmail().withMessage("Debes completar un email válido"),
-  body("tel").notEmpty().withMessage("Debes completar el teléfono"),
-  body("nacimiento").notEmpty().withMessage("Debes completar la fecha de nacimiento"),
-  body("genero").notEmpty().withMessage("Debes completar el género"),
-  body("fotoPerfil").custom((value, { req }) => {
-    if (!req.file) {
-      throw new Error("Debes subir una imagen");
-    }
-    return true;
-  }),
-  body("contrasena").notEmpty().withMessage("Debes completar la contraseña"),
-  body("repetir_contrasena").notEmpty().withMessage("Debes completar la contraseña repetida"),
+  body("Nombre")
+    .notEmpty().withMessage("Debes completar el nombre")
+    .isLength({ min: 2 }).withMessage("El nombre debe tener al menos 2 caracteres"),
+
+  body("Apellido")
+    .notEmpty().withMessage("Debes completar el apellido")
+    .isLength({ min: 2 }).withMessage("El apellido debe tener al menos 2 caracteres"),
+
+  body("email")
+    .isEmail().withMessage("Debes completar un email válido")
+    .custom(async (value, { req }) => {
+      const existingUser = await Usuarios.findOne({ where: { email: value } });
+      if (existingUser) {
+        throw new Error("El email ya está registrado");
+      }
+      return true;
+    }),
+
+  body("tel")
+    .notEmpty().withMessage("Debes completar el teléfono"),
+
+  body("nacimiento")
+    .notEmpty().withMessage("Debes completar la fecha de nacimiento"),
+
+  body("genero")
+    .notEmpty().withMessage("Debes completar el género"),
+
+  body("contrasena")
+    .notEmpty().withMessage("Debes completar la contraseña")
+    .isLength({ min: 8 }).withMessage("La contraseña debe tener al menos 8 caracteres")
+    .optional()
+    .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)
+    .withMessage("La contraseña debe tener letras mayúsculas, minúsculas, un número y un carácter especial"),
+
+  body("repetir_contrasena")
+    .notEmpty().withMessage("Debes completar la contraseña repetida"),
+
+  body("fotoPerfil")
+    .custom((value, { req }) => {
+      if (!req.file) {
+        throw new Error("Debes subir una imagen");
+      }
+      const allowedExtensions = ["jpg", "jpeg", "png", "gif"];
+      const ext = path.extname(req.file.originalname).toLowerCase().substring(1);
+      if (!allowedExtensions.includes(ext)) {
+        throw new Error("La imagen debe tener formato JPG, JPEG, PNG o GIF");
+      }
+      return true;
+    }),
 ];
+
 
 // Definimos las distintas rutas
 router.get("/usuarios", usersController.usuarios);
@@ -47,17 +83,34 @@ router.post(
   "/guardarUser",
   upload.single("fotoPerfil"),
   validateCreateForms,
-  (req, res) => {
-    // Validar los resultados de la validación
-    const errors = validationResult(req);
+  async (req, res) => {
+    try {
+      // Validar los resultados de la validación
+      const errors = validationResult(req);
 
-    if (!errors.isEmpty()) {
-      // Si hay errores, renderizar nuevamente la página de registro con los mensajes de error
-      return res.render("users/register", { errors: errors.array() });
+      if (!errors.isEmpty()) {
+        // Si hay errores, renderizar nuevamente la página de registro con los mensajes de error
+        return res.render("users/register", { errors: errors.array() });
+      }
+
+      // Si no hay errores y se ha cargado un archivo, continuar con la lógica para guardar el usuario
+      await Usuarios.create({
+        nombre: req.body.Nombre,
+        apellido: req.body.Apellido,
+        email: req.body.email,
+        telefono: req.body.tel,
+        fec_nac: req.body.nacimiento,
+        genero: req.body.genero,
+        url_foto_perfil: req.file.filename, // Asumiendo que el nombre de la imagen se guarda en el modelo
+      });
+
+      // Lógica para redirigir o enviar respuesta
+      res.send('Usuario registrado exitosamente');
+    } catch (error) {
+      console.error('Error al procesar el formulario:', error);
+      // Lógica para manejar el error
+      res.status(500).send('Error interno del servidor');
     }
-
-    // Si no hay errores y se ha cargado un archivo, continuar con la lógica para guardar el usuario
-    usersController.guardarUsuario(req, res);
   }
 );
 
