@@ -27,13 +27,16 @@
       <form action="/users/guardarUser" method="POST" enctype="multipart/form-data">
         <div class="right-side">
           <h2>Ficha de ingreso a "La Casaca":</h2>
-          <% if (typeof errors !== 'undefined') { %>
+          <% if (typeof errors !=='undefined' ) { %>
             <ul>
-              <% errors.forEach(error => { %>
-                <li><%= error.msg %></li>
-              <% }); %>
+              <% errors.forEach(error=> { %>
+                <li>
+                  <%= error.msg %>
+                </li>
+                <% }); %>
             </ul>
-          <% } %>
+            <% } %>
+              <div class="errores"></div>
               <div class="card-input">
                 <label class="titulo" for="usuario">Nombre:</label>
                 <br />

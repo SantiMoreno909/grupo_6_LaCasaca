@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 const { body, validationResult } = require("express-validator");
-const Usuarios = require("../database/models/Usuarios"); // Asegúrate de tener la ruta correcta
+const { Usuarios } = require("../database/models");
 const usersController = require("../controllers/usersController");
 const multer = require("multer");
 
@@ -21,15 +21,23 @@ const upload = multer({ storage });
 // Validaciones
 const validateCreateForms = [
   body("Nombre")
-    .notEmpty().withMessage("Debes completar el nombre")
-    .isLength({ min: 2 }).withMessage("El nombre debe tener al menos 2 caracteres"),
+    .bail()
+    .notEmpty()
+    .withMessage("Debes completar el nombre")
+    .isLength({ min: 2 })
+    .withMessage("El nombre debe tener al menos 2 caracteres"),
 
   body("Apellido")
-    .notEmpty().withMessage("Debes completar el apellido")
-    .isLength({ min: 2 }).withMessage("El apellido debe tener al menos 2 caracteres"),
+    .bail()
+    .notEmpty()
+    .withMessage("Debes completar el apellido")
+    .isLength({ min: 2 })
+    .withMessage("El apellido debe tener al menos 2 caracteres"),
 
   body("email")
-    .isEmail().withMessage("Debes completar un email válido")
+    .bail()
+    .isEmail()
+    .withMessage("Debes completar un email válido")
     .custom(async (value, { req }) => {
       const existingUser = await Usuarios.findOne({ where: { email: value } });
       if (existingUser) {
@@ -38,39 +46,51 @@ const validateCreateForms = [
       return true;
     }),
 
-  body("tel")
-    .notEmpty().withMessage("Debes completar el teléfono"),
+  body("tel").bail().notEmpty().withMessage("Debes completar el teléfono"),
 
   body("nacimiento")
-    .notEmpty().withMessage("Debes completar la fecha de nacimiento"),
+    .bail()
+    .notEmpty()
+    .withMessage("Debes completar la fecha de nacimiento"),
 
-  body("genero")
-    .notEmpty().withMessage("Debes completar el género"),
+  body("genero").bail().notEmpty().withMessage("Debes completar el género"),
 
   body("contrasena")
-    .notEmpty().withMessage("Debes completar la contraseña")
-    .isLength({ min: 8 }).withMessage("La contraseña debe tener al menos 8 caracteres")
+    .bail()
+    .notEmpty()
+    .withMessage("Debes completar la contraseña")
+    .isLength({ min: 8 })
+    .withMessage("La contraseña debe tener al menos 8 caracteres")
     .optional()
-    .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)
-    .withMessage("La contraseña debe tener letras mayúsculas, minúsculas, un número y un carácter especial"),
+    .matches(
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+    )
+    .withMessage(
+      "La contraseña debe tener letras mayúsculas, minúsculas, un número y un carácter especial"
+    ),
 
   body("repetir_contrasena")
-    .notEmpty().withMessage("Debes completar la contraseña repetida"),
+    .bail()
+    .notEmpty()
+    .withMessage("Debes completar la contraseña repetida"),
 
   body("fotoPerfil")
+    .bail()
     .custom((value, { req }) => {
       if (!req.file) {
         throw new Error("Debes subir una imagen");
       }
       const allowedExtensions = ["jpg", "jpeg", "png", "gif"];
-      const ext = path.extname(req.file.originalname).toLowerCase().substring(1);
+      const ext = path
+        .extname(req.file.originalname)
+        .toLowerCase()
+        .substring(1);
       if (!allowedExtensions.includes(ext)) {
         throw new Error("La imagen debe tener formato JPG, JPEG, PNG o GIF");
       }
       return true;
     }),
 ];
-
 
 // Definimos las distintas rutas
 router.get("/usuarios", usersController.usuarios);
@@ -105,11 +125,11 @@ router.post(
       });
 
       // Lógica para redirigir o enviar respuesta
-      res.send('Usuario registrado exitosamente');
+      res.send("Usuario registrado exitosamente");
     } catch (error) {
-      console.error('Error al procesar el formulario:', error);
+      console.error("Error al procesar el formulario:", error);
       // Lógica para manejar el error
-      res.status(500).send('Error interno del servidor');
+      res.status(500).send("Error interno del servidor");
     }
   }
 );
@@ -123,7 +143,16 @@ router.put("/editar/:id", upload.single("fotoPerfil"), usersController.update);
 
 // Ruta para el inicio de sesión
 router.get("/login", usersController.login);
-router.post("/login", usersController.iniciarSesion);
+router.post(
+  "/login",
+  [
+    body("email").isEmail().withMessage("Debes proporcionar un email válido"),
+    body("contrasena")
+      .notEmpty()
+      .withMessage("Debes proporcionar la contraseña"),
+  ],
+  usersController.iniciarSesion
+);
 
 // Ruta para cerrar sesión
 router.get("/logout", usersController.cerrarSesion);
