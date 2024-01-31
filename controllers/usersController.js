@@ -1,4 +1,5 @@
 const fs = require("fs");
+const { validationResult } = require("express-validator");
 const path = require("path");
 const userFilePath = path.join(__dirname, "../data/user.json");
 const user = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
@@ -12,21 +13,41 @@ const controlador = {
   register: (req, res) => {
     res.render("users/register");
   },
+  
+  guardarUsuario: (req, res) => {
+    // Validar los resultados de la validación
+    const errors = validationResult(req);
+    
+    if (!errors.isEmpty()) {
+      // Si hay errores, renderizar nuevamente la página de registro con los mensajes de error
+      return res.render("users/register", { errors: errors.array() });
+    }
+
+    // Verificar si se cargó correctamente el archivo
+    if (!req.file) {
+      console.log("No se ha seleccionado una imagen");
+      // Puedes manejar esto según tus necesidades, como redirigir a la página de registro con un mensaje de error.
+      return res.render("users/register", { errors: [{ msg: "Debes seleccionar una imagen" }] });
+    }
+
+    // Si no hay errores y se ha cargado un archivo, continuar con la lógica para guardar el usuario
+    user.push({
+      ...req.body,
+      fotoPerfil: req.file.filename // Usar el nombre de archivo proporcionado por Multer
+    });
+
+    fs.writeFileSync(userFilePath, JSON.stringify(user), "utf-8");
+    res.redirect("/login");
+  },
 
   usuarios: (req, res) => {
     let usuario = user;
-
     if (req.file) {
       console.log("entra");
     }
     res.render("users/admin", { usuario: usuario });
   },
-
-  guardarUsuario: (req, res) => {
-    user.push(req.body);
-    fs.writeFileSync(userFilePath, JSON.stringify(user), "utf-8");
-    res.redirect("/login");
-  },
+  
 
   destroy: (req, res) => {
     const { id } = req.params;
