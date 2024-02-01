@@ -13,7 +13,13 @@ app.use(methodOverride("_method")); //para el PUT y DELETE
 /*para el crud*/
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(expSession({ secret: "SessionSecret" }));
+app.use(
+  expSession({
+    secret: "SessionSecret",
+    resave: false, // Evitará la advertencia relacionada con resave
+    saveUninitialized: false, // Evitará la advertencia relacionada con saveUninitialized
+  })
+);
 
 app.use((req, res, next) => {
   if (req.session.user) {
@@ -25,7 +31,7 @@ app.use((req, res, next) => {
 app.use("/", rutasProductos);
 app.use("/users", rutasUsuarios);
 
-// Solucionando errores27/01/2024
+// Solucionando errores 27/01/2024
 app.get("/partials/header.ejs", (req, res) => {
   res.render("/partials/header.ejs");
 });
