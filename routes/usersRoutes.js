@@ -92,6 +92,14 @@ const validateCreateForms = [
     }),
 ];
 
+const validateLogin = [
+  body("email").isEmail().withMessage("Debes proporcionar un email válido"),
+  body("contrasena")
+    .notEmpty()
+    .withMessage("Debes proporcionar la contraseña"),
+];
+
+
 // Definimos las distintas rutas
 router.get("/usuarios", usersController.usuarios);
 
@@ -145,12 +153,7 @@ router.put("/editar/:id", upload.single("fotoPerfil"), usersController.update);
 router.get("/login", usersController.login);
 router.post(
   "/login",
-  [
-    body("email").isEmail().withMessage("Debes proporcionar un email válido"),
-    body("contrasena")
-      .notEmpty()
-      .withMessage("Debes proporcionar la contraseña"),
-  ],
+  validateLogin,
   usersController.iniciarSesion
 );
 
