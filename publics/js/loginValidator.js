@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (errores.length > 0) {
       erroresList.innerHTML = ""; // Limpiar errores anteriores
       for (let error of errores) {
-        erroresList.innerHTML += `<li class="error-card">${error}</li>`;
+        erroresList.innerHTML += `<div class="error-card">${error}</div>`;
       }
     } else {
       erroresList.innerHTML = ""; // Limpiar errores anteriores si no hay errores nuevos
