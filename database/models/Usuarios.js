@@ -27,6 +27,9 @@ module.exports = (sequelize, dataTypes) => {
     url_foto_perfil: {
       type: dataTypes.STRING,
     },
+    contrasenia: {
+      type: dataTypes.STRING,
+    },
   };
   let config = {
     tableName: "usuarios",

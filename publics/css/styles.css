@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
 }
 
 body {
@@ -146,6 +147,25 @@ a {
   color: burlywood;
   text-decoration: none;
 }
+
+/*ESTILO MENU HEADER - SESSION*/
+
+#menu>li>ul{
+  position: absolute;
+  display: none;
+}
+#menu>li:hover>ul {
+  display:block;
+}
+
+#menu {
+ color: #a1ccec;
+}
+#menu:hover {
+  color: #DEB887;
+  
+}
+
 
 /*ESTILOS DE BUSCADORES TIPO CARRUSEL*/
 #buscador__ligas,
