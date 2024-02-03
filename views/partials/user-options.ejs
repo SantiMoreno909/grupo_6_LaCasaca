@@ -1,0 +1,21 @@
+<div>
+    <% if (user !=null) { %>
+        <ul id="menu">
+            <li>
+                <p>
+                    <%= user.nombre %>
+                        <%= user.apellido %>
+                </p>
+                <ul>
+                    <li>
+                        <form  method="get" action="/users/logout">
+                            <input type="submit" value="Cerrar Session"></input>
+                        </form>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <% } else { %>
+            <a href="/login"><i class="fas fa-users"></i><br>Mi cuenta</a>
+            <% } %>
+</div>

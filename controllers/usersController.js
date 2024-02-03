@@ -8,6 +8,7 @@ const { Usuarios } = require("../database/models");
 
 const controlador = {
   login: (req, res) => {
+    console.log("entra login");
     res.render("users/login");
   },
 
@@ -121,11 +122,11 @@ const controlador = {
       }
 
       const { email, contrasena } = req.body;
-
+      console.log("Iniciando");
       // Buscar al usuario en la base de datos utilizando Sequelize
       const usuario = await Usuarios.findOne({ where: { email } });
 
-      if (usuario && bcrypt.compareSync(contrasena, usuario.contrasena)) {
+      if (usuario && bcrypt.compareSync(contrasena, bcrypt.hashSync(usuario.contrasenia))){
         req.session.user = usuario;
         res.redirect("/");
       } else {

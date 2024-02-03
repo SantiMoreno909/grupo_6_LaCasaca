@@ -55,7 +55,7 @@ const validateCreateForms = [
 
   body("genero").bail().notEmpty().withMessage("Debes completar el género"),
 
-  body("contrasena")
+  body("contrasenia")
     .bail()
     .notEmpty()
     .withMessage("Debes completar la contraseña")
