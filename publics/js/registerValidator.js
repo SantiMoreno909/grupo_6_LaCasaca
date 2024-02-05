@@ -7,7 +7,7 @@ window.addEventListener("", () => {
   let genero = document.getElementById("genero");
   let fotoPerfil = document.getElementById("fotoPerfil");
   let contrasenia = document.getElementById("contrasenia");
-  let repContrasenia = document.getElementById("repetir_contrasena");
+  let repContrasenia = document.getElementById("confirmar_contrasenia");
   let terminos = document.getElementById("aceptar_terminos");
   let newsletter = document.getElementById("newsletter");
 
