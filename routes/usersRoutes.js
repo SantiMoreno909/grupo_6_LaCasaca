@@ -69,7 +69,7 @@ const validateCreateForms = [
       "La contraseña debe tener letras mayúsculas, minúsculas, un número y un carácter especial"
     ),
 
-  body("repetir_contrasena")
+  body("confirmar_contrasenia")
     .bail()
     .notEmpty()
     .withMessage("Debes completar la contraseña repetida"),
@@ -131,7 +131,7 @@ router.post(
         genero: req.body.genero,
         url_foto_perfil: req.file.filename, // Asumiendo que el nombre de la imagen se guarda en el modelo
         contrasenia: req.body.contrasena,
-        confirmar_contrasenia: req.body.repetir_contrasena,
+        confirmar_contrasenia: req.body.confirmar_contrasenia,
         tyc: req.body.aceptar_terminos,
         novedades: req.body.newsletter
       });

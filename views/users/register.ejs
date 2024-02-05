@@ -28,7 +28,7 @@
         <div class="right-side">
           <h2>Ficha de ingreso a "La Casaca":</h2>
           <% if (typeof errors !=='undefined' ) { %>
-            <ul>
+            <ul style="background-color: red;">
               <% errors.forEach(error=> { %>
                 <li>
                   <%= error.msg %>
@@ -92,9 +92,9 @@
                     <input class="didi" type="password" id="contrasena" name="contrasena" /><br />
                   </div>
                   <div class="formulario_label">
-                    <label class="titulo" for="repetir_contrasena">Repetir Contraseña:</label>
+                    <label class="titulo" for="confirmar_contrasenia">Repetir Contraseña:</label>
 
-                    <input class="didi" type="password" id="repetir_contrasena" name="repetir_contrasena" /><br />
+                    <input class="didi" type="password" id="confirmar_contrasenia" name="confirmar_contrasenia" /><br />
                   </div>
 
                   <label>

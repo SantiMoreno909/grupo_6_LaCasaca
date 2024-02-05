@@ -82,7 +82,7 @@ const controlador = {
       type,
       contrasena,
       fotoPerfil,
-      repetir_contrasena,
+      confirmar_contrasenia,
       aceptar_terminos,
       newsletter,
     } = req.body;
@@ -102,7 +102,7 @@ const controlador = {
     user[index].genero = genero;
     user[index].type = type;
     user[index].contrasena = contrasena;
-    user[index].repetir_contrasena = repetir_contrasena;
+    user[index].confirmar_contrasenia = confirmar_contrasenia;
     user[index].fotoPerfil = fotoPerfil;
     user[index].aceptar_terminos = aceptar_terminos;
     user[index].newsletter = newsletter;
