@@ -120,7 +120,7 @@ router.post(
         // Si hay errores, renderizar nuevamente la página de registro con los mensajes de error
         return res.render("users/register", { errors: errors.array() });
       }
-
+      console.log("datos de body", req.body);
       // Si no hay errores y se ha cargado un archivo, continuar con la lógica para guardar el usuario
       await Usuarios.create({
         nombre: req.body.Nombre,
@@ -130,6 +130,10 @@ router.post(
         fec_nac: req.body.nacimiento,
         genero: req.body.genero,
         url_foto_perfil: req.file.filename, // Asumiendo que el nombre de la imagen se guarda en el modelo
+        contrasenia: req.body.contrasena,
+        confirmar_contrasenia: req.body.repetir_contrasena,
+        tyc: req.body.aceptar_terminos,
+        novedades: req.body.newsletter
       });
 
       // Lógica para redirigir o enviar respuesta

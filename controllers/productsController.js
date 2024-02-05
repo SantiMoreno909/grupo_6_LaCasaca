@@ -63,11 +63,13 @@ const controlador = {
 
   guardarProducto: async function (req, res) {
     try {
+      console.log("campos entra try ");
       // Validar los resultados de la validación
       const errors = validationResult(req);
 
       if (!errors.isEmpty()) {
         // Si hay errores, obtener equipos y marcas y renderizar nuevamente el formulario con los errores
+        console.log("entra if producto");
         const equipos = await db.Equipos.findAll();
         const marcas = await db.Marcas.findAll();
         return res.render("products/productCreate", {
@@ -75,12 +77,16 @@ const controlador = {
           marcas: marcas,
           errors: errors.array(),
         });
+      }else{
+        console.log("entra el producto guardar");
       }
 
       // Si no hay errores, continuar con la lógica para guardar el producto
       db.Productos.create({
         /* Campos del producto */
+        
       });
+      
       res.redirect("/productos");
     } catch (error) {
       console.error("Error al guardar el producto:", error);
