@@ -46,7 +46,20 @@ const validateCreateForms = [
       return true;
     }),
 
-  body("tel").bail().notEmpty().withMessage("Debes completar el teléfono"),
+  body("tel")
+    .bail()
+    .notEmpty()
+    .withMessage("Debes completar el teléfono")
+    .custom(async (value, { req }) => {
+      // Se verifica si el número de teléfono ya está registrado
+      const existingUser = await Usuarios.findOne({
+        where: { telefono: value },
+      });
+      if (existingUser) {
+        throw new Error("El número de teléfono ya está registrado");
+      }
+      return true;
+    }),
 
   body("nacimiento")
     .bail()
@@ -94,11 +107,8 @@ const validateCreateForms = [
 
 const validateLogin = [
   body("email").isEmail().withMessage("Debes proporcionar un email válido"),
-  body("contrasena")
-    .notEmpty()
-    .withMessage("Debes proporcionar la contraseña"),
+  body("contrasena").notEmpty().withMessage("Debes proporcionar la contraseña"),
 ];
-
 
 // Definimos las distintas rutas
 router.get("/usuarios", usersController.usuarios);
@@ -133,7 +143,7 @@ router.post(
         contrasenia: req.body.contrasena,
         confirmar_contrasenia: req.body.confirmar_contrasenia,
         tyc: req.body.aceptar_terminos,
-        novedades: req.body.newsletter
+        novedades: req.body.newsletter,
       });
 
       // Lógica para redirigir o enviar respuesta
@@ -155,11 +165,7 @@ router.put("/editar/:id", upload.single("fotoPerfil"), usersController.update);
 
 // Ruta para el inicio de sesión
 router.get("/login", usersController.login);
-router.post(
-  "/login",
-  validateLogin,
-  usersController.iniciarSesion
-);
+router.post("/login", validateLogin, usersController.iniciarSesion);
 
 // Ruta para cerrar sesión
 router.get("/logout", usersController.cerrarSesion);
