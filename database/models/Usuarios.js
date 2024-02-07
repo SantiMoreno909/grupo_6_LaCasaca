@@ -31,6 +31,9 @@ module.exports = (sequelize, dataTypes) => {
     contrasenia: {
       type: dataTypes.STRING,
     },
+    confirmar_contrasenia: {
+      type: dataTypes.STRING,
+    },
   };
   let config = {
     tableName: "usuarios",

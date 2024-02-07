@@ -36,6 +36,16 @@
                 <% }); %>
             </ul>
             <% } %>
+
+            <% if (typeof createOk !=='undefined' ) { %>
+              <ul style="background-color: rgb(0, 255, 42);" id="createok">
+                <% createOk.forEach(create=> { %>
+                  <li >
+                    <%= create.msg %>
+                  </li>
+                  <% }); %>
+              </ul>
+              <% } %>
               <div class="errores"></div>
               <div class="card-input">
                 <label class="titulo" for="usuario">Nombre:</label>
