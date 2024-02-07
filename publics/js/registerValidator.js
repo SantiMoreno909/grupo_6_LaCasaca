@@ -68,3 +68,13 @@ window.addEventListener("", () => {
     }
   });
 });
+
+window.onload = function () {
+  setInterval(() => {
+    let registrado = document.getElementById("createok")
+    if(registrado) {
+      window.location= "/login";
+    }
+
+  }, 2000);
+};

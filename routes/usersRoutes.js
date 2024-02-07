@@ -146,8 +146,11 @@ router.post(
         novedades: req.body.newsletter,
       });
 
+      return res.render("users/register", {
+        createOk: [{ msg: "Usuario registrado" }],
+      });
       // Lógica para redirigir o enviar respuesta
-      res.send("Usuario registrado exitosamente");
+      //res.send("Usuario registrado exitosamente");
     } catch (error) {
       console.error("Error al procesar el formulario:", error);
       // Lógica para manejar el error
