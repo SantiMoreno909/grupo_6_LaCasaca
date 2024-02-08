@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let erroresList = document.querySelector(".errores");
 
   form.addEventListener("submit", (e) => {
-    e.preventDefault();
+    
     let errores = [];
     let auxiliar = "";
 
@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Mostrar errores en la lista de errores
     if (errores.length > 0) {
+      e.preventDefault();
       erroresList.innerHTML = ""; // Limpiar errores anteriores
       for (let error of errores) {
         auxiliar += `<div class="error-card">${error}</div>`;

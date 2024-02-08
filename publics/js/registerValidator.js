@@ -8,7 +8,7 @@ window.addEventListener("DOMContentLoaded", () => {
   let genero = document.getElementById("genero");
   let fotoPerfil = document.getElementById("fotoPerfil");
   let contrasenia = document.getElementById("contrasenia");
-  let repContrasenia = document.getElementById("repetir_contrasena");
+  let repContrasenia = document.getElementById("confirmar_contrasenia");
   let terminos = document.getElementById("aceptar_terminos");
   let newsletter = document.getElementById("newsletter");
   let errores = [];
@@ -66,3 +66,13 @@ window.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".errores").innerHTML = auxiliar;
   });
 });
+
+window.onload = function () {
+  setInterval(() => {
+    let registrado = document.getElementById("createok")
+    if(registrado) {
+      window.location= "/login";
+    }
+
+  }, 2000);
+};
