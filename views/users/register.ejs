@@ -37,7 +37,6 @@
         <div class="right-side">
           <h2>Ficha de ingreso a "La Casaca":</h2>
           <% if (typeof errors !=='undefined' ) { %>
-<<<<<<< HEAD
           <ul>
             <% errors.forEach(error=> { %>
             <li><%= error.msg %></li>
@@ -108,31 +107,6 @@
                   id="contrasena"
                   name="contrasena"
                 /><br />
-=======
-            <ul style="background-color: red;">
-              <% errors.forEach(error=> { %>
-                <li>
-                  <%= error.msg %>
-                </li>
-                <% }); %>
-            </ul>
-            <% } %>
-
-            <% if (typeof createOk !=='undefined' ) { %>
-              <ul style="background-color: rgb(0, 255, 42);" id="createok">
-                <% createOk.forEach(create=> { %>
-                  <li >
-                    <%= create.msg %>
-                  </li>
-                  <% }); %>
-              </ul>
-              <% } %>
-              <div class="errores"></div>
-              <div class="card-input">
-                <label class="titulo" for="usuario">Nombre:</label>
-                <br />
-                <input class="didi" type="text" id="nombre" name="Nombre" />
->>>>>>> 440e962ce6152a7857b5fab1fff9e7300cad1eaa
               </div>
               <div class="formulario_label">
                 <label class="titulo" for="repetir_contrasena"
@@ -161,58 +135,9 @@
               ><br />
               <a href="#">Politica de privacidad de datos</a>
 
-<<<<<<< HEAD
               <button type="submit">Enviar</button>
             </div>
           </div>
-=======
-                  <input class="didi" type="date" id="nacimiento" name="nacimiento" /><br />
-                </div>
-                <div style="display: none">
-                  <input type="text" id="type" name="type" value="Customer" />
-                </div>
-                <div class="formulario_label">
-                  <label class="titulo" for="genero">Genero:</label>
-
-                  <select class="didi" name="genero" id="genero">
-                    <option>Masculino</option>
-
-                    <option>Femenino</option>
-
-                    <option>Otro</option>
-                  </select>
-                </div>
-              </div>
-              <div class="perfil">
-                <label for="perfil">Foto de perfil</label>
-                <input type="file" name="fotoPerfil" id="fotoPerfil" />
-              </div>
-
-              <div class="contenedor_ing">
-                <div class="formulario">
-                  <div class="formulario_label">
-                    <label class="titulo" for="contrasena">Contraseña:</label>
-
-                    <input class="didi" type="password" id="contrasena" name="contrasena" /><br />
-                  </div>
-                  <div class="formulario_label">
-                    <label class="titulo" for="confirmar_contrasenia">Repetir Contraseña:</label>
-
-                    <input class="didi" type="password" id="confirmar_contrasenia" name="confirmar_contrasenia" /><br />
-                  </div>
-
-                  <label>
-                    <input type="checkbox" name="aceptar_terminos" id="aceptar_terminos" />
-                    Acepto los términos y condiciones </label><br />
-                  <label>
-                    <input type="checkbox" name="newsletter" id="newsletter" />
-                    Unirme a las novedades </label><br />
-                  <a href="#">Politica de privacidad de datos</a>
-
-                  <button type="submit">Enviar</button>
-                </div>
-              </div>
->>>>>>> 440e962ce6152a7857b5fab1fff9e7300cad1eaa
         </div>
       </form>
     </div>

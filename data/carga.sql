@@ -1,0 +1,40 @@
+INSERT INTO `marcas` (`id`, `nombre`) VALUES ('0', 'Nike');
+INSERT INTO `marcas` (`id`, `nombre`) VALUES ('1', 'Adidas');
+INSERT INTO `marcas` (`id`, `nombre`) VALUES ('2', 'Puma');
+INSERT INTO `marcas` (`id`, `nombre`) VALUES ('3', 'Unbro');
+INSERT INTO `marcas` (`id`, `nombre`) VALUES ('4', 'Kappa');
+INSERT INTO `marcas` (`id`, `nombre`) VALUES ('5', 'Givova');
+INSERT INTO `marcas` (`id`, `nombre`) VALUES ('6', 'Errea');
+INSERT INTO `marcas` (`id`, `nombre`) VALUES ('7', 'Athix');
+INSERT INTO `marcas` (`id`, `nombre`) VALUES ('8', 'KDI');
+INSERT INTO `marcas` (`id`, `nombre`) VALUES ('9', 'Diadora');
+
+INSERT INTO `ligas` (`id`, `nombre`, `pais`) VALUES ('0', 'Liga Argentina de Futbol', 'Argentina');
+
+INSERT INTO `equipos` (`id`, `nombre`, `ligaId`, `marcaId`) VALUES ('0', 'San Lorenzo', '0', '0');
+INSERT INTO `equipos` (`id`, `nombre`, `ligaId`, `marcaId`) VALUES ('1', 'River Plate', '0', '1');
+INSERT INTO `equipos` (`id`, `nombre`, `ligaId`, `marcaId`) VALUES ('2', 'Boca Junior', '0', '1');
+INSERT INTO `equipos` (`id`, `nombre`, `ligaId`, `marcaId`) VALUES ('3', 'Independiente', '0', '2');
+INSERT INTO `equipos` (`id`, `nombre`, `ligaId`, `marcaId`) VALUES ('4', 'Rosario Central', '0', '3');
+INSERT INTO `equipos` (`id`, `nombre`, `ligaId`, `marcaId`) VALUES ('5', 'Atlético Tucumán', '0', '3');
+INSERT INTO `equipos` (`id`, `nombre`, `ligaId`, `marcaId`) VALUES ('6', 'Huracan', '0', '4');
+INSERT INTO `equipos` (`id`, `nombre`, `ligaId`, `marcaId`) VALUES ('7', 'Racing', '0', '4');
+INSERT INTO `equipos` (`id`, `nombre`, `ligaId`, `marcaId`) VALUES ('8', 'Tigre', '0', '4');
+INSERT INTO `equipos` (`id`, `nombre`, `ligaId`, `marcaId`) VALUES ('9', 'Newell’s', '0', '5');
+INSERT INTO `equipos` (`id`, `nombre`, `ligaId`, `marcaId`) VALUES ('10', 'Belgrano', '0', '6');
+INSERT INTO `equipos` (`id`, `nombre`, `ligaId`, `marcaId`) VALUES ('11', 'Defensa y Justicia', '0', '7');
+INSERT INTO `equipos` (`id`, `nombre`, `ligaId`, `marcaId`) VALUES ('12', 'Colon', '0', '8');
+INSERT INTO `equipos` (`id`, `nombre`, `ligaId`, `marcaId`) VALUES ('13', 'Velez Sarfield', '0', '9');
+
+INSERT INTO `productos` (`id`, `nombre`, `precio`, `talle`, `descripcion`, `equipoId`, `ligaId`, `stock`, `marcaId`, `url_foto`) VALUES ('0', 'CAMISETA TITULAR AUTHENTIC RIVER PLATE 23/24', '124999', 'S', 'Esta nueva camiseta oficial de River Plate adidas muestra elegancia en su diseño con una banda roja que le cruza simulando aquellos uniformes de los inicios del Siglo XX.', '1', '0', '10', '1', '/img/camisetas/RiverPlate23-24.png');
+INSERT INTO `productos` (`id`, `nombre`, `precio`, `talle`, `descripcion`, `equipoId`, `ligaId`, `stock`, `marcaId`, `url_foto`) VALUES ('1', 'CAMISETA TITULAR AUTHENTIC RIVER PLATE 23/24', '124999', 'M', 'Esta nueva camiseta oficial de River Plate adidas muestra elegancia en su diseño con una banda roja que le cruza simulando aquellos uniformes de los inicios del Siglo XX.', '1', '0', '10', '1', '/img/camisetas/RiverPlate23-24.png');
+INSERT INTO `productos` (`id`, `nombre`, `precio`, `talle`, `descripcion`, `equipoId`, `ligaId`, `stock`, `marcaId`, `url_foto`) VALUES ('2', 'CAMISETA TITULAR AUTHENTIC RIVER PLATE 23/24', '124999', 'L', 'Esta nueva camiseta oficial de River Plate adidas muestra elegancia en su diseño con una banda roja que le cruza simulando aquellos uniformes de los inicios del Siglo XX.', '1', '0', '10', '1', '/img/camisetas/RiverPlate23-24.png');
+INSERT INTO `productos` (`id`, `nombre`, `precio`, `talle`, `descripcion`, `equipoId`, `ligaId`, `stock`, `marcaId`, `url_foto`) VALUES ('3', 'CAMISETA TITULAR AUTHENTIC RIVER PLATE 23/24', '124999', 'XL', 'Esta nueva camiseta oficial de River Plate adidas muestra elegancia en su diseño con una banda roja que le cruza simulando aquellos uniformes de los inicios del Siglo XX.', '1', '0', '10', '1', '/img/camisetas/RiverPlate23-24.png');
+INSERT INTO `productos` (`id`, `nombre`, `precio`, `talle`, `descripcion`, `equipoId`, `ligaId`, `stock`, `marcaId`, `url_foto`) VALUES ('4', 'CAMISETA NIKE TITULAR SAN LORENZO 2023', '59999', 'S', 'Presentamos la nueva Camiseta Nike Titular San Lorenzo para la temporada 2023. Llevá tu pasión por el Ciclón a todas partes con este nuevo modelo.', '0', '0', '10', '0', '/img/camisetas/SanLorenzo23.webp');
+INSERT INTO `productos` (`id`, `nombre`, `precio`, `talle`, `descripcion`, `equipoId`, `ligaId`, `stock`, `marcaId`, `url_foto`) VALUES ('5', 'CAMISETA NIKE TITULAR SAN LORENZO 2023', '59999', 'M', 'Presentamos la nueva Camiseta Nike Titular San Lorenzo para la temporada 2023. Llevá tu pasión por el Ciclón a todas partes con este nuevo modelo.', '0', '0', '10', '0', '/img/camisetas/SanLorenzo23.webp');
+INSERT INTO `productos` (`id`, `nombre`, `precio`, `talle`, `descripcion`, `equipoId`, `ligaId`, `stock`, `marcaId`, `url_foto`) VALUES ('6', 'CAMISETA NIKE TITULAR SAN LORENZO 2023', '59999', 'L', 'Presentamos la nueva Camiseta Nike Titular San Lorenzo para la temporada 2023. Llevá tu pasión por el Ciclón a todas partes con este nuevo modelo.', '0', '0', '10', '0', '/img/camisetas/SanLorenzo23.webp');
+INSERT INTO `productos` (`id`, `nombre`, `precio`, `talle`, `descripcion`, `equipoId`, `ligaId`, `stock`, `marcaId`, `url_foto`) VALUES ('7', 'CAMISETA NIKE TITULAR SAN LORENZO 2023', '59999', 'XL', 'Presentamos la nueva Camiseta Nike Titular San Lorenzo para la temporada 2023. Llevá tu pasión por el Ciclón a todas partes con este nuevo modelo.', '0', '0', '10', '0', '/img/camisetas/SanLorenzo23.webp');
+INSERT INTO `productos` (`id`, `nombre`, `precio`, `talle`, `descripcion`, `equipoId`, `ligaId`, `stock`, `marcaId`, `url_foto`) VALUES ('8', 'CAMISETA TITULAR BOCA JUNIORS 23/24', '74999', 'S', 'Esta nueva camiseta titular de Boca Juniors adidas une la pasión y el barrio con diferentes tonos que logran un efecto visual y una prominente franja central que resaltan sus colores, el azul y oro.', '2', '0', '10', '1', '/img/camisetas/Boca23.webp');
+INSERT INTO `productos` (`id`, `nombre`, `precio`, `talle`, `descripcion`, `equipoId`, `ligaId`, `stock`, `marcaId`, `url_foto`) VALUES ('9', 'CAMISETA TITULAR BOCA JUNIORS 23/24', '74999', 'M', 'Esta nueva camiseta titular de Boca Juniors adidas une la pasión y el barrio con diferentes tonos que logran un efecto visual y una prominente franja central que resaltan sus colores, el azul y oro.', '2', '0', '10', '1', '/img/camisetas/Boca23.webp');
+INSERT INTO `productos` (`id`, `nombre`, `precio`, `talle`, `descripcion`, `equipoId`, `ligaId`, `stock`, `marcaId`, `url_foto`) VALUES ('10', 'CAMISETA TITULAR BOCA JUNIORS 23/24', '74999', 'L', 'Esta nueva camiseta titular de Boca Juniors adidas une la pasión y el barrio con diferentes tonos que logran un efecto visual y una prominente franja central que resaltan sus colores, el azul y oro.', '2', '0', '10', '1', '/img/camisetas/Boca23.webp');
+INSERT INTO `productos` (`id`, `nombre`, `precio`, `talle`, `descripcion`, `equipoId`, `ligaId`, `stock`, `marcaId`, `url_foto`) VALUES ('11', 'CAMISETA TITULAR BOCA JUNIORS 23/24', '74999', 'XL', 'Esta nueva camiseta titular de Boca Juniors adidas une la pasión y el barrio con diferentes tonos que logran un efecto visual y una prominente franja central que resaltan sus colores, el azul y oro.', '2', '0', '10', '1', '/img/camisetas/Boca23.webp');
