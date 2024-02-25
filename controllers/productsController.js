@@ -72,21 +72,29 @@ const controlador = {
         console.log("entra if producto");
         const equipos = await db.Equipos.findAll();
         const marcas = await db.Marcas.findAll();
-        return res.render("products/productCreate", {
-          equipos: equipos,
-          marcas: marcas,
-          errors: errors.array(),
-        });
+        // return res.render("products/productCreate", {
+        //   equipos: equipos,
+        //   marcas: marcas,
+        //   errors: errors.array(),
+        // });
       }else{
         console.log("entra el producto guardar");
       }
 
       // Si no hay errores, continuar con la lógica para guardar el producto
-      db.Productos.create({
+      const saveProd= await db.Productos.create({
         /* Campos del producto */
+          nombre: req.body.name,
+          precio: req.body.precio,
+          talle: req.body.talle,
+          descripcion: req.body.description,
+          equipoId: req.body.team,
+          ligaId: req.body.liga,
+          stock: req.body.stock,
+          marcaId: req.body.marca,
         
       });
-      
+      saveProd.save();
       res.redirect("/productos");
     } catch (error) {
       console.error("Error al guardar el producto:", error);
