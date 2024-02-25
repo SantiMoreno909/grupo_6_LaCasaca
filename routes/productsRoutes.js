@@ -3,6 +3,7 @@ const router = express.Router();
 const path = require("path");
 const { body, validationResult } = require("express-validator");
 const productsController = require("../controllers/productsController");
+const productsControllerApi = require("../controllers/api/productsControllerApi");
 const multer = require("multer");
 
 const storage = multer.diskStorage({
@@ -29,8 +30,8 @@ const validateCreateForms = [
   body("description")
     .notEmpty()
     .withMessage("Debes completar la descripción")
-    .isLength({ min: 20 })
-    .withMessage("La descripción debe tener al menos 20 caracteres"),
+    .isLength({ min: 8 })
+    .withMessage("La descripción debe tener al menos 8 caracteres"),
 
   body("team").notEmpty().withMessage("Debes seleccionar un equipo"),
 
@@ -85,4 +86,6 @@ router.delete("/delete/:id", productsController.destroy);
 //Agrego la ruta para editar los productos
 router.get("/:clubNombre", productsController.clubes);
 
+router.get("/api/productos", productsControllerApi.productos);
+router.get("/api/productos/detail/:id", productsControllerApi.detail);
 module.exports = router;

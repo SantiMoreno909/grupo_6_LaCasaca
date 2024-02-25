@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (nombre.value.length < 5) {
         errores.push("El nombre debe tener al menos 5 caracteres");
       }
-      if (descripcion.value.length < 20) {
-        errores.push("La descripción debe tener al menos 20 caracteres");
+      if (descripcion.value.length < 8) {
+        errores.push("La descripción debe tener al menos 8 caracteres");
       }
       if (
         !foto.value.toLowerCase().includes(".jpg") &&
