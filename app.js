@@ -4,10 +4,12 @@ const app = express();
 const methodOverride = require("method-override");
 const expSession = require("express-session");
 const bcrypt = require("bcryptjs");
+const cors = require("cors");
 
 let rutasProductos = require("./routes/productsRoutes.js");
 let rutasUsuarios = require("./routes/usersRoutes.js");
 
+app.use(cors());
 app.use("", express.static(`${__dirname}/publics`));
 app.use(methodOverride("_method")); //para el PUT y DELETE
 /*para el crud*/

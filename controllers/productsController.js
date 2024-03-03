@@ -47,7 +47,6 @@ const controlador = {
       raw: true,
       nest: true,
     }).then(function (productos) {
-      console.log("entra listado");
       res.render("products/productList", { productos: productos });
     });
   },
@@ -63,13 +62,12 @@ const controlador = {
 
   guardarProducto: async function (req, res) {
     try {
-      console.log("campos entra try ");
       // Validar los resultados de la validación
       const errors = validationResult(req);
 
       if (!errors.isEmpty()) {
         // Si hay errores, obtener equipos y marcas y renderizar nuevamente el formulario con los errores
-        console.log("entra if producto");
+
         const equipos = await db.Equipos.findAll();
         const marcas = await db.Marcas.findAll();
         // return res.render("products/productCreate", {
