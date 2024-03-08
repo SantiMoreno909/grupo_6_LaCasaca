@@ -4,6 +4,7 @@ const path = require("path");
 const { body, validationResult } = require("express-validator");
 const { Usuarios } = require("../database/models");
 const usersController = require("../controllers/usersController");
+const usersControllerApi = require("../controllers/api/usersControllerApi");
 const multer = require("multer");
 
 const storage = multer.diskStorage({
@@ -172,5 +173,9 @@ router.post("/login", validateLogin, usersController.iniciarSesion);
 
 // Ruta para cerrar sesión
 router.get("/logout", usersController.cerrarSesion);
+
+// Rutas de API
+router.get("/api/usuarios", usersControllerApi.usuarios);
+router.get("/api/usuarios/:id", usersControllerApi.detalleUsuarios);
 
 module.exports = router;
