@@ -6,12 +6,7 @@ const usersControllerApi = {
       raw: true,
       nest: true,
     }).then(function (usuarios) {
-      let countByCategory = {};
       let users = usuarios.map((usuarios) => {
-        //considera cetegory a los equipos
-        countByCategory[usuarios.nombre] =
-          (countByCategory[usuarios.nombre] || 0) + 1;
-
         return {
           id: usuarios.id,
           name: usuarios.nombre + usuarios.apellido,
