@@ -19,9 +19,8 @@ const usersControllerApi = {
         };
       });
       const response = {
-        count: usuarios.length,
-        countByCategory: countByCategory,
-        productos: users,
+        CONTADOR: usuarios.length,
+        USUARIOS: users,
       };
       res.json(response);
     });
