@@ -1,28 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/register.css" />
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/footer.css" />
-    <link rel="stylesheet" href="/css/admin.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
-    />
-    <title>Administracion</title>
-    <link rel="shortcut icon" href="/img/logo 1.png" type="image/x-icon" />
-  </head>
 
-  <body>
-    <%- include('../partials/header.ejs')%>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/register.css" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/admin.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+  <title>Administracion</title>
+  <link rel="shortcut icon" href="/img/logo 1.png" type="image/x-icon" />
+</head>
+
+<body>
+  <%- include('../partials/header.ejs')%>
     <main>
       <button class="addProducto"><a href="/crearProducto">Agregar Producto</a></button>
       <div class="initial">
@@ -46,35 +41,49 @@
           </thead>
           <tbody>
             <% for (let i=0; i < productos.length; i++) { %>
-            <tr>
-              <td><%= productos[i].nombre %></td>
-              <td><%= productos[i].descripcion %></td>
-              <td>cat</td>
-              <td><%= productos[i].ligaId %></td>
-              <td><%= productos[i].equipoId %></td>
-              <td>$<%= productos[i].precio %></td>
-              <td><%= productos[i].talle %></td>
-              <td><%= productos[i].stock %></td> 
-              <td class="acciones">
-                
-                <div class="formDelete">
-                  <form action="/delete/<%= productos[i].id %>?_method=DELETE" method="POST">
-                    <button type="submit"><i class="fas fa-trash-alt"></i></button>
-                  </form>
-                  
-                </div>
-                <a href="/editar/<%= productos[i].id %>" class="formSave">
-                  <button><i class="far fa-edit"></i></button>
-                </a>
-              </td>
-            </tr>
-            <% } %>
+              <tr>
+                <td>
+                  <%= productos[i].nombre %>
+                </td>
+                <td>
+                  <%= productos[i].descripcion %>
+                </td>
+                <td>cat</td>
+                <td>
+                  <%= productos[i].ligaId %>
+                </td>
+                <td>
+                  <%= productos[i].equipoId %>
+                </td>
+                <td>$<%= productos[i].precio %>
+                </td>
+                <td>
+                  <%= productos[i].talle %>
+                </td>
+                <td>
+                  <%= productos[i].stock %>
+                </td>
+                <td class="acciones">
+
+                  <div class="formDelete">
+                    <form action="/delete/<%= productos[i].id %>?_method=DELETE" method="POST">
+                      <button type="submit"><i class="fas fa-trash-alt"></i></button>
+                    </form>
+
+                  </div>
+                  <a href="/editar/<%= productos[i].id %>" class="formSave">
+                    <button><i class="far fa-edit"></i></button>
+                  </a>
+                </td>
+              </tr>
+              <% } %>
           </tbody>
         </table>
       </div>
     </main>
     <br />
-  </body>
+</body>
 
-  <%- include('../partials/footer.ejs')%>
+<%- include('../partials/footer.ejs')%>
+
 </html>

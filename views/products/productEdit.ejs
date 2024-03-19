@@ -20,7 +20,7 @@
 <body>
     <%- include('../partials/header.ejs')%>
         <main>
-            <form action="/editar/<%= productos.id %>?_method=PUT" method="POST" >
+            <form action="/editar/<%= productos.id %>?_method=PUT" method="POST">
                 <div class="initial">
                     <h3>Edición de producto</h3>
                 </div>
@@ -28,83 +28,91 @@
                     <div>
                         <div>
                             <label for="">Producto</label>
-                            <input type="text" placeholder="Nombre del producto" name="name" id="name" value="<%= productos.nombre %>">
+                            <input type="text" placeholder="Nombre del producto" name="name" id="name"
+                                value="<%= productos.nombre %>">
                         </div>
                         <div>
                             <label for="">Precio</label>
-                            <input type="text" placeholder="Precio" name="precio" id="precio" value="<%= productos.precio %>">
+                            <input type="text" placeholder="Precio" name="precio" id="precio"
+                                value="<%= productos.precio %>">
                         </div>
                         <div>
                             <label for="">Equipo</label>
-                            <select name="team" id="team" >
+                            <select name="team" id="team">
                                 <!-- <option value="" <%= productos.equipoId  === '' ? 'selected' : '' %>>Ninguno</option>
                                 <option value="boca" <%= productos.equipoId  === 1 ? 'selected' : '' %>>Boca Junior</option>
                                 <option value="river" <%= productos.equipoId  === 2 ? 'selected' : '' %>>River</option>
                                 <option value="estudiantes" <%= productos.equipoId  === 3 ? 'selected' : '' %>>Estudiantes</option>
                                 -->
                                 <% for(let i=0; i< equipos.length; i++) { %>
-                                    <% if(equipos[i].id == productos.equipoId){ %>
+                                    <% if(equipos[i].id==productos.equipoId){ %>
                                         <option value="<%= equipos[i].id %>" selected>
                                             <%= equipos[i].nombre %>
                                         </option>
-                                    <% } else { %>
-                                        <option value="<%= equipos[i].id %>">
-                                            <%= equipos[i].nombre %>
-                                        </option>
-                                    <% } %>
-                                <% } %> 
+                                        <% } else { %>
+                                            <option value="<%= equipos[i].id %>">
+                                                <%= equipos[i].nombre %>
+                                            </option>
+                                            <% } %>
+                                                <% } %>
                             </select>
                         </div>
                         <div>
                             <label for="">Talle</label>
                             <select name="talle" id="talle">
-                                <option value="s" <%= productos.talle === 's' ? 'selected' : '' %> >S</option>
-                                <option value="m" <%= productos.talle === 'm' ? 'selected' : '' %>>M</option>
-                                <option value="l" <%= productos.talle === 'l' ? 'selected' : '' %>>L</option>
-                                <option value="xl" <%= productos.talle === 'xl' ? 'selected' : '' %>>XL</option>
-                                <option value="xxl" <%= productos.talle === 'xxl' ? 'selected' : '' %>>XXL</option>
+                                <option value="s" <%=productos.talle==='s' ? 'selected' : '' %> >S</option>
+                                <option value="m" <%=productos.talle==='m' ? 'selected' : '' %>>M</option>
+                                <option value="l" <%=productos.talle==='l' ? 'selected' : '' %>>L</option>
+                                <option value="xl" <%=productos.talle==='xl' ? 'selected' : '' %>>XL</option>
+                                <option value="xxl" <%=productos.talle==='xxl' ? 'selected' : '' %>>XXL</option>
                             </select>
                         </div>
                         <div class="textArea">
                             <label for="">Descripción</label>
-                            <input type="textarea" name ="description" id="description" value="<%= productos.descripcion %>">
+                            <input type="textarea" name="description" id="description"
+                                value="<%= productos.descripcion %>">
                         </div>
                         <div>
                             <label for="">Liga</label>
-                            <select name="liga" id="liga" >
-                                <option value="1" <%= productos.liga === 'otra' ? 'selected' : '' %>>Otra</option>
-                                <option value="2" <%= productos.liga === 'arg' ? 'selected' : '' %> >Prof. Argentina</option>
-                                <option value="3" <%= productos.liga === 'champion' ? 'selected' : '' %> >Champions League</option>
+                            <select name="liga" id="liga">
+                                <option value="1" <%=productos.liga==='otra' ? 'selected' : '' %>>Otra</option>
+                                <option value="2" <%=productos.liga==='arg' ? 'selected' : '' %> >Prof. Argentina
+                                </option>
+                                <option value="3" <%=productos.liga==='champion' ? 'selected' : '' %> >Champions League
+                                </option>
                             </select>
                         </div>
                         <div>
                             <label for="">Stock</label>
-                            <input type="text" placeholder="stock" name="stock" id="stock" value="<%= productos.stock %>">
+                            <input type="text" placeholder="stock" name="stock" id="stock"
+                                value="<%= productos.stock %>">
                         </div>
                         <div>
                             <label for="">Marca</label>
-                            <select name="marca" id="marca" >
+                            <select name="marca" id="marca">
                                 <!-- <option value="adidas" <%= productos.marca  === 'adidas' ? 'selected' : '' %>>Adidas</option>
                                 <option value="nike" <%= productos.marca  === 'nike' ? 'selected' : '' %>>Nike</option> -->
                                 <% for(let i=0; i< marcas.length; i++) { %>
-                                    <% if(marcas[i].id == productos.marcaId){ %>
+                                    <% if(marcas[i].id==productos.marcaId){ %>
                                         <option value="<%= marcas[i].id %>" selected>
                                             <%= marcas[i].nombre %>
                                         </option>
-                                    <% } else { %>
-                                        <option value="<%= marcas[i].id %>">
-                                            <%= marcas[i].nombre %>
-                                        </option>
-                                    <% } %>
-                                   
-                                <% } %> 
+                                        <% } else { %>
+                                            <option value="<%= marcas[i].id %>">
+                                                <%= marcas[i].nombre %>
+                                            </option>
+                                            <% } %>
+
+                                                <% } %>
                             </select>
                         </div>
                         <div>
                             <label for="">Categoria</label>
-                            <select name="category" id="category" >
-                                <option value="short" <%= productos.category  === 'short' ? 'selected' : '' %> >Short</option>
-                                <option value="camiseta" <%= productos.category  === 'camiseta' ? 'selected' : '' %>>Camiseta</option>
+                            <select name="category" id="category">
+                                <option value="short" <%=productos.category==='short' ? 'selected' : '' %> >Short
+                                </option>
+                                <option value="camiseta" <%=productos.category==='camiseta' ? 'selected' : '' %>
+                                    >Camiseta</option>
                             </select>
                         </div>
                         <div class="imgProduct">

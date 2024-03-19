@@ -1,6 +1,5 @@
 body {
   font-family: "Roboto", sans-serif;
-
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -12,11 +11,11 @@ body {
   display: flex;
   height: 50px;
   flex-direction: row;
-
   padding: 0 10px;
   justify-content: space-between;
   align-items: center;
 }
+
 nav img {
   width: 50px;
   height: 50px;
@@ -35,16 +34,8 @@ a {
   margin: 20px;
 }
 
-.contenedor {
-  display: flex;
-  max-width: 95%;
-  width: 100%;
-  margin: 20px;
-}
-
 .left-side {
   display: flex;
-
   padding: 30px;
   flex: 1;
   text-align: center;
@@ -81,6 +72,7 @@ h2 {
   font-size: 24px;
   margin-bottom: 20px;
 }
+
 .titulo {
   font-size: 18px;
   font-weight: bold;
@@ -100,18 +92,20 @@ button {
   cursor: pointer;
   margin-top: 10px;
   border-radius: 15px;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
 }
 
 button:hover {
   background-color: #65c6f4;
   color: #ffffff;
-  border: 1px solid #65c6f4;
+  border: 3px double #65c6f4;
 }
 
 .card-input {
   margin-bottom: 15px;
   width: calc(100% - 20px);
 }
+
 .didi {
   margin-top: 10px;
   height: 25px;
@@ -119,13 +113,14 @@ button:hover {
   border-radius: 7px;
   border-style: none;
 }
-.mensaje-error{
+
+.mensaje-error {
   color: red;
   background-color: rgb(231, 179, 179);
-  padding:5px;
-  font-weight:bold;
-  
+  padding: 5px;
+  font-weight: bold;
 }
+
 .checkbox-label {
   display: flex;
   align-items: center;
@@ -147,55 +142,71 @@ button:hover {
   text-align: center;
   max-width: 800px;
   width: 100%;
-  margin: 20px;
-  justify-content: space-around;
+  margin: 20px auto; /* Centrado horizontal */
+  justify-content: center; /* Centrado horizontal */
+}
+
+.register-button button {
+  background-color: #ffffff;
+  color: #072e51; /* Cambiado a color de texto original */
+  border: 3px double #072e51; /* Cambiado a color de borde original */
+  padding: 15px 30px; /* Aumentado el padding */
+  font-size: 18px; /* Aumentado el tamaño del texto */
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+.register-button button:hover {
+  background-color: #65c6f4; /* Cambiado a color de fondo original */
+  color: #ffffff; /* Cambiado a color de texto original */
+  border: 3px double #ffffff; /* Cambiado a color de borde original */
 }
 
 @media screen and (max-width: 768px) {
-  body {
-    .container {
-      display: flex;
-      width: 100%;
-      margin: 20px;
-      flex-direction: column;
-    }
-    .navbar {
-      background-color: #e0e0e0;
-      display: flex;
-      height: 50px;
-      flex-direction: row;
-      width: 100%;
-      padding: 0 10px;
-      justify-content: space-evenly;
-      align-items: center;
-    }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .contenedor {
-      display: flex;
-      max-width: 95%;
-      width: 100%;
-      margin: 20px;
-      flex-direction: column;
-      align-items: center;
-    }
+  .navbar {
+    background-color: #e0e0e0;
+    display: flex;
+    height: 50px;
+    flex-direction: row;
+    width: 100%;
+    padding: 0 10px;
+    justify-content: space-evenly;
+    align-items: center;
+  }
 
-    .right-side {
-      width: 100%;
-      background-color: #e0e0e0;
-      padding: 30px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      flex: 1;
-      box-sizing: border-box;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+  .contenedor {
+    display: flex;
+    max-width: 95%;
+    width: 100%;
+    margin: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .register-button p {
-      font-weight: bold;
-    }
+  .right-side {
+    background-color: #072e51; /* Cambiado a color de fondo original */
+    color: white; /* Cambiado a color de texto original */
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    flex: 1;
+    box-sizing: border-box;
+    margin: 20px auto; /* Centrado horizontal */
+    width: 90%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .register-button p {
+    font-weight: bold;
   }
 }
-/*fin movil*/

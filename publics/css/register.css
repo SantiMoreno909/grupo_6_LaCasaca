@@ -108,6 +108,12 @@ button {
   border-radius: 15px;
 }
 
+button:hover {
+  background-color: #65c6f4;
+  color: #ffffff;
+  border: 3px double #000000;
+}
+
 .submit_button {
   background-color: #ffffff;
   color: #000000;
@@ -117,12 +123,6 @@ button {
   cursor: pointer;
   margin-top: 10px;
   border-radius: 15px;
-}
-
-button:hover {
-  background-color: #65c6f4;
-  color: #ffffff;
-  border: 1px solid #65c6f4;
 }
 
 .card-input {
@@ -183,49 +183,94 @@ button:hover {
 
 @media screen and (max-width: 768px) {
   body {
-    .container {
-      display: flex;
-      width: 100%;
-      margin: 20px;
-      flex-direction: column;
-    }
-    .navbar {
-      background-color: #e0e0e0;
-      display: flex;
-      height: 50px;
-      flex-direction: row;
-      width: 100%;
-      padding: 0 10px;
-      justify-content: space-evenly;
-      align-items: center;
-    }
+    /* Estilos para el cuerpo del documento */
+    font-family: "Roboto", sans-serif;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
 
-    .contenedor {
-      display: flex;
-      max-width: 95%;
-      width: 100%;
-      margin: 20px;
-      flex-direction: column;
-      align-items: center;
-    }
+  /* Estilos para el contenedor principal */
+  .container {
+    display: flex;
+    width: 100%;
+    margin: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .right-side {
-      width: 100%;
-      background-color: #e0e0e0;
-      padding: 30px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      flex: 1;
-      box-sizing: border-box;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+  /* Estilos para la barra de navegación */
+  .navbar {
+    background-color: #e0e0e0;
+    display: flex;
+    height: 50px;
+    flex-direction: row;
+    width: 100%;
+    padding: 0 10px;
+    justify-content: space-evenly;
+    align-items: center;
+  }
 
-    .register-button p {
-      font-weight: bold;
-    }
+  /* Estilos para el contenedor principal */
+  .contenedor {
+    display: flex;
+    max-width: 95%;
+    width: 100%;
+    margin: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Estilos para el lado derecho */
+  .right-side {
+    width: 100%;
+    background-color: #072e51; /* Color azul para el lado derecho */
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    flex: 1;
+    box-sizing: border-box;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Estilos para el botón de registro */
+  .register-button p {
+    font-weight: bold;
+  }
+
+  /* Ajustar el estilo de los elementos dentro del formulario según sea necesario */
+  .formulario {
+    background-color: #072e51; /* Color azul para el formulario */
+    max-width: 90%;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+  }
+
+  .formulario_1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .formulario_label {
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  /* Estilos adicionales para los botones en dispositivos móviles y tabletas */
+  button, .submit_button {
+    width: 100%;
+    margin-top: 10px;
   }
 }
-/*fin movil*/
+
