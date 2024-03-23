@@ -9,8 +9,15 @@ const { validationResult } = require("express-validator");
 const { promises } = require("stream");
 
 const controlador = {
-  index: (req, res) => {
-    let productos = product;
+  index: async(req, res) => {
+    //let productos = product;
+    const productos =  await db.Productos.findAll(
+      {
+        include: [{ association: "equipo" }, { association: "marca" }],
+        raw: true,
+        nest: true
+      });
+     
     res.render("products/index", { productos: productos });
   },
 
@@ -64,7 +71,7 @@ const controlador = {
     try {
       // Validar los resultados de la validación
       const errors = validationResult(req);
-
+      
       if (!errors.isEmpty()) {
         // Si hay errores, obtener equipos y marcas y renderizar nuevamente el formulario con los errores
 
@@ -78,7 +85,7 @@ const controlador = {
       }else{
         console.log("entra el producto guardar");
       }
-
+      
       // Si no hay errores, continuar con la lógica para guardar el producto
       const saveProd= await db.Productos.create({
         /* Campos del producto */
@@ -90,6 +97,7 @@ const controlador = {
           ligaId: req.body.liga,
           stock: req.body.stock,
           marcaId: req.body.marca,
+          url_foto: req.body.foto,
         
       });
       saveProd.save();
@@ -171,6 +179,7 @@ const controlador = {
         ligaId: req.body.liga,
         stock: req.body.stock,
         marcaId: req.body.marca,
+        url_foto: req.body.foto,
       },
       { where: { id: req.params.id } }
     );
