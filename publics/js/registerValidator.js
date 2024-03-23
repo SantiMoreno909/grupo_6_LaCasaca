@@ -15,7 +15,7 @@ window.addEventListener("DOMContentLoaded", () => {
   let auxiliar = "";
 
   document.querySelector("form").addEventListener("submit", function (event) {
-    event.preventDefault();
+    
 
     // Limpiar errores anteriores
     document.querySelector(".errores").innerHTML = "";
@@ -60,10 +60,15 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     // Mostrar errores
-    for (let error of errores) {
-      auxiliar += `<div class="error-card">${error}</div>`;
+    if( errores.length > 0 ) {
+      event.preventDefault();
+   
+        for (let error of errores) {
+          auxiliar += `<div class="error-card">${error}</div>`;
+        }
+      
+        document.querySelector(".errores").innerHTML = auxiliar;
     }
-    document.querySelector(".errores").innerHTML = auxiliar;
   });
 });
 

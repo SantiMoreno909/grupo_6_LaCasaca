@@ -46,11 +46,11 @@
             <% for (let i=0; i < usuario.length; i++) { %>
             <tr>
               
-             <td><%= usuario[i].Nombre + " " + usuario[i].Apellido %></td>
+             <td><%= usuario[i].nombre + " " + usuario[i].apellido %></td>
              <td><%= usuario[i].email %></td>
-             <td><%= usuario[i].tel %></td>
-             <td><%= usuario[i].type %></td>
-             <td><img src="/img/users/<%= usuario[i].fotoPerfil %>" alt=""></td>
+             <td><%= usuario[i].telefono %></td>
+             <td><%= usuario[i].rol %></td>
+             <td><img src="/img/users/<%= usuario[i].url_foto_perfil %>" alt=""></td>
              <td class="acciones">
                 
                 <div class="formDelete">

@@ -72,7 +72,7 @@ router.get("/productos", productsController.productos);
 router.get("/crearProducto", productsController.crearProducto);
 router.post(
   "/guardar",
-  upload.single("fotoPerfil"),
+  upload.single("foto"),
   validateCreateForms,
   productsController.guardarProducto
 );

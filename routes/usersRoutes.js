@@ -147,7 +147,7 @@ router.post(
         novedades: req.body.newsletter,
       });
 
-      return res.render("users/register", {
+      return res.render("users/login", {
         createOk: [{ msg: "Usuario registrado" }],
       });
       // Lógica para redirigir o enviar respuesta
