@@ -68,6 +68,7 @@ const controlador = {
   },
 
   guardarProducto: async function (req, res) {
+    console.log(req);
     try {
       // Validar los resultados de la validación
       const errors = validationResult(req);

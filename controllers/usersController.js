@@ -5,6 +5,7 @@ const userFilePath = path.join(__dirname, "../data/user.json");
 const user = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
 const bcrypt = require("bcryptjs");
 const { Usuarios } = require("../database/models");
+const db = require("../database/models");
 
 const controlador = {
   login: (req, res) => {
@@ -45,11 +46,20 @@ const controlador = {
   },
 
   usuarios: (req, res) => {
-    let usuario = user;
-    if (req.file) {
-      console.log("entra");
-    }
-    res.render("users/admin", { usuario: usuario });
+    // let usuario = user;
+    // console.log("usuarios listado", usuario);
+    // if (req.file) {
+    //   console.log("entra");
+    // }
+    // res.render("users/admin", { usuario: usuario });
+    db.Usuarios.findAll({
+      //include: [{ association: "equipo" }, { association: "marca" }],
+      raw: true,
+      nest: true,
+    }).then(function (usuario) {
+      res.render("users/admin", { usuario: usuario });
+    });
+    
   },
 
   destroy: (req, res) => {

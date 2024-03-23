@@ -28,6 +28,9 @@ module.exports = (sequelize, dataTypes) => {
     url_foto_perfil: {
       type: dataTypes.STRING,
     },
+    rol: {
+      type: dataTypes.STRING,
+    },
     contrasenia: {
       type: dataTypes.STRING,
     },
