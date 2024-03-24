@@ -73,144 +73,116 @@ const controlador = {
   },
 
   crearProducto: async (req, res) => {
-    const equipos = await db.Equipos.findAll();
-    const marcas = await db.Marcas.findAll();
-    return res.render("products/productCreate", {
-      equipos: equipos,
-      marcas: marcas,
-    });
+    try {
+      const usuario = req.user;
+      // Verificar si el usuario es administrador
+      if (usuario && usuario.rol == "ADMIN") {
+        // Asume que isAdmin es un campo en el modelo de usuario que indica si es administrador
+        // Si el usuario es administrador, recuperar equipos, marcas y renderizar la página de creación de producto
+        const equipos = await db.Equipos.findAll();
+        const marcas = await db.Marcas.findAll();
+        return res.render("products/productCreate", {
+          equipos: equipos,
+          marcas: marcas,
+        });
+      } else {
+        // Si el usuario no es administrador, redirigirlo a la página de error
+        return res.render("error", {
+          message: "No tienes permiso para acceder a esta página.",
+        });
+      }
+    } catch (error) {
+      console.error("Error al crear producto:", error);
+      res.status(500).send("Error interno del servidor");
+    }
   },
 
   guardarProducto: async function (req, res) {
-    console.log(req);
     try {
-      // Validar los resultados de la validación
       const errors = validationResult(req);
 
       if (!errors.isEmpty()) {
-        // Si hay errores, obtener equipos y marcas y renderizar nuevamente el formulario con los errores
-
         const equipos = await db.Equipos.findAll();
         const marcas = await db.Marcas.findAll();
-        // return res.render("products/productCreate", {
-        //   equipos: equipos,
-        //   marcas: marcas,
-        //   errors: errors.array(),
-        // });
+        return res.render("products/productCreate", {
+          equipos: equipos,
+          marcas: marcas,
+          errors: errors.array(),
+        });
       } else {
-        console.log("entra el producto guardar");
+        const saveProd = await db.Productos.create({
+          nombre: req.body.name,
+          precio: req.body.precio,
+          talle: req.body.talle,
+          descripcion: req.body.description,
+          equipoId: req.body.team,
+          ligaId: req.body.liga,
+          stock: req.body.stock,
+          marcaId: req.body.marca,
+          url_foto: req.body.foto,
+        });
+        saveProd.save();
+        res.redirect("/productos");
       }
-
-      // Si no hay errores, continuar con la lógica para guardar el producto
-      const saveProd = await db.Productos.create({
-        /* Campos del producto */
-        nombre: req.body.name,
-        precio: req.body.precio,
-        talle: req.body.talle,
-        descripcion: req.body.description,
-        equipoId: req.body.team,
-        ligaId: req.body.liga,
-        stock: req.body.stock,
-        marcaId: req.body.marca,
-        url_foto: req.body.foto,
-      });
-      saveProd.save();
-      res.redirect("/productos");
     } catch (error) {
       console.error("Error al guardar el producto:", error);
       res.status(500).send("Error interno del servidor");
     }
   },
 
-  editar: (req, res) => {
-    let productId = req.params.id;
-    // const result = product.find((data) => {
-    //   return data.id == productId;
-    // });
+  editar: async (req, res) => {
+    try {
+      const productId = req.params.id;
+      const productos = await db.Productos.findByPk(productId);
+      const equipos = await db.Equipos.findAll();
+      const marcas = await db.Marcas.findAll();
 
-    // res.render("products/productEdit", { producto: result });
-    /*db.Productos.findByPk(productId).then(
-      function (productos) {
-        return res.render("products/productEdit", { productos: productos });
-      }
-    );*/
-    const productos = db.Productos.findByPk(productId);
-    const equipos = db.Equipos.findAll();
-    const marcas = db.Marcas.findAll();
-
-    Promise.all([productos, equipos, marcas]).then(function ([
-      productos,
-      equipos,
-      marcas,
-    ]) {
-      return res.render("products/productEdit", {
+      res.render("products/productEdit", {
         productos: productos,
         equipos: equipos,
         marcas: marcas,
       });
-    });
+    } catch (error) {
+      console.error("Error al obtener el producto:", error);
+      res.status(500).send("Error interno del servidor");
+    }
   },
 
-  update: (req, res) => {
-    // const {
-    //   name,
-    //   description,
-    //   category,
-    //   liga,
-    //   team,
-    //   talle,
-    //   precio,
-    //   marca,
-    //   stock,
-    // } = req.body;
-    // const id = parseInt(req.params.id);
-    // const index = product.findIndex((prod) => prod.id === id);
-
-    // if (index === -1) {
-    //   res.render("productos");
-    //   return;
-    // }
-
-    // product[index].name = name;
-    // product[index].description = description;
-    // product[index].category = category;
-    // product[index].liga = liga;
-    // product[index].team = team;
-    // product[index].talle = talle;
-    // product[index].precio = precio;
-    // product[index].marca = marca;
-    // product[index].stock = stock;
-
-    // fs.writeFileSync(productFilePath, JSON.stringify(product), "utf-8");
-    // res.redirect("/productos");
-    db.Productos.update(
-      {
-        nombre: req.body.name,
-        precio: req.body.precio,
-        talle: req.body.talle,
-        descripcion: req.body.description,
-        equipoId: req.body.team,
-        ligaId: req.body.liga,
-        stock: req.body.stock,
-        marcaId: req.body.marca,
-        url_foto: req.body.foto,
-      },
-      { where: { id: req.params.id } }
-    );
-    res.redirect("/productos");
+  update: async (req, res) => {
+    try {
+      await db.Productos.update(
+        {
+          nombre: req.body.name,
+          precio: req.body.precio,
+          talle: req.body.talle,
+          descripcion: req.body.description,
+          equipoId: req.body.team,
+          ligaId: req.body.liga,
+          stock: req.body.stock,
+          marcaId: req.body.marca,
+          url_foto: req.body.foto,
+        },
+        { where: { id: req.params.id } }
+      );
+      res.redirect("/productos");
+    } catch (error) {
+      console.error("Error al actualizar el producto:", error);
+      res.status(500).send("Error interno del servidor");
+    }
   },
 
-  destroy: (req, res) => {
-    // const { id } = req.params;
-    // const productIndex = product.findIndex((prod) => prod.id === parseInt(id));
-    // product.splice(productIndex, 1);
-    // fs.writeFileSync(productFilePath, JSON.stringify(product), "utf-8");
-    db.Productos.destroy({
-      where: {
-        id: req.params.id,
-      },
-    });
-    res.redirect("/productos");
+  destroy: async (req, res) => {
+    try {
+      await db.Productos.destroy({
+        where: {
+          id: req.params.id,
+        },
+      });
+      res.redirect("/productos");
+    } catch (error) {
+      console.error("Error al eliminar el producto:", error);
+      res.status(500).send("Error interno del servidor");
+    }
   },
 };
 
