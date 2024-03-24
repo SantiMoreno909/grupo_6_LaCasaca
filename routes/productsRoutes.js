@@ -5,6 +5,7 @@ const { body, validationResult } = require("express-validator");
 const productsController = require("../controllers/productsController");
 const productsControllerApi = require("../controllers/api/productsControllerApi");
 const multer = require("multer");
+const adminValidator = require("../publics/js/userAdminValidator");
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -69,7 +70,7 @@ router.get("/admin", productsController.administracion);
 
 router.get("/productos", productsController.productos);
 /*para el create*/
-router.get("/crearProducto", productsController.crearProducto);
+router.get("/crearProducto", adminValidator, productsController.crearProducto);
 router.post(
   "/guardar",
   upload.single("foto"),
@@ -77,11 +78,11 @@ router.post(
   productsController.guardarProducto
 );
 /*para editar*/
-router.get("/editar/:id", productsController.editar);
-router.put("/editar/:id", productsController.update);
+router.get("/editar/:id", adminValidator, productsController.editar);
+router.put("/editar/:id", adminValidator, productsController.update);
 
 /*para eliminar*/
-router.delete("/delete/:id", productsController.destroy);
+router.delete("/delete/:id", adminValidator, productsController.destroy);
 
 //Agrego la ruta para editar los productos
 router.get("/:clubNombre", productsController.clubes);
