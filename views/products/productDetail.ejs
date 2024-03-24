@@ -17,14 +17,18 @@
     <%- include('../partials/header.ejs')%>
     <content>
       <div class="content__imagenes">
-        <img src="/img/camisetasBoca/camiseta_Boca_2023.png" alt="" />
+        <% if (producto && producto.url_foto) { %>
+        <img src="<%= producto.url_foto %>" alt="Imagen del producto" />
+        <% } else { %>
+        <p>No hay imagen disponible</p>
+        <% } %>
       </div>
       <div class="content__descripcion">
         <div class="content__descripcion--titulo">
-          <h1>Camiseta Titular Boca 2023</h1>
+          <h1><%= producto.nombre %></h1>
           <h4>Hombre</h4>
-          <p>Código de Articulo: 0000123</p>
-          <h1 class="content__descripcion--precio">$33000</h1>
+          <p>Código de Articulo: <%= producto.id %></p>
+          <h1 class="content__descripcion--precio">$<%= producto.precio %></h1>
         </div>
         <div class="content__pagos">
           <hr />

@@ -63,7 +63,7 @@ router.get("/", productsController.index);
 
 router.get("/login", productsController.login);
 router.get("/carrito", productsController.carrito);
-router.get("/detail", productsController.detail);
+router.get("/detail/:id", productsController.detail);
 router.get("/register", productsController.register);
 router.get("/admin", productsController.administracion);
 

@@ -9,15 +9,14 @@ const { validationResult } = require("express-validator");
 const { promises } = require("stream");
 
 const controlador = {
-  index: async(req, res) => {
+  index: async (req, res) => {
     //let productos = product;
-    const productos =  await db.Productos.findAll(
-      {
-        include: [{ association: "equipo" }, { association: "marca" }],
-        raw: true,
-        nest: true
-      });
-     
+    const productos = await db.Productos.findAll({
+      include: [{ association: "equipo" }, { association: "marca" }],
+      raw: true,
+      nest: true,
+    });
+
     res.render("products/index", { productos: productos });
   },
 
@@ -29,8 +28,23 @@ const controlador = {
     res.render("products/productCart");
   },
 
-  detail: (req, res) => {
-    res.render("products/productDetail");
+  detail: async (req, res) => {
+    try {
+      const productId = req.params.id; // Captura el param id
+      const producto = await db.Productos.findByPk(productId, {
+        include: [{ association: "equipo" }, { association: "marca" }],
+      }); // Recupera el producto de la BDD
+
+      if (!producto) {
+        // Si no se encuentra el producto, renderizar una página de error o redirigir a otra página
+        return res.render("error", { message: "Producto no encontrado" });
+      }
+
+      res.render(`products/productDetail`, { producto: producto }); // Renderizar la página de detalle del producto con el producto encontrado
+    } catch (error) {
+      console.error("Error al obtener el producto:", error);
+      res.status(500).send("Error interno del servidor");
+    }
   },
 
   register: (req, res) => {
@@ -72,7 +86,7 @@ const controlador = {
     try {
       // Validar los resultados de la validación
       const errors = validationResult(req);
-      
+
       if (!errors.isEmpty()) {
         // Si hay errores, obtener equipos y marcas y renderizar nuevamente el formulario con los errores
 
@@ -83,23 +97,22 @@ const controlador = {
         //   marcas: marcas,
         //   errors: errors.array(),
         // });
-      }else{
+      } else {
         console.log("entra el producto guardar");
       }
-      
+
       // Si no hay errores, continuar con la lógica para guardar el producto
-      const saveProd= await db.Productos.create({
+      const saveProd = await db.Productos.create({
         /* Campos del producto */
-          nombre: req.body.name,
-          precio: req.body.precio,
-          talle: req.body.talle,
-          descripcion: req.body.description,
-          equipoId: req.body.team,
-          ligaId: req.body.liga,
-          stock: req.body.stock,
-          marcaId: req.body.marca,
-          url_foto: req.body.foto,
-        
+        nombre: req.body.name,
+        precio: req.body.precio,
+        talle: req.body.talle,
+        descripcion: req.body.description,
+        equipoId: req.body.team,
+        ligaId: req.body.liga,
+        stock: req.body.stock,
+        marcaId: req.body.marca,
+        url_foto: req.body.foto,
       });
       saveProd.save();
       res.redirect("/productos");
