@@ -45,11 +45,11 @@
               />
             </div>
             <img
-              src="/img/camisetasRiver/Camiseta_de_Juego_Titular_River_Plate_22-23.png"
+              src="<%= productos[i].url_foto %>"
               alt=""
               class="card__fotoRemera"
             />
-            <a href="/detail" class="card__txt">
+            <a href="/detail/<%= productos[i].id %>" class="card__txt">
               <%= productos[i].nombre %><br />
             </a>
             <p><strong><%= productos[i].marca.nombre %></strong></p>
