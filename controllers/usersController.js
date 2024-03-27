@@ -59,7 +59,6 @@ const controlador = {
     }).then(function (usuario) {
       res.render("users/admin", { usuario: usuario });
     });
-    
   },
 
   destroy: (req, res) => {
@@ -135,8 +134,12 @@ const controlador = {
       console.log("Iniciando");
       // Buscar al usuario en la base de datos utilizando Sequelize
       const usuario = await Usuarios.findOne({ where: { email } });
+      console.log("Usuario encontrado:", usuario);
 
-      if (usuario && bcrypt.compareSync(contrasena, bcrypt.hashSync(usuario.contrasenia))){
+      if (
+        usuario &&
+        bcrypt.compareSync(contrasena, bcrypt.hashSync(usuario.contrasenia))
+      ) {
         req.session.user = usuario;
         res.redirect("/");
       } else {
